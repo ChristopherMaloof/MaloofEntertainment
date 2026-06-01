@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- --- SEO SUPERIORITY BLOCK --- -->
+    <title>Our Services | Maloof Entertainment Tampa Bay</title>
+    <meta name="description" content="Expert MC services, voice-over talent, and full event production in Tampa Bay. Professional hosting for weddings, corporate galas, Latin nights, and festivals.">
+    <meta name="keywords" content="Wedding MC Tampa, Corporate Event Host, Latin Nightlife Production, Voice Over Talent Florida, Event DJ Tampa, Master of Ceremonies">
+    <meta name="author" content="Maloof Entertainment">
+    <link rel="canonical" href="https://maloofentertainment.com/services/">
+
+    <!-- SOCIAL MEDIA INTELLIGENCE (OPEN GRAPH) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Expert Event Services | Maloof Entertainment">
+    <meta property="og:description" content="Elevate your event with professional MC hosting, sound, lighting, and production.">
+    <meta property="og:url" content="https://maloofentertainment.com/services/">
+    <meta property="og:image" content="https://maloofentertainment.com/logo.png">
+    <meta property="og:site_name" content="Maloof Entertainment">
+
+    <!-- PRELOAD GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- LUXURY THEME VARIABLES --- */
+        :root {
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.5);
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #AA8C2C 100%);
+            --black: #050505;
+            --dark-gray: #121212;
+            --glass: rgba(5, 5, 5, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --white: #ffffff;
+            --font-main: 'Montserrat', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        /* --- RESET & BASE --- */
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--black); 
+            color: var(--white); 
+            font-family: var(--font-main); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+            animation: siteFadeIn 0.8s ease-out forwards;
+            opacity: 0; 
+        }
+
+        @keyframes siteFadeIn {
+            to { opacity: 1; }
+        }
+        
+        a { text-decoration: none; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { width: 100%; height: auto; display: block; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 0.8rem 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo-container {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .logo-container img {
+            position: relative;
+            z-index: 2;
+            max-height: 100%;
+            width: auto;
+            filter: drop-shadow(0 0 8px var(--gold-glow));
+            transition: filter 0.3s ease;
+        }
+        
+        .logo-container:hover img { filter: drop-shadow(0 0 12px var(--gold)); }
+
+        .nav-logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            display: none; 
+            margin-left: 10px;
+        }
+
+        .nav-brand { display: flex; align-items: center; }
+
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        /* Active State */
+        .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after { width: 100%; }
+        
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--gold); }
+
+        .menu-toggle { 
+            display: none; 
+            color: var(--gold); 
+            font-size: 1.5rem; 
+            cursor: pointer;
+            text-shadow: 0 0 5px var(--gold-glow);
+            transition: text-shadow 0.3s ease;
+        }
+        
+        .menu-toggle:hover { text-shadow: 0 0 10px var(--gold); }
+
+        /* --- PAGE HEADER --- */
+        header.page-header {
+            position: relative;
+            padding-top: 180px; 
+            padding-bottom: 80px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #050505 70%);
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-subtitle {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .header-title {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        /* --- SERVICES LIST --- */
+        section#services-list { padding: 2rem 5% 6rem; }
+        
+        .service-card-full {
+            background: var(--dark-gray);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card-full:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .service-icon-large {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 1rem;
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .service-list li::before {
+            content: '•';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .service-list strong { color: var(--white); }
+
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: var(--black);
+            padding: 1rem 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+            margin-top: 2rem;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* --- CONTACT FOOTER --- */
+        footer#contact {
+            background-color: #080808;
+            border-top: 1px solid #222;
+            padding: 5rem 5% 2rem;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info { flex: 1; min-width: 300px; }
+        .contact-info h3 { font-family: var(--font-serif); color: var(--gold); font-size: 2rem; margin-bottom: 1.5rem; }
+        .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: #ccc; }
+        .contact-item i { color: var(--gold); width: 20px; }
+        .contact-item a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        /* --- RESPONSIVE QUERIES --- */
+        @media (max-width: 768px) {
+            nav { padding: 0.8rem 1rem; }
+            .logo-container { width: 45px; height: 45px; margin-left: 8px; }
+            .nav-links { 
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background: var(--black);
+                padding: 2rem;
+                border-bottom: 1px solid var(--gold);
+            } 
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .header-title { font-size: 2.5rem; }
+            .contact-container { flex-direction: column; }
+        }
+    </style>
+
+    <!-- SCHEMA MARKUP (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "name": "Maloof Entertainment Services",
+          "description": "Professional MC, Voice-Over, and Event Production services in Tampa Bay.",
+          "provider": {
+            "@type": "EntertainmentBusiness",
+            "name": "Maloof Entertainment",
+            "image": "https://maloofentertainment.com/logo.png",
+            "telephone": "813-738-2444",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Tampa",
+              "addressRegion": "FL"
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Event Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Master of Ceremonies",
+                  "description": "Wedding and Corporate Event Hosting"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Voice-Over Talent",
+                  "description": "Commercials, Announcements, and Podcast Hosting"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Full Event Production",
+                  "description": "Sound, Lighting, and Timeline Management"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAVIGATION (Root Relative) -->
+    <nav>
+        <a href="/" class="nav-brand">
+            <div class="logo-container">
+                <img src="/logo.png" alt="Maloof Entertainment Logo" onerror="this.src='/logo.jpg'; this.onerror=null; this.style.display='none'; document.querySelector('.nav-logo-text').style.display='block';">
+            </div>
+            <span class="nav-logo-text">MALOOF ENT.</span>
+        </a>
+        
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/services/" class="active">Services</a></li> <!-- ACTIVE LINK -->
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <div class="header-content">
+            <span class="header-subtitle">Professional Excellence</span>
+            <h1 class="header-title">Our Event Services</h1>
+            <div style="width: 60px; height: 3px; background: var(--gold); margin: 0 auto;"></div>
+        </div>
+    </header>
+
+    <!-- SERVICES LIST -->
+    <section id="services-list">
+        
+        <!-- MC SERVICES -->
+        <div class="service-card-full">
+            <i class="fas fa-microphone-alt service-icon-large"></i>
+            <h2 class="service-title">Master of Ceremonies</h2>
+            <ul class="service-list">
+                <li><strong>Wedding Ceremonies & Receptions:</strong> Seamless hosting from introductions to the last dance. We engage guests with charisma and precision timing.</li>
+                <li><strong>Corporate Events & Galas:</strong> Keep your agenda on track while energizing the crowd. Perfect for product launches and awards.</li>
+                <li><strong>Festival & Concert Hosting:</strong> Commanding large crowds at events like the Cuban Sandwich Festival. Dynamic stage presence that maintains high energy.</li>
+                <li><strong>Latin Dance Nights:</strong> Fluency in Latin culture and bilingual capabilities to keep the dance floor packed all night.</li>
+            </ul>
+        </div>
+
+        <!-- VOICE OVER -->
+        <div class="service-card-full">
+            <i class="fas fa-podcast service-icon-large"></i>
+            <h2 class="service-title">Voice-Over Talent</h2>
+            <ul class="service-list">
+                <li><strong>Commercial Voice-Overs:</strong> Professional narration for TV, radio, and online ads. Versatile styles from energetic to authoritative.</li>
+                <li><strong>Event Announcements:</strong> Crystal-clear pre-event promotions and on-site announcements that set the tone.</li>
+                <li><strong>Radio & Podcast Hosting:</strong> Smooth transitions and compelling delivery for live segments and episodes.</li>
+                <li><strong>Corporate Presentations:</strong> Clear narration for training videos and company overviews.</li>
+            </ul>
+        </div>
+
+        <!-- FULL PRODUCTION -->
+        <div class="service-card-full">
+            <i class="fas fa-sliders-h service-icon-large"></i>
+            <h2 class="service-title">Full Event Production</h2>
+            <ul class="service-list">
+                <li><strong>Sound System Management:</strong> Professional setup ensuring crystal-clear audio for speeches and music.</li>
+                <li><strong>Timeline Coordination:</strong> Detailed execution from setup to teardown. We manage every minute so you can relax.</li>
+                <li><strong>Vendor Communication:</strong> Seamless coordination with bands, DJs, caterers, and photographers.</li>
+                <li><strong>Crisis Management:</strong> Quick solutions for unexpected issues, ensuring minimal disruption to your event.</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="/contact/" class="btn-gold">Book Your Service</a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>MALOOF ENT.</h3>
+                <p style="margin-bottom: 2rem;">Tampa Bay's Premier Event Experience. Book us for your next gala, wedding, or festival.</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:8137382444">813-738-2444</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:maloofentertainment@gmail.com">maloofentertainment@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-facebook-f"></i>
+                    <a href="https://facebook.com/maloofentertainment" target="_blank">@maloofentertainment</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://instagram.com/maloof_entertainment" target="_blank">@maloof_entertainment</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Maloof Entertainment. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

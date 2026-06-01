@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upcoming Latin Events | Tampa Bay | Maloof Entertainment</title>
+    <meta name="description" content="Upcoming Latin nightlife events across Tampa Bay. Quality Inn NPR Latin Night every second Saturday, La Sala at Babes Coffee Lounge Land O Lakes every third Friday, and Classic Salsa Sundays at 809 Lounge Tampa every first Sunday. Beginner friendly. No partner needed.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Maloof Entertainment">
+    <link rel="canonical" href="https://maloofentertainment.com/events/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maloofentertainment.com/events/">
+    <meta property="og:title" content="Upcoming Latin Events | Maloof Entertainment">
+    <meta property="og:description" content="Three recurring monthly Latin nights across Tampa Bay. Live bands, real DJs, beginner-friendly. Pick your night.">
+    <meta property="og:image" content="https://maloofentertainment.com/logo.png">
+    <meta property="og:site_name" content="Maloof Entertainment">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500;700&display=swap"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.5);
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #AA8C2C 100%);
+            --black: #0a0a0a;
+            --dark-gray: #111111;
+            --glass: rgba(10, 10, 10, 0.9);
+            --glass-border: rgba(212, 175, 55, 0.3);
+            --white: #ffffff;
+            --font-main: 'Montserrat', sans-serif;
+            --font-display: 'Oswald', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            animation: siteFadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes siteFadeIn { to { opacity: 1; } }
+        a { text-decoration: none; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { width: 100%; height: auto; display: block; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 0.8rem 2rem;
+            background: var(--glass);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+            transition: all 0.4s ease;
+        }
+        nav.scrolled {
+            background: var(--black);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 0.6rem 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .nav-brand { display: flex; align-items: center; }
+        .logo-container { position: relative; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-left: 10px; }
+        .logo-container img { position: relative; z-index: 2; max-height: 100%; width: auto; filter: drop-shadow(0 0 8px var(--gold-glow)); transition: filter 0.3s ease; }
+        .logo-container:hover img { filter: drop-shadow(0 0 12px var(--gold)); }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a { color: var(--white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--gold); transition: width 0.3s; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .menu-toggle { display: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; text-shadow: 0 0 5px var(--gold-glow); transition: text-shadow 0.3s ease; }
+        .menu-toggle:hover { text-shadow: 0 0 10px var(--gold); }
+
+        /* --- PAGE HEADER --- */
+        header.page-header {
+            position: relative;
+            padding-top: 160px;
+            padding-bottom: 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1a1a1a 0%, var(--black) 70%);
+            border-bottom: 1px solid #1a1a1a;
+        }
+        .header-content { max-width: 1000px; margin: 0 auto; padding: 0 1rem; }
+        .header-subtitle { color: var(--gold); font-size: 0.85rem; letter-spacing: 5px; text-transform: uppercase; font-weight: 600; margin-bottom: 1rem; display: block; }
+        .header-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; letter-spacing: 1px; line-height: 1.05; margin-bottom: 1.5rem; color: var(--white); }
+        .header-divider { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
+
+        /* --- EVENTS GRID --- */
+        section#events-grid-section { padding: 4rem 5% 6rem; }
+        .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto; }
+
+        .event-card { background: var(--dark-gray); border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; border: 1px solid #222; }
+        .event-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+
+        .flyer-wrapper { position: relative; overflow: hidden; aspect-ratio: 4/5; background-color: #000; border-bottom: 1px solid #222; }
+        .flyer-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
+        .event-card:hover .flyer-wrapper img { transform: scale(1.03); }
+
+        .event-date-badge { position: absolute; top: 15px; right: 15px; background: var(--gold-gradient); color: #000; padding: 6px 14px; border-radius: 2px; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 10; }
+
+        .event-info { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(to bottom, var(--dark-gray), #080808); }
+
+        .event-date { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 0.5rem; letter-spacing: 2px; }
+        .event-title { font-family: var(--font-display); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--white); line-height: 1.1; }
+        .event-tagline { font-family: var(--font-serif); font-style: italic; color: var(--gold); font-size: 0.95rem; margin-bottom: 1.2rem; }
+        .event-desc { color: #ccc; font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.2rem; }
+
+        .event-meta { background: rgba(0,0,0,0.4); padding: 1rem 1.2rem; border-left: 3px solid var(--gold); border-radius: 2px; margin-bottom: 1.2rem; }
+        .event-meta-row { display: flex; align-items: start; gap: 10px; color: #aaa; font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .event-meta-row:last-child { margin-bottom: 0; }
+        .event-meta-row i { color: var(--gold); margin-top: 3px; width: 14px; flex-shrink: 0; }
+
+        .map-container { width: 100%; height: 200px; border-radius: 2px; overflow: hidden; margin-bottom: 1.2rem; border: 1px solid #333; background: #000; filter: grayscale(100%) contrast(1.2); transition: filter 0.3s; }
+        .event-card:hover .map-container { filter: grayscale(0%); }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        .btn-primary { display: block; text-align: center; background: var(--gold-gradient); color: var(--black); padding: 1rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; font-weight: 700; border: 1px solid var(--gold); transition: all 0.3s ease; }
+        .btn-primary:hover { background: transparent; color: var(--gold); }
+
+        /* --- FOOTER (matches main index exactly) --- */
+        footer#contact { padding: 5rem 5% 2rem; position: relative; background: linear-gradient(to top, rgba(10,10,10,1) 0%, transparent 100%); border-top: 1px solid #1a1a1a; }
+        footer#contact h3, footer#contact p, footer#contact a, .footer-bottom { text-shadow: 0 2px 10px rgba(0,0,0,1); position: relative; z-index: 2; }
+        .footer-logo img { max-width: 120px; margin: 0 auto 2rem; display: block; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+        .footer-social { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; }
+        .footer-social a { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); display: flex; align-items: center; justify-content: center; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); }
+        .footer-social a:hover { background: var(--gold); color: var(--black); transform: translateY(-5px); }
+        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 4rem; font-size: 0.8rem; color: #ccc; }
+
+        /* --- WHATSAPP FLOAT --- */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; animation: float-pulse 2s infinite; }
+        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
+        @keyframes float-pulse { 0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.5); transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); transform: translateY(0px); } }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav { padding: 0.8rem 1rem; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--black); padding: 2rem; border-bottom: 1px solid var(--gold); }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .whatsapp-float { bottom: 90px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
+            .events-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-brand">
+            <div class="logo-container">
+                <img src="/logo.png" alt="Maloof Entertainment Logo" width="60" height="60" loading="eager">
+            </div>
+        </a>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="/">HOME</a></li>
+            <li><a href="/events" class="active">EVENTS</a></li>
+            <li><a href="/b2b">VENUE OWNERS</a></li>
+            <li><a href="/host">BOOK YOUR MC</a></li>
+            <li><a href="/ambito">AMBITO BAND</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="header-content">
+            <span class="header-subtitle">Mark Your Calendar</span>
+            <h1 class="header-title">Upcoming Latin Night Events</h1>
+            <div class="header-divider"></div>
+        </div>
+    </header>
+
+    <section id="events-grid-section">
+        <div class="events-grid" id="events-grid"></div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-logo">
+            <img src="/logo.png" alt="Maloof Entertainment Logo" width="120" height="120" loading="lazy">
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/maloofentertainment" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/maloof_entertainment" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <div style="margin-bottom: 2rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+                <a href="/" style="color: var(--gold); font-weight: 600;">HOME</a>
+                <a href="/events" style="color: var(--gold); font-weight: 600;">EVENTS</a>
+                <a href="/b2b" style="color: var(--gold); font-weight: 600;">VENUE OWNERS</a>
+                <a href="/host" style="color: var(--gold); font-weight: 600;">BOOK YOUR MC</a>
+                <a href="/about" style="color: var(--gold); font-weight: 600;">ABOUT</a>
+            </div>
+            <p>&copy; 2026 Maloof Entertainment. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="sms:+18137382444" class="whatsapp-float" aria-label="Text Maloof Entertainment">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // DATE ENGINE — identical to main index
+        function getNextDate(type) {
+            const now = new Date();
+            now.setHours(0,0,0,0);
+            let y = now.getFullYear(), m = now.getMonth();
+            function getFirst(day, y, m) {
+                let d = new Date(y, m, 1);
+                while(d.getDay() !== day) d.setDate(d.getDate() + 1);
+                return d;
+            }
+            function getNth(day, n, y, m) {
+                let d = new Date(y, m, 1);
+                let count = 0;
+                while (d.getMonth() === m) {
+                    if (d.getDay() === day) { count++; if (count === n) return new Date(d); }
+                    d.setDate(d.getDate() + 1);
+                }
+                return null;
+            }
+            let d = null;
+            if(type === 'first-friday') d = getFirst(5, y, m);
+            if(type === 'second-saturday') d = getNth(6, 2, y, m);
+            if(type === 'first-sunday') d = getFirst(0, y, m);
+            if(type === 'third-friday') d = getNth(5, 3, y, m);
+            if(type === 'fourth-wednesday') d = getNth(3, 4, y, m);
+
+            if(d < now) {
+                m++; if(m > 11) { m = 0; y++; }
+                if(type === 'first-friday') d = getFirst(5, y, m);
+                if(type === 'second-saturday') d = getNth(6, 2, y, m);
+                if(type === 'first-sunday') d = getFirst(0, y, m);
+                if(type === 'third-friday') d = getNth(5, 3, y, m);
+                if(type === 'fourth-wednesday') d = getNth(3, 4, y, m);
+            }
+
+            // Launch date exception for Quality Inn NPR Latin Night — May 9, 2026
+            if(type === 'second-saturday') {
+                const launchDate = new Date(2026, 4, 9);
+                const today = new Date(); today.setHours(0,0,0,0);
+                if(today <= launchDate) d = launchDate;
+            }
+
+            // Launch date exception for La Sala — April 17, 2026
+            if(type === 'third-friday') {
+                const launchDate = new Date(2026, 3, 17);
+                const today = new Date(); today.setHours(0,0,0,0);
+                if(today <= launchDate) d = launchDate;
+            }
+
+            // One-time date exception for Classic Salsa Sundays — March 8, 2026
+            if(type === 'first-sunday') {
+                const exceptionDate = new Date(2026, 2, 8);
+                const today = new Date(); today.setHours(0,0,0,0);
+                if(today <= exceptionDate) d = exceptionDate;
+            }
+
+            return d;
+        }
+
+        // EVENT LIBRARY — matches main index exactly
+        const eventLibrary = {
+            'quality-inn': {
+                type: 'second-saturday',
+                title: 'Quality Inn NPR Latin Night',
+                tagline: 'Second Saturdays @ Grand Ballroom \u00b7 New Port Richey',
+                img: '/flyer2.jpg',
+                imgAlt: 'Quality Inn NPR Latin Night at Grand Ballroom New Port Richey',
+                venue: 'Grand Ballroom at Quality Inn & Suites',
+                address: '5316 US Hwy 19 N, New Port Richey, FL 34652',
+                copy: "Pasco County finally has its own Saturday night. Maloof Entertainment brings a full Latin production to the Grand Ballroom at Quality Inn & Suites Conference Center in New Port Richey \u2014 The Koko Band live, DJ Mike Sensation, and two complimentary dance classes to kick off the night. Elba teaches Ladies Traditional Bachata at 8 PM. Jenny Morano teaches Salsa at 8:30 PM. DJ Mike Sensation \u2014 Tampa Bay's most recognized Latin DJ \u2014 takes over at 9 PM with his signature Salsa, Bachata, and Merengue mix. Doors open at 7:30 PM. Presale tickets are $12 \u2014 price goes to $15 at the door. No experience needed. No partner required. Just show up.",
+                time: '7:30 PM Doors | 8:00 PM Bachata Class | 8:30 PM Salsa Class | 9:00 PM DJ Mike Sensation',
+                cover: '$12 Presale \u00b7 $15 at the Door',
+                mapUrl: 'https://maps.google.com/maps?q=5316+US+Hwy+19+N,+New+Port+Richey,+FL+34652&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'GET TICKETS \u2014 $12 PRESALE',
+                actionLink: 'https://buytickets.at/maloofentertainment/2161470',
+                actionTarget: '_blank'
+            },
+            'la-sala': {
+                type: 'third-friday',
+                title: 'La Sala',
+                tagline: 'Third Fridays @ Babes Coffee Lounge \u00b7 Land O Lakes',
+                img: '/flyer4.jpg',
+                imgAlt: 'La Sala \u2014 Third Friday Latin Night at Babes Coffee Lounge Land O Lakes',
+                venue: 'Babes Coffee Lounge',
+                address: '5132 Land O Lakes Blvd, Land O Lakes, FL 34639',
+                copy: "La Sala is the newest Latin night in Tampa Bay \u2014 and it\u2019s launching at one of the most unique venues in the region. Babes Coffee Lounge in Land O Lakes opens its doors every third Friday for a night of Salsa, Bachata, and Merengue with a complimentary ladies styling Salsa class by Jenny Marie at 8:30 PM and DJ Kama keeping the energy going until 1 AM. Whether you\u2019re a seasoned dancer or stepping onto the floor for the first time, La Sala is built for you \u2014 beginner friendly, no partner needed. Come dressed, come ready, and come expecting something different.",
+                time: '8:30 PM Lesson | DJ Kama until 1:00 AM',
+                cover: 'Complimentary Entry',
+                mapUrl: 'https://maps.google.com/maps?q=5132+Land+O+Lakes+Blvd,+Land+O+Lakes,+FL+34639&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'GET DIRECTIONS',
+                actionLink: 'https://maps.google.com/?q=5132+Land+O+Lakes+Blvd+Land+O+Lakes+FL+34639',
+                actionTarget: '_blank'
+            },
+            '809': {
+                type: 'first-sunday',
+                title: 'Classic Salsa Sundays',
+                tagline: 'First Sundays @ 809 Lounge Tampa',
+                img: '/flyer3.jpg',
+                imgAlt: 'Classic Salsa Sundays at 809 Lounge Tampa',
+                venue: '809 Lounge Tampa',
+                address: '3710 W Waters Ave, Tampa, FL 33614',
+                copy: "Some nights are about trends. This one is about tradition. Classic Salsa Sundays at the 809 Lounge is a matinee built for people who love classic salsa dancing Tampa the way it was meant to be felt \u2014 deep cuts on vinyl, Salsa Dura, Live Latin Bands, and a room full of dancers who respect the roots. The afternoon opens at 3:00 PM with a complimentary beginner salsa lesson Tampa (no partner required), then flows into open dancing until 7:00 PM on the first Sunday of every month. If you\u2019ve been searching for the best Sunday salsa Tampa has to offer, you just found it.",
+                time: '3:00 PM Lesson | Social until 7:00 PM',
+                cover: 'FREE ENTRY',
+                mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.984508255559!2d-82.50631682573251!3d28.02494931141417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c1133501914f%3A0xfc44c7c992528e39!2s809%20Lounge%20Restaurant%20%26%20Grill!5e0!3m2!1sen!2sus!4v1770002862871!5m2!1sen!2sus',
+                actionText: 'RESERVE A TABLE',
+                actionLink: 'https://www.eventbrite.com/e/dinner-drinks-live-salsa-the-red-black-valentines-affair-809-lounge-tickets-1980289175231',
+                actionTarget: '_blank'
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('events-grid');
+
+            ['quality-inn', 'la-sala', '809'].forEach(id => {
+                const ev = eventLibrary[id];
+                const nextDate = getNextDate(ev.type);
+                const dayFull  = nextDate.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
+                const dateFull = nextDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).toUpperCase();
+                const badge    = nextDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+                const card = document.createElement('article');
+                card.className = 'event-card';
+                card.innerHTML =
+                    '<div class="flyer-wrapper">' +
+                        '<div class="event-date-badge">Next: ' + badge + '</div>' +
+                        '<img src="' + ev.img + '" alt="' + ev.imgAlt + '" loading="lazy">' +
+                    '</div>' +
+                    '<div class="event-info">' +
+                        '<div>' +
+                            '<div class="event-date">' + dayFull + ', ' + dateFull + '</div>' +
+                            '<h2 class="event-title">' + ev.title + '</h2>' +
+                            '<p class="event-tagline">' + ev.tagline + '</p>' +
+                            '<p class="event-desc">' + ev.copy + '</p>' +
+                            '<div class="event-meta">' +
+                                '<div class="event-meta-row"><i class="fas fa-clock"></i><span>' + ev.time + '</span></div>' +
+                                '<div class="event-meta-row"><i class="fas fa-ticket-alt"></i><span>' + ev.cover + '</span></div>' +
+                                '<div class="event-meta-row"><i class="fas fa-users"></i><span>Beginner Friendly \u00b7 No Partner Needed</span></div>' +
+                                '<div class="event-meta-row"><i class="fas fa-map-marker-alt"></i><span>' + ev.venue + '</span></div>' +
+                                '<div class="event-meta-row" style="padding-left:24px;"><i class="fas fa-location-arrow" style="color:var(--gold);margin-top:3px;width:14px;flex-shrink:0;"></i><span>' + ev.address + '</span></div>' +
+                            '</div>' +
+                            '<div class="map-container"><iframe src="' + ev.mapUrl + '" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>' +
+                        '</div>' +
+                        '<a href="' + ev.actionLink + '" class="btn-primary" target="' + ev.actionTarget + '"' + (ev.actionTarget === '_blank' ? ' rel="noopener"' : '') + '>' + ev.actionText + '</a>' +
+                    '</div>';
+                grid.appendChild(card);
+            });
+
+            // Navbar scroll effect
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) nav.classList.add('scrolled');
+                else nav.classList.remove('scrolled');
+            });
+
+            // Mobile menu
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => navLinks.classList.remove('active'));
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

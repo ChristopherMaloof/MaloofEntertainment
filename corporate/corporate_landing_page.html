@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated Title to match folder structure -->
+    <title>Dance Therapy To Go | Corporate Wellness & Team Building | Tampa Bay</title>
+    
+    <!-- ENHANCED META TAGS FOR SEO -->
+    <meta name="description" content="Transform your Tampa Bay corporate events with professional dance therapy and wellness programs. Expert team building through movement, stress relief, and authentic connection. Book your holiday celebration now - only 6 December spots available.">
+    <meta name="keywords" content="corporate wellness Tampa, team building Tampa Bay, dance therapy corporate, holiday party entertainment Tampa, corporate stress relief, Tampa team building, employee wellness programs Florida, corporate dance lessons, Tampa Bay corporate events, wellness team building, movement therapy corporate">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Maloof Entertainment - Christopher Maloof & Jenny Marie">
+    
+    <!-- LOCAL BUSINESS SEO -->
+    <meta name="geo.region" content="US-FL">
+    <meta name="geo.placename" content="Tampa Bay">
+    <meta name="geo.position" content="27.9506;-82.4572">
+    
+    <!-- Updated Canonical URL to match the path provided by the user -->
+    <link rel="canonical" href="https://www.maloofentertainment.com/corporate/corporate_landing_page.html">
+    
+    <!-- ENHANCED OPEN GRAPH META -->
+    <meta property="og.title" content="Corporate Wellness & Team Building | Dance Therapy Programs | Tampa Bay">
+    <meta property="og.description" content="Transform your corporate events with professional dance therapy and wellness programs. Expert team building through movement, stress relief, and authentic connection.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.maloofentertainment.com/corporate/corporate_landing_page.html">
+
+
+    <!-- Favicons for all platforms (Paths confirmed to be in 'images' folder) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="theme-color" content="#2A676E"> <!-- Brand primary color for mobile browser UI -->
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom Font and Configuration */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* Define colors based on the uploaded image aesthetic */
+        :root {
+            --primary-color: #2A676E; /* Deep Teal/Blue */
+            --secondary-color: #A3B18A; /* Soft Sage Green */
+            --dark-sub-header: #1e293b; /* Custom color for sub-header */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light Gray Background */
+        }
+
+        /* --- Scroll Animation Styles --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        /* --- Button Shimmer Animation --- */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .cta-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-color) 40%, #ffffff33 50%, var(--primary-color) 60%, var(--primary-color) 100%);
+            background-size: 200% 100%;
+        }
+
+        .cta-button:hover {
+            animation: shimmer 1.5s infinite linear;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(42, 103, 110, 0.5), 0 4px 6px -2px rgba(42, 103, 110, 0.25);
+        }
+
+        /* --- Package Hover Effect --- */
+        .package-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .package-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Deep shadow */
+        }
+        
+        /* --- Mobile Menu Styles --- */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Message Box Styling */
+        #message-box {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            transform: translateX(100%);
+        }
+        #message-box.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* --- Heartbeat Animation for Banner --- */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.05); }
+            30% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        #urgency-banner {
+            animation: heartbeat 1.5s ease-in-out infinite alternate;
+            animation-delay: 3s; /* Delay before first beat */
+            background-color: transparent !important; /* Ensure background is transparent */
+        }
+        /* End Heartbeat Animation */
+
+    </style>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2A676E', /* Deep Teal/Blue */
+                        'secondary': '#A3B18A', /* Soft Sage Green */
+                        'dark': '#1e293b',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-dark">
+
+    <!-- Global Message Box (Replaces alert()) -->
+    <div id="message-box" class="p-4 rounded-lg shadow-xl text-white max-w-sm w-full"></div>
+
+    <!-- Navigation (Sticky Header) -->
+    <header id="main-header" class="bg-white sticky top-0 z-50 transition-shadow duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            
+            <!-- Logo and Title: Path confirmed for root level -->
+            <div class="flex items-center space-x-2 md:space-x-3">
+                <img src="jenny_marie_logo.png" 
+                     alt="Jenny Marie's Logo" 
+                     class="h-12 md:h-16 w-auto object-contain" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/64x64/2A676E/ffffff?text=Logo';"
+                >
+                <div class="flex flex-col items-center md:items-start">
+                    <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-primary whitespace-nowrap">Dance Therapy To Go</h1>
+                    <!-- NEW SUB-TITLE: Centered, smaller font, Dark color -->
+                    <p class="text-xs sm:text-sm font-medium text-dark-sub-header text-center mt-[-4px] md:mt-0">
+                        Corporate Wellness and Team Building
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#why-us" class="text-dark hover:text-primary transition">Why Us</a>
+                <a href="#packages" class="text-dark hover:text-primary transition">Packages</a>
+                <a href="#testimonials" class="text-dark hover:text-primary transition">Testimonials</a>
+                <a href="#faq" class="text-dark hover:text-primary transition">FAQs</a>
+                <a href="#instructor" class="text-dark hover:text-primary transition">About Jenny</a>
+                <a href="#contact" class="bg-secondary text-white py-2 px-6 rounded-full font-semibold hover:bg-secondary/80 transition duration-300">
+                    Book a Consultation
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-button" class="md:hidden p-2 text-dark z-50" aria-label="Open Menu">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-full max-w-xs bg-dark bg-opacity-90 z-50 shadow-2xl p-6 text-white md:hidden">
+        <button id="close-menu-button" class="absolute top-4 right-4 p-2 text-white" aria-label="Close Menu">
+            <i class="fas fa-times text-3xl"></i>
+        </button>
+        <nav class="flex flex-col space-y-6 pt-16">
+            <a href="#why-us" class="text-2xl font-semibold hover:text-secondary transition menu-link">Why Us</a>
+            <a href="#packages" class="text-2xl font-semibold hover:text-secondary transition menu-link">Packages</a>
+            <a href="#testimonials" class="text-2xl font-semibold hover:text-secondary transition menu-link">Testimonials</a>
+            <a href="#faq" class="text-2xl font-semibold hover:text-secondary transition menu-link">FAQs</a>
+            <a href="#instructor" class="text-2xl font-semibold hover:text-secondary transition menu-link">About Jenny</a>
+            <a href="#contact" class="bg-primary text-white text-center py-3 mt-8 rounded-full font-bold hover:bg-primary/80 transition menu-link">
+                Book a Consultation
+            </a>
+        </nav>
+    </div>
+
+    <!-- 1. Hero Section (The Hook): Path confirmed for root level -->
+    <section class="bg-dark text-white py-16 md:py-24 relative overflow-hidden" 
+        style="
+            /* Use the new hero background image */
+            background-image: linear-gradient(
+                /* Apply a strong gradient overlay for text clarity */
+                90deg, 
+                rgba(30, 41, 59, 0.95) 0%, 
+                rgba(30, 41, 59, 0.7) 40%, 
+                rgba(30, 41, 59, 0.85) 100%
+            ), 
+            url('hero_background.jpg'); 
+            background-size: cover; 
+            background-position: center;
+        "
+    >
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- URGENCY BANNER WITH HEARTBEAT EFFECT -->
+                <p id="urgency-banner" class="text-white text-lg inline-block px-4 py-2 mb-4 rounded-full font-bold shadow-lg transition duration-500 uppercase fade-in">
+                    <i class="fas fa-bell mr-2"></i> Limited Availability: Only 6 December Spots Left!
+                </p>
+
+                <h2 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight fade-in">
+                    Elevate Your Team. Transform Your Culture.
+                </h2>
+                <!-- Corrected color application (only to "Corporate Wellness and Team Building Programs") -->
+                <p class="text-xl sm:text-2xl font-light mb-10 fade-in">
+                    The #1 <span class="text-secondary font-semibold">Corporate Wellness and Team Building Programs</span> in Tampa Bay, led by world-class dance instructor Jenny Marie.
+                </p>
+                <a href="#contact" class="cta-button bg-primary text-white text-lg font-bold py-4 px-10 rounded-full shadow-2xl inline-block fade-in">
+                    Schedule Your Free Wellness Assessment Today <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Client Trust Bar & Full Client List -->
+    <section id="clients" class="bg-white py-12 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h3 class="text-center text-xl font-semibold text-gray-500 uppercase mb-4">Trusted by Tampa Bay's Leading Organizations</h3>
+            
+            <p class="text-center text-sm text-gray-500 max-w-2xl mx-auto mb-6">
+                We have provided professional dance instruction, hosting/MC services, and custom wellness programs for:
+            </p>
+
+            <!-- Company Logos/Names Grid: Professional spacing and layout adjusted for desktop -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 items-center justify-center pt-4 pb-8 border-t border-b border-gray-200 fade-in">
+                
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">McDonald's</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Keller Williams Realty</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Seminole Hard Rock Taste of Latino Festival</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Ford's Cuban Sandwich Festival</div>
+
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Tampa Bay Latin American Medical Society</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Therachoice Inc.</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Tampa Pinnacle Academy</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">USA Dance, Rocky Mount North Carolina Chapter</div>
+                
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">GPS 4 Vets Foundation</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Wheelchairs for Kids</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Tampa Pinnacle Academy</div>
+                <div class="text-center text-gray-700 font-medium text-base brand-logo">Rocky Mount Adult Dance Collective</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Core Value Proposition: The "Why Us?" -->
+    <section id="why-us" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Beyond Pizza Parties: The Power of Movement for Business</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-primary fade-in package-card-hover">
+                    <i class="fas fa-hand-holding-heart text-3xl text-primary mb-3"></i>
+                    <h4 class="text-xl font-bold mb-2">Reduce Burnout and Stress</h4>
+                    <p class="text-gray-600">Our programs leverage evidence-based movement to significantly lower cortisol levels, reducing chronic stress and preventing costly employee burnout.</p>
+                </div>
+                <div class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-secondary fade-in package-card-hover">
+                    <i class="fas fa-users-line text-3xl text-secondary mb-3"></i>
+                    <h4 class="text-xl font-bold mb-2">Build Authentic Team Trust</h4>
+                    <p class="text-gray-600">Movement-based activities break down barriers faster than traditional icebreakers, fostering genuine connection, communication, and psychological safety.</p>
+                </div>
+                <div class="info-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-primary fade-in package-card-hover">
+                    <i class="fas fa-lightbulb text-3xl text-primary mb-3"></i>
+                    <h4 class="text-xl font-bold mb-2">Boost Creativity and Focus</h4>
+                    <p class="text-gray-600">Physical engagement boosts blood flow to the brain, leading to increased cognitive flexibility, problem-solving skills, and sustained productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services & Packages -->
+    <section id="packages" class="bg-gray-100 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-6">Our Popular Tampa Bay Corporate Packages</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">From a 90-minute workshop to a fully integrated quarterly wellness program, we have a solution to fit your budget and goals.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Package 1: Team Builder -->
+                <div class="package-card bg-white p-8 rounded-xl shadow-xl transition duration-300 border-b-8 border-primary fade-in package-card-hover">
+                    <h3 class="text-2xl font-extrabold mb-4 text-primary">The Team Synergy Workshop</h3>
+                    <p class="text-gray-600 mb-6">A high-impact, 90-minute session designed to break the ice and improve non-verbal communication immediately.</p>
+                    <ul class="space-y-3 mb-8 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Focus: Trust and Communication</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Perfect for: Off-sites and Kick-offs</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Max Capacity: Up to 50 people</span></li>
+                    </ul>
+                    <a href="#contact" class="cta-button w-full block text-center bg-primary text-white py-3 rounded-full font-bold transition">Inquire for Pricing</a>
+                </div>
+
+                <!-- Package 2: Wellness Program (Recommended) -->
+                <div class="package-card bg-white p-8 rounded-xl shadow-2xl transition duration-300 transform scale-100 border-b-8 border-secondary fade-in package-card-hover">
+                    <span class="block text-center text-sm font-bold uppercase text-white bg-secondary py-1 rounded-t-lg -mt-8 mx-12">Most Popular</span>
+                    <h3 class="text-2xl font-extrabold mb-4 text-secondary mt-4">The Quarterly Wellness Anchor</h3>
+                    <p class="text-gray-600 mb-6">A structured, ongoing program to integrate movement and mindfulness into your company's monthly routine.</p>
+                    <ul class="space-y-3 mb-8 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Focus: Stress Management and Retention</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Includes: Three Monthly Sessions</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Custom Digital Resources</span></li>
+                    </ul>
+                    <a href="#contact" class="cta-button w-full block text-center bg-secondary text-white py-3 rounded-full font-bold transition">Explore Partnership</a>
+                </div>
+
+                <!-- Package 3: Holiday Entertainment -->
+                <div class="package-card bg-white p-8 rounded-xl shadow-xl transition duration-300 border-b-8 border-primary fade-in package-card-hover">
+                    <h3 class="text-2xl font-extrabold mb-4 text-primary">Holiday Party Entertainment</h3>
+                    <p class="text-gray-600 mb-6">Unique, engaging entertainment for your end-of-year celebration; no prior dance experience necessary!</p>
+                    <ul class="space-y-3 mb-8 text-gray-700">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Focus: Fun and Employee Morale</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Includes: Interactive Dance Sets</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-secondary mt-1 mr-2 flex-shrink-0"></i> <span>Custom Music Curation</span></li>
+                    </ul>
+                    <a href="#contact" class="cta-button w-full block text-center bg-primary text-white py-3 rounded-full font-bold transition">Secure Your December Slot</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Testimonials -->
+    <section id="testimonials" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">What Our Clients Are Saying</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 (Corporate) -->
+                <div class="testimonial bg-white p-8 rounded-xl shadow-lg border-l-4 border-secondary fade-in package-card-hover">
+                    <div class="text-3xl text-secondary mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-lg italic text-gray-700 mb-4">"Best money we've spent on team building all year. Employees are still talking about it three months later."</p>
+                    <p class="font-bold text-dark">- Operations Manager, Tampa Tech Company</p>
+                </div>
+                
+                <!-- Testimonial 2 (Professional Colleague) -->
+                <div class="testimonial bg-white p-8 rounded-xl shadow-lg border-l-4 border-secondary fade-in package-card-hover">
+                    <div class="text-3xl text-secondary mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-lg italic text-gray-700 mb-4">"Jenny has a natural gift to teach dance. We worked together in a Salsa music video where she co-directed, choreographed, and helped me fine-tune it. It ended up exceeding our expectations."</p>
+                    <p class="font-bold text-dark">- Edsonn Ayala, Songwriter, Director in Los Angeles, CA</p>
+                </div>
+                 
+                <!-- Testimonial 3 (Private Event/Entertainment) -->
+                <div class="testimonial bg-white p-8 rounded-xl shadow-lg border-l-4 border-secondary fade-in package-card-hover">
+                    <div class="text-3xl text-secondary mb-4"><i class="fas fa-quote-left"></i></div>
+                    <p class="text-lg italic text-gray-700 mb-4">"Jenny and her partner were amazing at teaching our dinner party how to dance. Her ability to explain and illustrate for us made it much easier than we could have imagined. Such a pleasure to work with them!"</p>
+                    <p class="font-bold text-dark">- Opera Singer, The Florida Orchestra</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Contact Form (Primary Conversion Point) -->
+    <section id="contact" class="bg-primary py-16 md:py-24 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-xl shadow-2xl text-dark">
+                <h2 class="text-3xl font-bold text-center mb-4 text-primary">Ready to Transform Your Team?</h2>
+                <p class="text-center text-lg mb-8 text-gray-600">Secure your date and let us design a program that meets your unique corporate needs.</p>
+                
+                <!-- FORM ACTION UPDATED WITH USER'S FORMSPREE CODE -->
+                <form id="contact-form" action="https://formspree.io/f/mdkdyrjv" method="POST" class="space-y-6">
+                    <div>
+                        <label for="company_name" class="block text-sm font-medium text-gray-700">Company Name</label>
+                        <input type="text" id="company_name" name="Company Name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="contact_name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                        <input type="text" id="contact_name" name="Contact Name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary">
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Work Email</label>
+                            <input type="email" id="email" name="Email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="Phone" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="event_type" class="block text-sm font-medium text-gray-700">What are you planning?</label>
+                        <select id="event_type" name="Event Type" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary appearance-none bg-white">
+                            <option value="">Select an Option</option>
+                            <option value="team_building">Team Building Workshop</option>
+                            <option value="wellness_program">Ongoing Wellness Program</option>
+                            <option value="holiday_party">Holiday Party / Event Entertainment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message / Program Details</label>
+                        <textarea id="message" name="Message" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-primary focus:border-primary"></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submit-button" class="cta-button w-full bg-primary text-white text-lg font-bold py-3 rounded-lg hover:bg-primary/80 transition duration-300">
+                        Submit Request and View Availability
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FAQ Section (Accordion Style) -->
+    <section id="faq" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div id="faq-container" class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md border-l-4 border-secondary fade-in package-card-hover">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-xl text-dark" onclick="toggleFaq(this)">
+                        <span>Do employees need prior dance experience?</span>
+                        <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Absolutely not! Our programs are movement and communication-focused, not technique-focused. The activities are designed to be fun, accessible, and inclusive for every physical ability and comfort level. No coordination is required!</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md border-l-4 border-secondary fade-in package-card-hover">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-xl text-dark" onclick="toggleFaq(this)">
+                        <span>How long is a typical workshop?</span>
+                        <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Most of our single-session workshops run for 90 minutes. Our full corporate wellness programs typically involve 60-minute sessions delivered monthly or bi-weekly over a quarter.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item bg-white p-6 rounded-xl shadow-md border-l-4 border-secondary fade-in package-card-hover">
+                    <button class="flex justify-between items-center w-full text-left font-semibold text-xl text-dark" onclick="toggleFaq(this)">
+                        <span>Can you host the session virtually for remote teams?</span>
+                        <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Yes, we offer tailored virtual programs that are highly effective for connecting remote or hybrid Tampa Bay teams, focusing on movement exercises that work perfectly through a video conferencing platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Instructor Section: Path confirmed for root level -->
+    <section id="instructor" class="bg-gray-100 py-16 md:py-20">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1 text-center">
+                    <!-- Image for Jenny Marie's Picture -->
+                    <img src="jenny_marie_pic.jpg" 
+                         alt="Portrait of Jenny Marie, Lead Dance Instructor" 
+                         class="w-48 h-48 rounded-full mx-auto shadow-xl object-cover border-4 border-primary fade-in">
+                    
+                    <a href="https://www.thumbtack.com/fl/tampa/dance-lessons/dance-therapy-togo/service/386355006571831297" 
+                       target="_blank" 
+                       class="text-primary font-bold mt-4 inline-block hover:underline"
+                    >
+                       <i class="fas fa-calendar-alt mr-2"></i> Book Private Lessons
+                    </a>
+                </div>
+                <div class="md:col-span-2 text-center md:text-left">
+                    <h3 class="text-3xl font-bold mb-2 text-dark">Meet Jenny Marie: Your Expert Wellness Instructor</h3>
+                    <p class="text-lg text-primary font-semibold mb-4">Professional Dance Instructor, Certified in Yoga, Pilates, Latin Dance, and Stress Management</p>
+                    
+                    <!-- REVISED SECTION: Professional punctuation and spacing -->
+                    <p class="text-gray-600">
+                        Jenny Marie leads our unique corporate programs, blending her expertise as a **Professional Dance Instructor** with therapeutic movement principles. She holds certifications in **Yoga, Pilates, Latin Dances, and Stress Management**, dedicating her practice to enhancing team connection, relieving burnout, and fostering psychological safety through movement. With years of experience choreographing and hosting major corporate and private events, Jenny delivers a professional, energetic, and truly unforgettable experience for your team.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating CTA Button (Mobile Only) -->
+    <a href="#contact" class="fixed bottom-4 right-4 z-50 md:hidden cta-button bg-primary text-white py-3 px-6 rounded-full font-bold shadow-2xl transition duration-300 text-sm">
+        Book a Consultation
+    </a>
+
+    <!-- Footer: Improved responsiveness on desktop -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Column 1: Logo & Mission -->
+                <div class="md:col-span-2 text-center md:text-left mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-3">
+                        <!-- Increased logo size in footer -->
+                        <img src="jenny_marie_logo.png" 
+                             alt="Jenny Marie's Logo" 
+                             class="h-10 w-auto object-contain inline-block mr-2 align-middle"
+                             onerror="this.onerror=null; this.src='https://placehold.co/40x40/2A676E/ffffff?text=Logo'; this.classList.remove('mr-2');"
+                        >
+                        Dance Therapy To Go
+                    </h3>
+                    <p class="text-gray-400 max-w-sm md:mx-0 mx-auto">Transforming Tampa Bay corporate culture through the power of professional movement and dance therapy.</p>
+                </div>
+                
+                <!-- Column 2: Contact Links -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-3">Contact Us</h3>
+                    <p class="text-gray-400 space-y-2">
+                        <a href="tel:813-738-2444" class="block hover:text-secondary transition duration-300"><i class="fas fa-phone mr-2 text-secondary"></i> (813) 738-2444</a>
+                        <a href="mailto:maloofentertainment@gmail.com" class="block hover:text-secondary transition duration-300"><i class="fas fa-envelope mr-2 text-secondary"></i> maloofentertainment@gmail.com</a>
+                        <a href="#contact" class="block hover:text-secondary transition duration-300"><i class="fas fa-briefcase mr-2 text-secondary"></i> Corporate Inquiry</a>
+                    </p>
+                </div>
+                
+                <!-- Column 3: Quick Links -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-3">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#packages" class="hover:text-secondary transition duration-300">Our Packages</a></li>
+                        <li><a href="#testimonials" class="hover:text-secondary transition duration-300">Client Reviews</a></li>
+                        <li><a href="https://www.thumbtack.com/fl/tampa/dance-lessons/dance-therapy-togo/service/386355006571831297" target="_blank" class="hover:text-secondary transition duration-300">Private Lessons</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+                &copy; 2024 Dance Therapy To Go - Corporate Wellness and Team Building. All Rights Reserved. Serving the Tampa Bay Area.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Functionality (Sticky Header, Mobile Menu, Form, FAQ, Animations) -->
+    <script>
+        // Utility to display messages instead of alert()
+        function showMessage(text, isSuccess = false) {
+            const msgBox = document.getElementById('message-box');
+            msgBox.textContent = text;
+            msgBox.className = isSuccess 
+                ? 'p-4 rounded-lg shadow-xl text-white max-w-sm w-full bg-green-600 show'
+                : 'p-4 rounded-lg shadow-xl text-white max-w-sm w-full bg-red-600 show';
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                msgBox.classList.remove('show');
+            }, 5000);
+        }
+
+        // --- Sticky Header Shadow Toggle ---
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-2xl', 'bg-opacity-95');
+            } else {
+                header.classList.remove('shadow-2xl', 'bg-opacity-95');
+            }
+        });
+
+        // --- Mobile Menu Toggle ---
+        const menuButton = document.getElementById('menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+        }
+
+        menuButton.addEventListener('click', toggleMenu);
+        closeMenuButton.addEventListener('click', toggleMenu);
+
+        // Close menu when a link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Delay closing the menu to allow the scroll to happen smoothly
+                setTimeout(toggleMenu, 300);
+            });
+        });
+
+
+        // --- FAQ Toggle Functionality ---
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close other open FAQs
+            document.querySelectorAll('.faq-content').forEach(otherContent => {
+                if (otherContent !== content && !otherContent.classList.contains('hidden')) {
+                    otherContent.classList.add('hidden');
+                    otherContent.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                }
+            });
+
+            // Toggle current FAQ
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+
+        // --- Form Submission Handling (Formspree Ready) ---
+        const contactForm = document.getElementById('contact-form');
+        const submitButton = document.getElementById('submit-button');
+        const originalText = submitButton.textContent;
+        
+        contactForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+
+            // Formspree requires no Content-Type header when submitting form data
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    'Accept': 'application/json' 
+                }
+            });
+
+            if (response.ok) {
+                showMessage('Success! Your request has been sent. We will contact you within 24 hours.', true);
+                contactForm.reset();
+            } else {
+                showMessage('There was an error submitting your request. Please check your details or call us directly.', false);
+                // Log the error to console for debugging
+                console.error('Formspree submission error:', await response.json()); 
+            }
+            
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+
+
+        // --- Scroll Animations (Intersection Observer) ---
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('fade-in'); 
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select elements to animate. Filter out elements already handled by hover/other styles.
+            const animateSelectors = '.fade-in, .info-card, .package-card, .testimonial, .faq-item, #urgency-banner, h2, p, .brand-logo';
+            const animateElements = document.querySelectorAll(animateSelectors);
+            
+            animateElements.forEach(el => {
+                if (!el.classList.contains('fade-in')) {
+                    el.classList.add('fade-in');
+                }
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+
