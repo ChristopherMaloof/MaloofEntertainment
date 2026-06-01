@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Event Proposal | Maloof Entertainment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Maloof Entertainment Brand Colors - Matching Website */
+        :root {
+            --maloof-gold: #facc15;
+            --maloof-gold-light: #fde047;
+            --maloof-red: #dc2626;
+            --maloof-red-dark: #7f1d1d;
+            --maloof-black: #000000;
+            --maloof-gray: #1a1a1a;
+            --maloof-gray-light: #2d2d2d;
+        }
+        
+        .gradient-bg { 
+            background: linear-gradient(135deg, #0f0e0e 0%, #1a1a1a 50%, #0f0e0e 100%); 
+        }
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(250, 204, 21, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .proposal-box { 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+        }
+        .proposal-box:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
+        }
+        
+        /* Enhanced Animations */
+        .fade-in { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; transform: translateY(30px); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        
+        .section-divider { 
+            background: linear-gradient(90deg, transparent, var(--maloof-gold), transparent); 
+            height: 3px; 
+            margin: 2rem 0; 
+            border-radius: 2px;
+        }
+        
+        /* Progress Steps */
+        .step { transition: all 0.3s ease; }
+        .step.active { color: var(--maloof-gold); }
+        .step.completed { color: #10b981; }
+        
+        /* Collapsible Sections */
+        .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-in-out; }
+        .collapsible-content.expanded { max-height: 2000px; }
+        
+        /* Enhanced Signature Styles */
+        .signature-tools { display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .pen-size, .pen-color { 
+            padding: 0.5rem 1rem; 
+            border-radius: 0.5rem; 
+            cursor: pointer; 
+            transition: all 0.2s; 
+            background-color: #2d2d2d;
+            border: 1px solid #555;
+        }
+        .pen-size.active, .pen-color.active { 
+            background: var(--maloof-gold); 
+            color: black;
+            transform: scale(1.05); 
+        }
+        
+        /* Maloof Brand Buttons */
+        .maloof-button {
+            background: linear-gradient(135deg, var(--maloof-red), var(--maloof-red-dark));
+            border: 2px solid var(--maloof-gold);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .maloof-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .maloof-button:hover::before { left: 100%; }
+        .maloof-button:hover {
+            background: linear-gradient(135deg, var(--maloof-red-dark), var(--maloof-red));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+        }
+        
+        /* Mobile Enhancements */
+        @media (max-width: 768px) {
+            .signature-tools { justify-content: center; }
+            canvas { touch-action: none; }
+        }
+        
+        /* Loading Animation */
+        .loading-spinner { 
+            border: 3px solid #f3f3f3; 
+            border-top: 3px solid var(--maloof-gold); 
+            border-radius: 50%; 
+            width: 40px; 
+            height: 40px; 
+            animation: spin 1s linear infinite; 
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* Section visibility */
+        .section-hidden { display: none; }
+        
+        /* Pulse glow effect like website */
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(250, 204, 21, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(250, 204, 21, 0.6); }
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+
+<script>
+// 🎯 EASY CUSTOMIZATION - CHANGE THESE VARIABLES FOR ANY EVENT TYPE!
+const EVENT_CONFIG = {
+    // Basic Event Info
+    eventName: "Party en El Patio",
+    eventType: "latin", // Options: latin, corporate, wedding, club, festival
+    clientName: "Corey",
+    venue: "Lucky's Sports Bar",
+    venueAddress: "4318 US Hwy 98 N, Lakeland, FL 33809",
+    
+    // Pricing & Terms
+    pricing: {
+        structure: "per-event", // Options: per-event, hourly, package, custom
+        amount: 600,
+        currency: "$",
+        paymentTerms: "Same day after event completion"
+    },
+    
+    // Event Details
+    dates: ["October 24", "November 28", "December TBD"],
+    duration: "9:00 PM to 1:00 AM",
+    setupTime: "8:30 PM",
+    
+    // Services & Features
+    services: {
+        dj: true,
+        marketing: true,
+        equipment: false,
+        catering: false,
+        photography: false,
+        security: false,
+        coordination: true
+    },
+    
+    // Exclusivity & Legal
+    exclusivity: {
+        enabled: true,
+        duration: "3 months",
+        scope: "Party en El Patio events"
+    },
+    
+    // Contact Info
+    contact: {
+        name: "Chris Maloof",
+        company: "Maloof Entertainment",
+        website: "www.maloofentertainment.com",
+        phones: ["352-942-7717", "813-738-2444"],
+        email: "maloofentertainment@gmail.com"
+    },
+    
+    // Branding - Updated to match website
+    logo: "https://www.maloofentertainment.com/mylogo.jpg",
+    
+    // Email Integration
+    formspreeId: "mdkdyrjv"
+};
+
+// Apply theme and populate content
+function initializeProposal() {
+    // Update page title
+    document.getElementById('page-title').textContent = `${EVENT_CONFIG.eventName} Proposal | ${EVENT_CONFIG.contact.company}`;
+    
+    // Show/hide sections based on services
+    Object.keys(EVENT_CONFIG.services).forEach(service => {
+        const elements = document.querySelectorAll(`[data-service="${service}"]`);
+        elements.forEach(el => {
+            if (EVENT_CONFIG.services[service]) {
+                el.classList.remove('section-hidden');
+            } else {
+                el.classList.add('section-hidden');
+            }
+        });
+    });
+    
+    // Populate dynamic content
+    populateContent();
+}
+
+function populateContent() {
+    // Header content
+    document.getElementById('client-name').textContent = EVENT_CONFIG.clientName;
+    document.getElementById('event-name').textContent = EVENT_CONFIG.eventName;
+    document.getElementById('venue-name').textContent = EVENT_CONFIG.venue;
+    
+    // Event basics
+    document.getElementById('event-description').textContent = 
+        `"${EVENT_CONFIG.eventName}" – High-energy entertainment featuring professional DJ services, comprehensive marketing, and full event coordination.`;
+    document.getElementById('event-dates').textContent = EVENT_CONFIG.dates.join(', ');
+    document.getElementById('event-duration').textContent = EVENT_CONFIG.duration;
+    document.getElementById('setup-time').textContent = EVENT_CONFIG.setupTime;
+    document.getElementById('event-pricing').textContent = 
+        `${EVENT_CONFIG.pricing.currency}${EVENT_CONFIG.pricing.amount} ${EVENT_CONFIG.pricing.structure === 'per-event' ? 'per event' : EVENT_CONFIG.pricing.structure}`;
+    
+    // Venue details
+    document.getElementById('venue-full').textContent = `${EVENT_CONFIG.venue} (${EVENT_CONFIG.venueAddress})`;
+    
+    // Services list
+    updateServicesList();
+    
+    // Pricing details
+    document.getElementById('pricing-amount').textContent = 
+        `${EVENT_CONFIG.pricing.currency}${EVENT_CONFIG.pricing.amount} ${EVENT_CONFIG.pricing.structure === 'per-event' ? 'per event' : EVENT_CONFIG.pricing.structure}`;
+    document.getElementById('payment-terms').textContent = EVENT_CONFIG.pricing.paymentTerms;
+    
+    // Exclusivity
+    if (EVENT_CONFIG.exclusivity.enabled) {
+        document.getElementById('exclusivity-duration').textContent = EVENT_CONFIG.exclusivity.duration;
+        document.getElementById('exclusivity-scope').textContent = EVENT_CONFIG.exclusivity.scope;
+    } else {
+        document.querySelector('[data-section="exclusivity"]').classList.add('section-hidden');
+    }
+    
+    // Contact info
+    document.getElementById('contact-name').textContent = EVENT_CONFIG.contact.name;
+    document.getElementById('contact-company').textContent = EVENT_CONFIG.contact.company;
+    document.getElementById('contact-website').textContent = EVENT_CONFIG.contact.website;
+    document.getElementById('contact-phones').textContent = EVENT_CONFIG.contact.phones.join(' / ');
+    
+    // Logo
+    document.getElementById('company-logo').src = EVENT_CONFIG.logo;
+    document.getElementById('company-logo').alt = `${EVENT_CONFIG.contact.company} Logo`;
+    
+    // Signature placeholder
+    document.getElementById('signature-placeholder').placeholder = EVENT_CONFIG.clientName;
+    
+    // Footer
+    document.getElementById('client-name-2').textContent = EVENT_CONFIG.clientName;
+    document.getElementById('footer-company').textContent = EVENT_CONFIG.contact.company;
+}
+
+function updateServicesList() {
+    const servicesList = document.getElementById('services-list');
+    const services = [];
+    
+    if (EVENT_CONFIG.services.dj) services.push('Professional DJ services and music curation');
+    if (EVENT_CONFIG.services.marketing) services.push('Comprehensive marketing and promotional campaign');
+    if (EVENT_CONFIG.services.equipment) services.push('Professional audio/visual equipment setup');
+    if (EVENT_CONFIG.services.catering) services.push('Catering coordination and management');
+    if (EVENT_CONFIG.services.photography) services.push('Professional event photography');
+    if (EVENT_CONFIG.services.security) services.push('Event security and crowd management');
+    if (EVENT_CONFIG.services.coordination) services.push('Full event coordination and on-site management');
+    
+    servicesList.innerHTML = services.map(service => `<li>${service}</li>`).join('');
+}
+</script>
+
+    <!-- Progress Indicator -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-gray-800/90 backdrop-blur-sm border-b border-gray-700">
+        <div class="max-w-4xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center text-sm">
+                <div class="step active" id="step1">
+                    <span class="hidden sm:inline">📋 </span>Review Proposal
+                </div>
+                <div class="step" id="step2">
+                    <span class="hidden sm:inline">✍️ </span>Sign Agreement
+                </div>
+                <div class="step" id="step3">
+                    <span class="hidden sm:inline">✅ </span>Complete
+                </div>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
+                <div class="h-2 rounded-full transition-all duration-500" id="progressBar" style="width: 33%; background-color: var(--maloof-gold);"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="gradient-bg py-6 px-4 mt-16 relative">
+        <div class="max-w-3xl mx-auto text-center fade-in relative z-10">
+            <img id="company-logo" src="" alt="Company Logo" class="mx-auto mb-4 w-full max-w-xs md:max-w-sm pulse-glow">
+            <h2 class="text-2xl md:text-3xl font-bold">Exclusive Proposal for <span id="client-name"></span></h2>
+            <p class="text-lg mt-2 text-gray-300"><span id="event-name"></span> at <span id="venue-name"></span></p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <!-- Main Proposal Content -->
+        <div class="proposal-box border-2 rounded-2xl p-8 md:p-12 mb-8 fade-in" style="border-color: var(--maloof-gold);">
+            <h1 class="text-3xl font-bold text-center mb-8 text-white">Event Partnership Proposal</h1>
+            <p class="mb-6 text-lg">Hi <span id="client-name-2"></span>,</p>
+            <p class="mb-6 text-lg">Thank you for considering our entertainment services for your upcoming event at <span id="venue-full"></span>. Here's our comprehensive proposal for your event.</p>
+            
+            <!-- Expandable Sections -->
+            <div class="space-y-4">
+                <!-- Event Basics -->
+                <div class="border border-gray-600 rounded-xl overflow-hidden">
+                    <button onclick="toggleSection('basics')" class="w-full text-left p-4 bg-gray-700/50 hover:bg-gray-700 transition-colors flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-white">📅 Event Details</h3>
+                        <span id="basics-icon" class="text-2xl" style="color: var(--maloof-gold);">▼</span>
+                    </button>
+                    <div id="basics-content" class="collapsible-content expanded">
+                        <div class="p-4">
+                            <ul class="list-disc pl-6 space-y-3 text-gray-200">
+                                <li><strong>Event Concept:</strong> <span id="event-description"></span></li>
+                                <li><strong>Dates:</strong> <span id="event-dates"></span></li>
+                                <li><strong>Duration:</strong> <span id="event-duration"></span></li>
+                                <li><strong>Setup Time:</strong> <span id="setup-time"></span></li>
+                                <li><strong>Investment:</strong> <span id="event-pricing"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="border border-gray-600 rounded-xl overflow-hidden" data-service="marketing">
+                    <button onclick="toggleSection('services')" class="w-full text-left p-4 bg-gray-700/50 hover:bg-gray-700 transition-colors flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-white">🎯 Services Included</h3>
+                        <span id="services-icon" class="text-2xl" style="color: var(--maloof-gold);">▼</span>
+                    </button>
+                    <div id="services-content" class="collapsible-content expanded">
+                        <div class="p-4">
+                            <ul class="list-disc pl-6 space-y-3 text-gray-200" id="services-list">
+                                <!-- Populated dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Logistics -->
+                <div class="border border-gray-600 rounded-xl overflow-hidden">
+                    <button onclick="toggleSection('logistics')" class="w-full text-left p-4 bg-gray-700/50 hover:bg-gray-700 transition-colors flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-white">💰 Investment & Terms</h3>
+                        <span id="logistics-icon" class="text-2xl" style="color: var(--maloof-gold);">▼</span>
+                    </button>
+                    <div id="logistics-content" class="collapsible-content expanded">
+                        <div class="p-4">
+                            <ul class="list-disc pl-6 space-y-3 text-gray-200">
+                                <li><strong>Total Investment:</strong> <span id="pricing-amount"></span></li>
+                                <li><strong>Payment Terms:</strong> <span id="payment-terms"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exclusivity (conditional) -->
+                <div class="border border-gray-600 rounded-xl overflow-hidden" data-section="exclusivity">
+                    <button onclick="toggleSection('exclusivity')" class="w-full text-left p-4 bg-gray-700/50 hover:bg-gray-700 transition-colors flex justify-between items-center">
+                        <h3 class="text-xl font-semibold text-white">🔒 Exclusivity Agreement</h3>
+                        <span id="exclusivity-icon" class="text-2xl" style="color: var(--maloof-gold);">▼</span>
+                    </button>
+                    <div id="exclusivity-content" class="collapsible-content expanded">
+                        <div class="p-4">
+                            <ul class="list-disc pl-6 space-y-3 text-gray-200">
+                                <li><strong>Duration:</strong> <span id="exclusivity-duration"></span> exclusive partnership</li>
+                                <li><strong>Scope:</strong> Exclusive rights for <span id="exclusivity-scope"></span></li>
+                                <li><strong>Confidentiality:</strong> All creative processes and methodologies remain confidential</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+            
+            <p class="mb-6 text-lg">Please review the terms above. If everything looks good, please proceed to sign below.</p>
+            <p class="mb-6 text-lg font-semibold">We're excited about the opportunity to create an exceptional event experience with you.</p>
+            
+            <p class="text-lg font-semibold">Respectfully,</p>
+            <p class="text-xl font-bold mt-2">
+                <span id="contact-name"></span><br>
+                <span id="contact-company"></span><br>
+                <span id="contact-website"></span><br>
+                <span id="contact-phones"></span>
+            </p>
+        </div>
+        
+        <!-- Enhanced Signature Section -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600 rounded-2xl p-8 md:p-12 fade-in">
+            <h3 class="text-2xl font-bold mb-6 text-center text-white">Electronic Signature & Agreement</h3>
+            
+            <!-- Terms Acceptance -->
+            <div class="mb-6 p-4 bg-gray-800/50 rounded-xl border border-gray-600">
+                <label class="flex items-start space-x-3 cursor-pointer">
+                    <input type="checkbox" id="termsAccept" class="mt-1 w-5 h-5 border-gray-500 rounded focus:ring-2" style="accent-color: var(--maloof-gold);">
+                    <span class="text-sm text-gray-200">
+                        I acknowledge that I have read, understood, and agree to all terms outlined in this proposal.
+                    </span>
+                </label>
+            </div>
+
+            <!-- Signature Tools -->
+            <div class="signature-tools justify-center mb-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-300">Pen Size:</span>
+                    <button onclick="setPenSize(1)" class="pen-size text-xs" data-size="1">Thin</button>
+                    <button onclick="setPenSize(3)" class="pen-size text-sm active" data-size="3">Medium</button>
+                    <button onclick="setPenSize(5)" class="pen-size text-base" data-size="5">Thick</button>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-300">Color:</span>
+                    <button onclick="setPenColor('#000000')" class="pen-color bg-black w-8 h-8 rounded active" data-color="#000000"></button>
+                    <button onclick="setPenColor('#1e40af')" class="pen-color bg-blue-800 w-8 h-8 rounded" data-color="#1e40af"></button>
+                    <button onclick="setPenColor('#059669')" class="pen-color bg-emerald-600 w-8 h-8 rounded" data-color="#059669"></button>
+                </div>
+            </div>
+
+            <p class="text-center mb-4 text-gray-200">Sign below OR type your name</p>
+            <canvas id="signatureCanvas" class="border-2 border-white/20 w-full h-32 md:h-40 mb-4 rounded-xl bg-white/10 cursor-crosshair"></canvas>
+            
+            <div class="text-center mb-6">
+                <label class="block text-lg mb-2">Or Type Full Name:</label>
+                <input type="text" id="typedSignature" placeholder="" class="w-full max-w-md mx-auto px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2" style="focus:ring-color: var(--maloof-gold);">
+            </div>
+
+            <!-- Date Selection -->
+            <div class="text-center mb-6">
+                <label class="block text-lg mb-2">Signature Date:</label>
+                <input type="date" id="signatureDate" class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2" style="focus:ring-color: var(--maloof-gold);">
+            </div>
+
+            <div class="text-center space-x-4">
+                <button onclick="clearSignature()" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors">Clear Signature</button>
+                <button onclick="signProposal()" id="signButton" class="maloof-button text-white px-8 py-3 rounded-xl font-bold text-lg transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                    Sign & Send Proposal
+                </button>
+            </div>
+            
+            <div id="loadingIndicator" class="hidden text-center mt-4">
+                <div class="loading-spinner mx-auto"></div>
+                <p class="mt-2 text-gray-300">Processing signature...</p>
+            </div>
+            
+            <p id="status" class="text-center mt-4 font-semibold"></p>
+        </div>
+    </main>
+
+    <footer class="gradient-bg py-8 px-4 mt-12 relative">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <p class="text-sm text-gray-300">&copy; 2025 <span id="footer-company"></span>. Confidential proposal.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Enhanced Canvas Signature (same as before but with dynamic colors)
+        const canvas = document.getElementById('signatureCanvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+        let penSize = 3;
+        let penColor = '#000000';
+        let signaturePaths = [];
+        let currentPath = [];
+
+        function resizeCanvas() {
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * window.devicePixelRatio;
+            canvas.height = rect.height * window.devicePixelRatio;
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+        }
+        
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        function getEventPos(e) {
+            const rect = canvas.getBoundingClientRect();
+            const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+            return { x: clientX - rect.left, y: clientY - rect.top };
+        }
+
+        function startDraw(e) {
+            e.preventDefault();
+            drawing = true;
+            currentPath = [];
+            const pos = getEventPos(e);
+            currentPath.push(pos);
+            ctx.beginPath();
+            ctx.moveTo(pos.x, pos.y);
+        }
+
+        function draw(e) {
+            if (!drawing) return;
+            e.preventDefault();
+            const pos = getEventPos(e);
+            currentPath.push(pos);
+            ctx.lineWidth = penSize;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = penColor;
+            ctx.lineTo(pos.x, pos.y);
+            ctx.stroke();
+        }
+
+        function stopDraw(e) {
+            if (!drawing) return;
+            e.preventDefault();
+            drawing = false;
+            if (currentPath.length > 0) {
+                signaturePaths.push({ path: [...currentPath], size: penSize, color: penColor });
+            }
+            ctx.beginPath();
+        }
+
+        canvas.addEventListener('mousedown', startDraw);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDraw);
+        canvas.addEventListener('touchstart', startDraw);
+        canvas.addEventListener('touchmove', draw);
+        canvas.addEventListener('touchend', stopDraw);
+
+        function setPenSize(size) {
+            penSize = size;
+            document.querySelectorAll('.pen-size').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-size="${size}"]`).classList.add('active');
+        }
+
+        function setPenColor(color) {
+            penColor = color;
+            document.querySelectorAll('.pen-color').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-color="${color}"]`).classList.add('active');
+        }
+
+        function clearSignature() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            signaturePaths = [];
+            document.getElementById('typedSignature').value = '';
+        }
+
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId + '-content');
+            const icon = document.getElementById(sectionId + '-icon');
+            
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.textContent = '▶';
+            } else {
+                content.classList.add('expanded');
+                icon.textContent = '▼';
+            }
+        }
+
+        function updateProgress(step) {
+            const steps = ['step1', 'step2', 'step3'];
+            const progressBar = document.getElementById('progressBar');
+            
+            steps.forEach((stepId, index) => {
+                const element = document.getElementById(stepId);
+                element.classList.remove('active', 'completed');
+                
+                if (index < step - 1) {
+                    element.classList.add('completed');
+                } else if (index === step - 1) {
+                    element.classList.add('active');
+                }
+            });
+            
+            progressBar.style.width = `${(step / 3) * 100}%`;
+        }
+
+        // Enhanced PDF generation
+        function generatePDF(signature, typedSig, date) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Header
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text('SIGNED PARTNERSHIP PROPOSAL', 20, 20);
+            doc.setFontSize(14);
+            doc.text(`${EVENT_CONFIG.eventName} at ${EVENT_CONFIG.venue}`, 20, 30);
+            
+            // Proposal content
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            
+            const content = [
+                `Event: ${EVENT_CONFIG.eventName}`,
+                `Venue: ${EVENT_CONFIG.venue} (${EVENT_CONFIG.venueAddress})`,
+                `Dates: ${EVENT_CONFIG.dates.join(', ')}`,
+                `Time: ${EVENT_CONFIG.duration}`,
+                `Investment: ${EVENT_CONFIG.pricing.currency}${EVENT_CONFIG.pricing.amount} ${EVENT_CONFIG.pricing.structure}`,
+                `Payment: ${EVENT_CONFIG.pricing.paymentTerms}`,
+                '',
+                'Services Included:',
+                '• Professional DJ services and music curation',
+                '• Comprehensive marketing and promotional campaign',
+                '• Full event coordination and on-site management',
+                '',
+                'Contact: ' + EVENT_CONFIG.contact.name + ' - ' + EVENT_CONFIG.contact.company,
+                'Phone: ' + EVENT_CONFIG.contact.phones.join(' / '),
+                'Website: ' + EVENT_CONFIG.contact.website
+            ];
+            
+            let yPos = 50;
+            content.forEach(line => {
+                if (line === '') {
+                    yPos += 5;
+                } else {
+                    doc.text(line, 20, yPos);
+                    yPos += 8;
+                }
+            });
+            
+            // Signature section
+            yPos += 20;
+            doc.setFont('helvetica', 'bold');
+            doc.text('AGREEMENT SIGNATURE:', 20, yPos);
+            yPos += 15;
+            
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Signed by: ${typedSig}`, 20, yPos);
+            doc.text(`Date: ${date}`, 120, yPos);
+            
+            // Add signature image if drawn
+            if (signature && signaturePaths.length > 0) {
+                try {
+                    doc.addImage(signature, 'PNG', 20, yPos + 5, 80, 25);
+                } catch (e) {
+                    console.log('Could not add signature image');
+                }
+            }
+            
+            yPos += 40;
+            doc.setFontSize(8);
+            doc.text('This document serves as a legally binding agreement between the parties.', 20, yPos);
+            doc.text(`Generated on: ${new Date().toLocaleString()}`, 20, yPos + 10);
+            
+            return doc;
+        }
+
+        function signProposal() {
+            const typedSig = document.getElementById('typedSignature').value.trim();
+            const termsAccepted = document.getElementById('termsAccept').checked;
+            const hasDrawnSignature = signaturePaths.length > 0;
+            const sigDate = document.getElementById('signatureDate').value || new Date().toISOString().split('T')[0];
+            const status = document.getElementById('status');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const signButton = document.getElementById('signButton');
+
+            if (!termsAccepted) {
+                status.textContent = 'Please accept the terms and conditions first.';
+                status.className = 'text-center mt-4 font-semibold text-red-400';
+                return;
+            }
+
+            // Either signature OR typed name is required
+            if (!typedSig && !hasDrawnSignature) {
+                status.textContent = 'Please provide a signature (draw on canvas OR type your full name).';
+                status.className = 'text-center mt-4 font-semibold text-red-400';
+                return;
+            }
+
+            // Show loading
+            loadingIndicator.classList.remove('hidden');
+            signButton.disabled = true;
+            updateProgress(3);
+
+            // Generate signature image
+            const sigImg = canvas.toDataURL('image/png');
+            const formattedDate = new Date(sigDate).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+
+            // Generate enhanced PDF
+            const doc = generatePDF(sigImg, typedSig, formattedDate);
+            
+            // Save PDF
+            doc.save(`${EVENT_CONFIG.eventName.replace(/\s+/g, '-')}-Proposal-Signed-${typedSig.replace(/\s+/g, '-')}.pdf`);
+
+            // Submit to Formspree with enhanced data
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = `https://formspree.io/f/${EVENT_CONFIG.formspreeId}`;
+            form.innerHTML = `
+                <input type="hidden" name="_subject" value="SIGNED: ${EVENT_CONFIG.eventName} Proposal from ${typedSig}">
+                <input type="hidden" name="signature_name" value="${typedSig}">
+                <input type="hidden" name="signature_date" value="${formattedDate}">
+                <input type="hidden" name="event_name" value="${EVENT_CONFIG.eventName}">
+                <input type="hidden" name="venue" value="${EVENT_CONFIG.venue}">
+                <input type="hidden" name="event_dates" value="${EVENT_CONFIG.dates.join(', ')}">
+                <input type="hidden" name="investment_amount" value="${EVENT_CONFIG.pricing.currency}${EVENT_CONFIG.pricing.amount}">
+                <input type="hidden" name="terms_accepted" value="true">
+                <input type="hidden" name="signature_image" value="${sigImg}">
+                <input type="hidden" name="timestamp" value="${new Date().toISOString()}">
+                <input type="hidden" name="_next" value="">
+            `;
+            document.body.appendChild(form);
+            form.submit();
+
+            // Success message
+            setTimeout(() => {
+                loadingIndicator.classList.add('hidden');
+                status.textContent = '✅ Proposal signed successfully! PDF downloaded and sent to Maloof Entertainment.';
+                status.className = 'text-center mt-4 font-semibold text-green-400';
+                
+                setTimeout(() => {
+                    // Redirect to thank you page
+                    window.location.href = '/thanks-signed.html';
+                }, 3000);
+            }, 2000);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeProposal();
+            document.getElementById('signatureDate').valueAsDate = new Date();
+            
+            // Animate elements
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Update progress when scrolling to signature section
+            const signatureSection = document.querySelector('.bg-gradient-to-r');
+            const signatureObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateProgress(2);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            signatureObserver.observe(signatureSection);
+        });
+    </script>
+</body>
+</html>

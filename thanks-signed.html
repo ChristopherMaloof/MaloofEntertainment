@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Signed Successfully | Maloof Entertainment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Maloof Entertainment Brand Colors - Matching Website */
+        :root {
+            --maloof-gold: #facc15;
+            --maloof-gold-light: #fde047;
+            --maloof-red: #dc2626;
+            --maloof-red-dark: #7f1d1d;
+            --maloof-black: #000000;
+            --maloof-gray: #1a1a1a;
+            --maloof-gray-light: #2d2d2d;
+        }
+        
+        .gradient-bg { 
+            background: linear-gradient(135deg, #0f0e0e 0%, #1a1a1a 50%, #0f0e0e 100%); 
+        }
+        .gradient-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(250, 204, 21, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        /* Celebration Animations */
+        .celebration-enter { animation: celebrationEnter 1s ease-out forwards; }
+        @keyframes celebrationEnter {
+            0% { opacity: 0; transform: scale(0.8) translateY(50px); }
+            50% { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        
+        .check-mark { animation: checkMark 0.8s ease-in-out 0.5s forwards; opacity: 0; }
+        @keyframes checkMark {
+            0% { opacity: 0; transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .success-text { animation: successBounce 2s ease-in-out infinite; }
+        @keyframes successBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Confetti Effect - Maloof Colors */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--maloof-gold);
+            animation: confettiFall 3s linear infinite;
+        }
+        
+        @keyframes confettiFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .confetti:nth-child(even) { background: var(--maloof-red); animation-delay: 0.5s; }
+        .confetti:nth-child(3n) { background: #10b981; animation-delay: 1s; }
+        .confetti:nth-child(4n) { background: var(--maloof-gold-light); animation-delay: 1.5s; }
+        
+        /* Next Steps Animation */
+        .next-steps { animation: slideInUp 1s ease-out 1.5s forwards; opacity: 0; transform: translateY(30px); }
+        @keyframes slideInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Floating Elements - Entertainment Theme */
+        .float-1 { animation: float1 3s ease-in-out infinite; }
+        .float-2 { animation: float2 4s ease-in-out infinite 1s; }
+        @keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        
+        /* Pulse glow effect like website */
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(250, 204, 21, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(250, 204, 21, 0.6); }
+        }
+        
+        /* Maloof Button Style */
+        .maloof-button {
+            background: linear-gradient(135deg, var(--maloof-red), var(--maloof-red-dark));
+            border: 2px solid var(--maloof-gold);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .maloof-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .maloof-button:hover::before { left: 100%; }
+        .maloof-button:hover {
+            background: linear-gradient(135deg, var(--maloof-red-dark), var(--maloof-red));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen">
+    <!-- Confetti Container -->
+    <div id="confetti-container" class="fixed inset-0 pointer-events-none z-10"></div>
+    
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 relative">
+        <!-- Background Floating Elements - Entertainment Theme -->
+        <div class="absolute top-20 left-10 text-6xl opacity-20 float-1" style="color: var(--maloof-gold);">🎤</div>
+        <div class="absolute top-40 right-20 text-5xl opacity-20 float-2" style="color: var(--maloof-red);">🎉</div>
+        <div class="absolute bottom-40 left-20 text-4xl opacity-20 float-1" style="color: var(--maloof-gold);">🎵</div>
+        <div class="absolute bottom-20 right-10 text-5xl opacity-20 float-2" style="color: var(--maloof-red);">🎭</div>
+        
+        <div class="text-center max-w-2xl celebration-enter">
+            <!-- Logo -->
+            <img src="https://www.maloofentertainment.com/mylogo.jpg" 
+                 alt="Maloof Entertainment Logo" 
+                 class="mx-auto mb-8 w-full max-w-xs md:max-w-sm pulse-glow">
+            
+            <!-- Success Check Mark -->
+            <div class="check-mark mb-6">
+                <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl" style="background-color: var(--maloof-gold); color: black;">
+                    ✓
+                </div>
+            </div>
+            
+            <!-- Main Success Message -->
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 bg-clip-text text-transparent">
+                Proposal Signed!
+            </h1>
+            
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-white success-text">
+                🎉 Your Event is OFFICIAL! 🎉
+            </h2>
+            
+            <div class="bg-gradient-to-r from-gray-800/80 to-gray-700/80 backdrop-blur-sm rounded-2xl p-8 mb-8 border-2" style="border-color: var(--maloof-gold);">
+                <p class="text-lg md:text-xl text-gray-200 mb-4">
+                    Your signed proposal has been received and processed successfully!
+                </p>
+                <p class="text-base text-gray-300">
+                    Get ready for an unforgettable event experience with Tampa Bay's premier entertainment company.
+                </p>
+            </div>
+            
+            <!-- Event Summary -->
+            <div class="next-steps">
+                <h3 class="text-xl font-bold mb-4 text-white">What Happens Next:</h3>
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gray-800/50 rounded-xl p-4 border" style="border-color: var(--maloof-gold);">
+                        <div class="text-2xl mb-2">📧</div>
+                        <h4 class="font-semibold mb-2" style="color: var(--maloof-gold);">Confirmation Email</h4>
+                        <p class="text-sm text-gray-300">You'll receive a detailed confirmation within 24 hours</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-4 border" style="border-color: var(--maloof-red);">
+                        <div class="text-2xl mb-2">📅</div>
+                        <h4 class="font-semibold mb-2" style="color: var(--maloof-red);">Event Planning</h4>
+                        <p class="text-sm text-gray-300">We'll coordinate all details and logistics</p>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-4 border" style="border-color: var(--maloof-gold);">
+                        <div class="text-2xl mb-2">🚀</div>
+                        <h4 class="font-semibold mb-2" style="color: var(--maloof-gold);">Event Execution</h4>
+                        <p class="text-sm text-gray-300">Professional entertainment and coordination</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Card -->
+                <div class="bg-gradient-to-r from-red-900/30 to-yellow-600/30 rounded-xl p-6 border mb-8" style="border-color: var(--maloof-gold);">
+                    <h3 class="text-lg font-bold mb-3" style="color: var(--maloof-gold);">📞 Stay Connected</h3>
+                    <p class="text-sm text-gray-300 mb-4">
+                        Questions or need to discuss details? Contact Chris Maloof directly:
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-3 text-sm">
+                        <div class="text-center">
+                            <a href="tel:352-942-7717" class="font-bold text-white hover:text-yellow-300 transition-colors block">📱 352-942-7717</a>
+                        </div>
+                        <div class="text-center">
+                            <a href="tel:813-738-2444" class="font-bold text-white hover:text-yellow-300 transition-colors block">📱 813-738-2444</a>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="mailto:maloofentertainment@gmail.com" class="font-bold text-white hover:text-yellow-300 transition-colors">
+                            📧 maloofentertainment@gmail.com
+                        </a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="https://www.maloofentertainment.com" class="font-bold text-white hover:text-yellow-300 transition-colors">
+                            🌐 www.maloofentertainment.com
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Experience Promise -->
+                <div class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl p-6 mb-8 border" style="border-color: var(--maloof-red);">
+                    <h3 class="text-lg font-bold mb-3 text-white">🎭 The Maloof Entertainment Promise</h3>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
+                        <div>
+                            <div class="font-semibold mb-1" style="color: var(--maloof-gold);">🏆 15+ Years Experience</div>
+                            <div>Tampa Bay's most trusted MC and entertainment company</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold mb-1" style="color: var(--maloof-gold);">📞 24/7 Availability</div>
+                            <div>Always here when you need us most</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold mb-1" style="color: var(--maloof-red);">🎤 Professional MC Services</div>
+                            <div>Expert hosting for weddings, corporate events & nightlife</div>
+                        </div>
+                        <div>
+                            <div class="font-semibold mb-1" style="color: var(--maloof-red);">🎉 Unforgettable Events</div>
+                            <div>Creating memories that last a lifetime</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="window.close()" class="maloof-button text-white px-8 py-3 rounded-xl font-semibold transition-all transform hover:scale-105">
+                        Close Window
+                    </button>
+                    <a href="https://www.maloofentertainment.com" class="bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 text-black px-8 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 text-center">
+                        Visit Our Website
+                    </a>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-gray-400 mb-3">Follow Maloof Entertainment for updates and events:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://www.facebook.com/MaloofEntertainment/" class="transition-colors duration-300 hover:text-yellow-300" style="color: var(--maloof-gold);" aria-label="Facebook">
+                            📘 Facebook
+                        </a>
+                        <a href="https://www.instagram.com/maloof_entertainment/" class="transition-colors duration-300 hover:text-yellow-300" style="color: var(--maloof-gold);" aria-label="Instagram">
+                            📸 Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Confetti Animation with Maloof Colors
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#facc15', '#dc2626', '#fde047', '#7f1d1d', '#10b981'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    confetti.style.animationDelay = Math.random() * 2 + 's';
+                    container.appendChild(confetti);
+                    
+                    // Remove confetti after animation
+                    setTimeout(() => {
+                        if (confetti.parentNode) {
+                            confetti.parentNode.removeChild(confetti);
+                        }
+                    }, 5000);
+                }, i * 100);
+            }
+        }
+        
+        // Start confetti when page loads
+        window.addEventListener('load', () => {
+            setTimeout(createConfetti, 500);
+            
+            // Repeat confetti every 10 seconds for the first minute
+            const confettiInterval = setInterval(createConfetti, 10000);
+            setTimeout(() => clearInterval(confettiInterval), 60000);
+        });
+        
+        // Add some interactive fun
+        document.addEventListener('click', (e) => {
+            // Create a small burst of confetti at click location
+            const container = document.getElementById('confetti-container');
+            for (let i = 0; i < 5; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = e.clientX + 'px';
+                confetti.style.top = e.clientY + 'px';
+                confetti.style.position = 'fixed';
+                confetti.style.backgroundColor = ['#facc15', '#dc2626', '#fde047'][Math.floor(Math.random() * 3)];
+                container.appendChild(confetti);
+                
+                setTimeout(() => {
+                    if (confetti.parentNode) {
+                        confetti.parentNode.removeChild(confetti);
+                    }
+                }, 2000);
+            }
+        });
+        
+        // Auto-close after 45 seconds if user doesn't interact
+        let autoCloseTimer = setTimeout(() => {
+            const closeButton = document.querySelector('button');
+            closeButton.textContent = 'Auto-closing in 5...';
+            let countdown = 5;
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                closeButton.textContent = `Auto-closing in ${countdown}...`;
+                if (countdown <= 0) {
+                    clearInterval(countdownInterval);
+                    window.close();
+                }
+            }, 1000);
+        }, 45000);
+        
+        // Cancel auto-close if user interacts
+        document.addEventListener('click', () => {
+            clearTimeout(autoCloseTimer);
+        });
+        
+        document.addEventListener('scroll', () => {
+            clearTimeout(autoCloseTimer);
+        });
+        
+        // Smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
