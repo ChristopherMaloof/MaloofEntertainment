@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Classic Salsa Sundays Tampa | Nov 9 at 809 Lounge | Free Event</title>
+    <meta name="description" content="Preserving authentic Salsa culture in Tampa. Every 2nd Sunday, 3-7 PM at 809 Lounge. Free dance lesson with world-ranked instructor, DJ Washington Party spinning the classics, real Latino food. NO COVER.">
+    <meta name="keywords" content="Salsa Tampa, Latin dance Tampa, Classic Salsa, 809 Lounge, Salsa dancing Tampa, Latino events Tampa, free Salsa lessons, Tampa Salsa Sundays, authentic Salsa">
+    
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Classic Salsa Sundays Tampa | Nov 9">
+    <meta property="og:description" content="Preserving authentic Salsa every 2nd Sunday. Free lesson, DJ Washington Party, real Latino food. NO COVER.">
+    <meta property="og:image" content="https://www.maloofentertainment.com/809sundays/images/hero.jpg">
+    <meta property="og:url" content="https://www.maloofentertainment.com/809sundays">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Classic Salsa Sundays Tampa">
+    <meta name="twitter:description" content="Nov 9 | 3-7 PM | 809 Lounge | NO COVER">
+    <meta name="twitter:image" content="https://www.maloofentertainment.com/809sundays/images/hero.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/809sundays/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===========================================
+           CSS VARIABLES - BRAND COLORS & TYPOGRAPHY
+           =========================================== */
+        :root {
+            /* Brand Colors */
+            --terracotta-red: #C44536;
+            --rich-gold: #D4A574;
+            --deep-espresso: #3D2817;
+            --warm-cream: #F5E6D3;
+            --tropical-teal: #2D8B8B;
+            
+            /* Typography */
+            --headline-font: 'Bebas Neue', 'Oswald', Arial Black, sans-serif;
+            --body-font: 'Montserrat', 'Raleway', Arial, sans-serif;
+            --accent-font: 'Pacifico', 'Dancing Script', cursive;
+            
+            /* Spacing */
+            --section-padding: 80px;
+            --section-padding-mobile: 50px;
+        }
+        
+        /* ===========================================
+           GLOBAL STYLES
+           =========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            color: var(--deep-espresso);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        h1 {
+            font-family: var(--headline-font);
+            font-size: 56px;
+            line-height: 1.1;
+            color: var(--terracotta-red);
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-family: var(--headline-font);
+            font-size: 40px;
+            line-height: 1.2;
+            color: var(--deep-espresso);
+            margin-bottom: 30px;
+        }
+        
+        h3 {
+            font-family: var(--body-font);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--deep-espresso);
+            margin-bottom: 15px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .accent-text {
+            font-family: var(--accent-font);
+            font-size: 18px;
+            color: var(--rich-gold);
+        }
+        
+        /* Mobile Typography */
+        @media (max-width: 767px) {
+            h1 { font-size: 40px; }
+            h2 { font-size: 32px; }
+            h3 { font-size: 18px; }
+            p { font-size: 14px; }
+        }
+        
+        /* ===========================================
+           UTILITY CLASSES
+           =========================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section {
+            padding: var(--section-padding) 0;
+        }
+        
+        @media (max-width: 767px) {
+            .section {
+                padding: var(--section-padding-mobile) 0;
+            }
+        }
+        
+        /* ===========================================
+           BUTTONS
+           =========================================== */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-family: var(--body-font);
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background-color: var(--rich-gold);
+            color: var(--deep-espresso);
+        }
+        
+        .btn-primary:hover {
+            background-color: #C49563;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: var(--terracotta-red);
+            color: var(--warm-cream);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #B23D2E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 69, 54, 0.4);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        /* ===========================================
+           TOP NAVIGATION
+           =========================================== */
+        .top-nav {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            gap: 20px;
+        }
+        
+        .top-nav a {
+            color: var(--warm-cream);
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .top-nav a:hover {
+            opacity: 1;
+        }
+        
+        .shop-merch-nav {
+            background: var(--rich-gold);
+            color: var(--deep-espresso);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 1 !important;
+            transition: all 0.3s ease;
+        }
+        
+        .shop-merch-nav:hover {
+            background: #C49563;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.4);
+        }
+        
+        @media (max-width: 767px) {
+            .top-nav {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+        
+        /* ===========================================
+           SECTION 1: HERO
+           =========================================== */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(196, 69, 54, 0.85), rgba(61, 40, 23, 0.75)), 
+                        url('images/hero.jpg') center/cover no-repeat;
+            color: var(--warm-cream);
+            background-position: center;
+        }
+        
+        @media (max-width: 767px) {
+            .hero {
+                background-position: 50% 60%;
+            }
+        }
+        
+        .hero-content {
+            width: 100%;
+            max-width: 700px;
+            padding: 20px;
+        }
+        
+        .hero-logo {
+            max-width: 500px;
+            width: 85%;
+            height: auto;
+            margin: 0 auto 10px;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: var(--warm-cream);
+        }
+        
+        .hero-info-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 50px;
+            color: var(--rich-gold);
+        }
+        
+        .hero-info-bar span {
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 767px) {
+            .hero {
+                min-height: 500px;
+            }
+            
+            .hero-logo {
+                max-width: 280px;
+                margin-bottom: 5px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+            
+            .hero-info-bar {
+                font-size: 14px;
+                gap: 10px;
+                margin-bottom: 40px;
+            }
+        }
+        
+        /* ===========================================
+           SECTION 2: THE PROMISE
+           =========================================== */
+        .promise {
+            background: var(--warm-cream);
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 165, 116, 0.05) 35px, rgba(212, 165, 116, 0.05) 70px);
+        }
+        
+        .promise-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .promise h2 {
+            margin-bottom: 40px;
+        }
+        
+        /* ===========================================
+           SECTION 3: WHAT TO EXPECT
+           =========================================== */
+        .expect {
+            background: linear-gradient(135deg, var(--terracotta-red), #B23D2E);
+            color: var(--warm-cream);
+        }
+        
+        .expect h2 {
+            color: var(--warm-cream);
+        }
+        
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--rich-gold);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background-color: var(--rich-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background-color: var(--warm-cream);
+            color: var(--deep-espresso);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .timeline-content h3 {
+            color: var(--terracotta-red);
+            margin-bottom: 15px;
+        }
+        
+        .timeline-content p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .timeline-content .highlight {
+            font-weight: 600;
+            color: var(--terracotta-red);
+        }
+        
+        /* Mobile Timeline */
+        @media (max-width: 767px) {
+            .timeline::before {
+                display: none;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                margin-bottom: 40px;
+                align-items: center;
+            }
+            
+            .timeline-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+        }
+        
+        /* ===========================================
+           SECTION 4: MEET THE FAMILIA
+           =========================================== */
+        .familia {
+            background: linear-gradient(135deg, rgba(196, 69, 54, 0.1), rgba(212, 165, 116, 0.1));
+        }
+        
+        .familia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .familia-card {
+            background: var(--warm-cream);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .familia-photo {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        
+        .familia-card h3 {
+            color: var(--rich-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .familia-card .subtitle {
+            color: var(--terracotta-red);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .familia-card p {
+            font-size: 16px;
+            text-align: left;
+        }
+        
+        .familia-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--tropical-teal);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .familia-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* ===========================================
+           NEW SECTION: SHOP MERCH
+           =========================================== */
+        .shop-merch {
+            background: linear-gradient(135deg, rgba(61, 40, 23, 0.95), rgba(196, 69, 54, 0.95));
+            color: var(--warm-cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shop-merch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 165, 116, 0.05) 35px, rgba(212, 165, 116, 0.05) 70px);
+            pointer-events: none;
+        }
+        
+        .shop-merch .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .shop-merch h2 {
+            color: var(--warm-cream);
+            margin-bottom: 20px;
+        }
+        
+        .merch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        
+        .merch-image-container {
+            text-align: center;
+        }
+        
+        .merch-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            background: var(--warm-cream);
+            padding: 20px;
+        }
+        
+        .merch-content h3 {
+            font-family: var(--headline-font);
+            font-size: 30px;
+            color: var(--rich-gold);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .merch-tagline {
+            font-family: var(--accent-font);
+            font-size: 20px;
+            color: var(--rich-gold);
+            margin-bottom: 30px;
+        }
+        
+        .merch-features {
+            margin-bottom: 30px;
+        }
+        
+        .merch-features p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .merch-features p::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--rich-gold);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .merch-cta-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-merch {
+            background: var(--rich-gold);
+            color: var(--deep-espresso);
+            font-size: 18px;
+            padding: 16px 32px;
+        }
+        
+        .btn-merch:hover {
+            background: #C49563;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 165, 116, 0.5);
+        }
+        
+        @media (max-width: 767px) {
+            .merch-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .merch-content h3 {
+                font-size: 24px;
+            }
+            
+            .merch-tagline {
+                font-size: 18px;
+            }
+            
+            .merch-cta-group {
+                flex-direction: column;
+            }
+            
+            .btn-merch {
+                width: 100%;
+            }
+        }
+        
+        /* ===========================================
+           SECTION 5: NEXT EVENT
+           =========================================== */
+        .next-event {
+            background: var(--deep-espresso);
+            color: var(--warm-cream);
+        }
+        
+        .next-event h2 {
+            color: var(--warm-cream);
+        }
+        
+        .event-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(245, 230, 211, 0.05);
+            border: 3px solid var(--rich-gold);
+            border-radius: 16px;
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .event-label {
+            font-size: 20px;
+            color: var(--rich-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .event-date {
+            font-size: 36px;
+            font-family: var(--headline-font);
+            color: var(--warm-cream);
+            margin-bottom: 10px;
+        }
+        
+        .event-time {
+            font-size: 24px;
+            color: var(--rich-gold);
+            margin-bottom: 40px;
+        }
+        
+        .event-location {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .event-location strong {
+            color: var(--rich-gold);
+        }
+        
+        .event-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        
+        @media (max-width: 767px) {
+            .event-card {
+                padding: 30px 20px;
+            }
+            
+            .event-date {
+                font-size: 30px;
+            }
+            
+            .event-time {
+                font-size: 20px;
+            }
+            
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* ===========================================
+           SECTION 6: FAQ
+           =========================================== */
+        .faq {
+            background: var(--warm-cream);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--deep-espresso);
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(212, 165, 116, 0.1);
+        }
+        
+        .faq-icon {
+            font-size: 24px;
+            color: var(--rich-gold);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer-content {
+            padding: 0 25px 25px;
+            color: var(--deep-espresso);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        
+        /* ===========================================
+           SONG REQUEST SECTION
+           =========================================== */
+        .song-request {
+            background: linear-gradient(135deg, var(--tropical-teal), #247070);
+            color: var(--warm-cream);
+        }
+        
+        .song-request h2 {
+            color: var(--warm-cream);
+            margin-bottom: 15px;
+        }
+        
+        .song-request .subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: var(--rich-gold);
+            font-family: var(--accent-font);
+        }
+        
+        .song-request-intro {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .song-request-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        
+        .song-request-form h3 {
+            color: var(--terracotta-red);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        
+        .label-optional {
+            color: #666;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        
+        .song-request-examples {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(45, 139, 139, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid var(--tropical-teal);
+        }
+        
+        .song-request-examples h4 {
+            color: var(--deep-espresso);
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .song-request-examples ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .song-request-examples li {
+            padding: 8px 0;
+            color: var(--deep-espresso);
+            font-size: 14px;
+        }
+        
+        .song-request-examples li::before {
+            content: "🎵 ";
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 767px) {
+            .song-request-form {
+                padding: 30px 20px;
+            }
+            
+            .song-request-intro {
+                font-size: 16px;
+            }
+        }
+        
+        /* ===========================================
+           SECTION 7: FINAL CTA / EMAIL FORM
+           =========================================== */
+        .final-cta {
+            background: linear-gradient(135deg, var(--terracotta-red), #B23D2E);
+            color: var(--warm-cream);
+        }
+        
+        .final-cta h2 {
+            color: var(--warm-cream);
+        }
+        
+        .final-cta .subtitle {
+            font-size: 20px;
+            margin-bottom: 50px;
+            color: var(--rich-gold);
+            font-family: var(--accent-font);
+        }
+        
+        .email-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--deep-espresso);
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            height: 45px;
+            padding: 0 15px;
+            font-size: 16px;
+            font-family: var(--body-font);
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: var(--deep-espresso);
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--rich-gold);
+            box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+        }
+        
+        .form-group input.border-red {
+            border-color: #dc2626;
+        }
+        
+        .error-message {
+            display: none;
+            color: #dc2626;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .error-message.visible {
+            display: block;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            height: 50px;
+            font-size: 18px;
+            background: linear-gradient(135deg, var(--rich-gold), #C49563);
+            color: var(--deep-espresso);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--body-font);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #C49563, var(--rich-gold));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.4);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .trust-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--warm-cream);
+            text-align: center;
+        }
+        
+        .success-message {
+            display: none;
+            background: #28a745;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .success-message.visible {
+            display: block;
+        }
+        
+        /* ===========================================
+           SECTION 8: FOOTER
+           =========================================== */
+        footer {
+            background: var(--deep-espresso);
+            color: var(--warm-cream);
+            padding: 60px 20px;
+        }
+        
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            text-align: center;
+        }
+        
+        .footer-column h3 {
+            color: var(--rich-gold);
+            margin-bottom: 20px;
+            font-family: var(--headline-font);
+            font-size: 24px;
+        }
+        
+        .footer-logo {
+            font-family: var(--headline-font);
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-tagline {
+            font-family: var(--accent-font);
+            color: var(--rich-gold);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: var(--warm-cream);
+            font-size: 28px;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-links a svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--warm-cream);
+            transition: fill 0.3s ease;
+        }
+        
+        .social-links a:hover svg {
+            fill: var(--rich-gold);
+        }
+        
+        .footer-link {
+            color: var(--warm-cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            margin: 5px 0;
+        }
+        
+        .footer-link:hover {
+            color: var(--rich-gold);
+        }
+        
+        .footer-merch-link {
+            display: inline-block;
+            background: var(--rich-gold);
+            color: var(--deep-espresso);
+            padding: 12px 24px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-merch-link:hover {
+            background: #C49563;
+            transform: translateY(-2px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(245, 230, 211, 0.2);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <a href="/">← Back to MaloofEntertainment.com</a>
+        <a href="https://classicsalsasundays.etsy.com" class="shop-merch-nav" target="_blank" rel="noopener">👕 Shop Merch</a>
+    </div>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/logo-top.png" alt="Classic Salsa Sundays Logo" class="hero-logo" loading="eager">
+            <p class="hero-subtitle">Where Tampa Preserves the Soul of Authentic Salsa</p>
+            
+            <div class="hero-info-bar">
+                <span>Every 2nd Sunday</span>
+                <span>|</span>
+                <span>3-7 PM</span>
+                <span>|</span>
+                <span>809 Lounge</span>
+                <span>|</span>
+                <span>NO COVER</span>
+                <span>|</span>
+                <span style="color: #facc15; font-weight: 700;">🎺 LIVE BAND NOV 9</span>
+            </div>
+            
+            <a href="#email-form" class="btn btn-primary btn-block" style="max-width: 400px; margin: 0 auto;">GET REMINDER FOR NOV 9</a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: THE PROMISE -->
+    <section class="promise section">
+        <div class="container">
+            <div class="promise-content text-center">
+                <h2>This Isn't Just Another Salsa Night...</h2>
+                
+                <p>Remember the Salsa your abuela danced to? The music that filled kitchens with sabor and stories? That's what we're preserving every Sunday.</p>
+                
+                <p>No pretense. No pressure. Just the clásicos that run through our veins, played the way they're meant to sound.</p>
+                
+                <p>This is the Salsa that has <span class="accent-text">historia</span>. The songs that made El Barrio dance, that carried our people through struggles and celebrations. Héctor Lavoe's pain turned to beauty. Celia's "¡AZÚCAR!" battle cry. Willie Colón's trombone that built bridges.</p>
+                
+                <p style="font-size: 20px; font-weight: 600; color: var(--terracotta-red); margin-top: 30px;">Come as you are. Dance como familia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: WHAT TO EXPECT -->
+    <section class="expect section">
+        <div class="container">
+            <h2 class="text-center">YOUR CLASSIC SALSA SUNDAY</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">🕒</div>
+                    <div class="timeline-content">
+                        <h3>3:00-3:30 PM: LEARN TO DANCE</h3>
+                        <p><span class="highlight">Free Salsa lesson with Jenny Marie</span> (world-ranked instructor)</p>
+                        <p>No experience needed. We'll teach you the basics.</p>
+                        <p><a href="http://dancewithjenny.carrd.co" class="highlight" target="_blank" rel="noopener">dancewithjenny.carrd.co</a></p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🎶</div>
+                    <div class="timeline-content">
+                        <h3>3:30-7:00 PM: DJ WASHINGTON PARTY</h3>
+                        <p>Spinning the clásicos that run through our veins</p>
+                        <p><span class="highlight">Héctor Lavoe. Celia Cruz. Willie Colón. Rubén Blades.</span></p>
+                        <p>The music your parents fell in love to.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🎺</div>
+                    <div class="timeline-content">
+                        <h3>LIVE MUSIC BY ÀMBITO LATIN BAND</h3>
+                        <p>Feel the power of LIVE Salsa music</p>
+                        <p>Àmbito Latin Band brings authentic salsa dura with real piano, real percussion, and real sabor.</p>
+                        <p>This is the sound our abuelos danced to - pero en vivo.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">🍽️</div>
+                    <div class="timeline-content">
+                        <h3>ALL AFTERNOON: REAL LATINO FOOD</h3>
+                        <p>Porque you can't dance Salsa on an empty stomach</p>
+                        <p>Full menu of <span class="highlight">authentic Latino cuisine and drinks</span></p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-icon">💃</div>
+                    <div class="timeline-content">
+                        <h3>THE VIBE</h3>
+                        <p>• All skill levels welcome (beginners to advanced)</p>
+                        <p>• Multigenerational (bring the whole familia)</p>
+                        <p>• Come solo or bring your crew</p>
+                        <p>• <span class="highlight">NO COVER CHARGE</span> - cultura should be for everyone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: MEET THE FAMILIA -->
+    <section class="familia section">
+        <div class="container">
+            <h2 class="text-center">Meet The Familia</h2>
+            
+            <div class="familia-grid">
+                <div class="familia-card">
+                    <img src="images/dj-washington.jpg" alt="DJ Washington Party" class="familia-photo">
+                    <h3>DJ Washington Party</h3>
+                    <p class="subtitle">Your guide through the clásicos</p>
+                    <p>Washington brings decades of experience spinning the authentic Salsa that made generations move. From Fania Records classics to the deep cuts you forgot you loved, he keeps the cultura alive.</p>
+                </div>
+                
+                <div class="familia-card">
+                    <img src="images/jenny-marie.jpg" alt="Jenny Marie Dance Instructor" class="familia-photo">
+                    <h3>Jenny Marie</h3>
+                    <p class="subtitle">World-Ranked Dance Instructor</p>
+                    <p>Jenny has taught Salsa across the globe and brings that expertise home to Tampa. Whether you've never danced before or you're looking to refine your style, she makes Salsa accessible and fun.</p>
+                    <a href="http://dancewithjenny.carrd.co" class="familia-link" target="_blank" rel="noopener">dancewithjenny.carrd.co</a>
+                </div>
+                
+                <div class="familia-card">
+                    <img src="images/809-lounge.jpg" alt="809 Restaurant & Lounge Interior" class="familia-photo">
+                    <h3>809 Restaurant & Lounge</h3>
+                    <p class="subtitle">Your Cultural Kitchen</p>
+                    <p>More than just a venue, 809 Lounge is where Tampa's Latino community gathers. Real food, warm atmosphere, and the perfect space to preserve our cultura.</p>
+                </div>
+                
+                <div class="familia-card">
+                    <img src="images/ambito-latin-band.jpg" alt="Àmbito Latin Band" class="familia-photo">
+                    <h3>ÀMBITO LATIN BAND</h3>
+                    <p class="subtitle">Live Salsa Dura</p>
+                    <p>When you hear Àmbito, you're not just listening to Salsa - you're experiencing it. Real piano, real timbales, real congas. This is the live music that made El Barrio move, brought to Tampa Bay. From classic Fania hits to deep cuts that make your abuelos smile, Àmbito keeps the authentic sound alive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: SHOP MERCH -->
+    <section class="shop-merch section">
+        <div class="container">
+            <h2 class="text-center">REP THE MOVEMENT</h2>
+            
+            <div class="merch-grid">
+                <div class="merch-image-container">
+                    <img src="images/classic-salsa-sundays-shirt.jpg" alt="Classic Salsa Sundays T-Shirt" class="merch-image">
+                </div>
+                
+                <div class="merch-content">
+                    <h3>PA'LA GENTE<br>Official Merchandise</h3>
+                    <p class="merch-tagline">Wear Tampa's Salsa Pride</p>
+                    
+                    <div class="merch-features">
+                        <p>Premium Bella+Canvas quality</p>
+                        <p>Bold Classic Salsa Sundays logo</p>
+                        <p>Unisex fit - perfect for everyone</p>
+                        <p>Tampa, FL pride on every shirt</p>
+                        <p>Support the movement, wear the culture</p>
+                    </div>
+                    
+                    <p style="font-size: 18px; margin-bottom: 30px; line-height: 1.6;">This isn't just a shirt. It's proof you're part of Tampa's Salsa renaissance. It's PA'LA GENTE - for the people bringing cultura back.</p>
+                    
+                    <div class="merch-cta-group">
+                        <a href="https://classicsalsasundays.etsy.com" class="btn btn-merch" target="_blank" rel="noopener">SHOP NOW 👕</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: NEXT EVENT -->
+    <section id="next-event" class="next-event section">
+        <div class="container">
+            <h2 class="text-center">Next Event</h2>
+            
+            <div class="event-card">
+                <div class="event-label">SPECIAL EVENT: ÀMBITO LATIN BAND LIVE!</div>
+                <div class="event-date">SUNDAY, NOVEMBER 9, 2025</div>
+                <div class="event-time">3:00 PM - 7:00 PM</div>
+                
+                <div class="event-location">
+                    <p>📍 <strong>809 Restaurant & Lounge</strong></p>
+                    <p>3710 West Waters Avenue<br>Tampa, FL 33614</p>
+                </div>
+                
+                <div class="event-highlights">
+                    <span>🎺 LIVE BAND</span>
+                    <span>|</span>
+                    <span>🚫 NO COVER</span>
+                    <span>|</span>
+                    <span>ALL AGES WELCOME</span>
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="downloadCalendar()" class="btn btn-primary">ADD TO CALENDAR</button>
+                    <a href="#email-form" class="btn btn-secondary">GET EMAIL REMINDER</a>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=3710+W+Waters+Ave,+Tampa,+FL+33614&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="600" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <p style="margin-top: 30px; font-size: 16px;"><strong>Parking:</strong> Free parking available in the lot</p>
+                <p style="font-size: 16px;"><strong>Public Transit:</strong> Bus routes 5, 8, and 36 stop nearby</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FAQ -->
+    <section class="faq section">
+        <div class="container">
+            <h2 class="text-center">Questions? We Got Answers.</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do I need to know how to dance?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Not at all! We have a FREE lesson from 3-3:30 PM with world-ranked instructor Jenny Marie. After that, it's all about feeling the music. Many of our regulars started as complete beginners.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I come alone?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            ¡Claro que sí! Many people come solo and leave with new friends. This is familia - we welcome everyone.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What's the age range?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            All ages! We're multigenerational - from teens to abuelos. Everyone who loves classic Salsa is welcome.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is there really no cover charge?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Really! We believe Salsa and cultura should be accessible to everyone. No cover, ever.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What should I wear?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Come as you are. Comfortable clothes and shoes you can move in. Some people dress up, others keep it casual. Whatever makes you feel good.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is food and drink available?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes! 809 Lounge has a full menu of authentic Latino cuisine, plus a full bar. You can enjoy real food all afternoon while you dance.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What if I don't speak Spanish?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            You don't need to! We're a welcoming mix of Spanish speakers, English speakers, and everything in between. The music speaks for itself.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FINAL CTA / EMAIL FORM -->
+    <section id="email-form" class="final-cta section">
+        <div class="container">
+            <h2 class="text-center">¡Únete a Nuestra Familia!</h2>
+            <p class="subtitle text-center">Join us in preserving Tampa's Salsa cultura</p>
+            
+            <form class="email-form" action="https://formspree.io/f/mdkdyrjv" method="POST" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                        placeholder="Enter your name"
+                    >
+                    <div id="name-error" class="error-message">Please enter your name.</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                        placeholder="your.email@example.com"
+                    >
+                    <div id="email-error" class="error-message">Please enter a valid email address.</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number (optional)</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone"
+                        placeholder="For text reminders"
+                    >
+                    <div id="phone-error" class="error-message">Please enter a valid phone number.</div>
+                </div>
+                
+                <button type="submit" class="submit-btn">REMIND ME FOR NOV 9</button>
+                
+                <div id="success-message" class="success-message">
+                    ¡Gracias! You're on the list for November 9th. See you on the dance floor, mi gente!
+                </div>
+            </form>
+            
+            <p class="trust-text">We respect your inbox. Event reminders only - no spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column" style="margin-bottom: 30px;">
+                <div class="footer-logo">CLASSIC SALSA SUNDAYS</div>
+                <p class="footer-tagline">Preserving La Cultura</p>
+            </div>
+            
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>SHOP</h3>
+                    <a href="https://classicsalsasundays.etsy.com" class="footer-merch-link" target="_blank" rel="noopener">Shop Merch 👕</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>FOLLOW US</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/maloof_entertainment/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/MaloofEntertainment/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>CONTACT</h3>
+                    <a href="mailto:maloofentertainment@gmail.com" class="footer-link">maloofentertainment@gmail.com</a>
+                    <a href="tel:813-738-2444" class="footer-link">813-738-2444</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>SCHEDULE</h3>
+
+    <!-- SECTION 7: SONG REQUESTS -->
+    <section id="song-requests" class="song-request section">
+        <div class="container">
+            <h2 class="text-center">🎵 Request Your Favorite Songs</h2>
+            <p class="subtitle text-center">Tell DJ Washington what you want to hear!</p>
+            
+            <div class="song-request-intro">
+                <p><strong>Missing a song you love?</strong> Let us know! DJ Washington Party wants to hear what moves you. Submit your favorites and they might make it into the next event's playlist.</p>
+                <p>Whether it's a classic from Héctor Lavoe, a banger from Celia Cruz, or that deep cut your abuela taught you to dance to — we want to know!</p>
+            </div>
+            
+            <form class="song-request-form" action="https://formspree.io/f/mdkdyrjv" method="POST" onsubmit="handleSongRequestSubmit(event)">
+                <!-- Hidden fields to identify this as a song request -->
+                <input type="hidden" name="form_type" value="song_request">
+                <input type="hidden" name="event" value="Classic Salsa Sundays">
+                
+                <h3>🎶 Your Song Request</h3>
+                
+                <div class="form-group">
+                    <label for="song-title">
+                        Song Title <span style="color: #dc2626;">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="song-title" 
+                        name="song_title" 
+                        required
+                        placeholder='e.g., "El Cantante"'
+                    >
+                    <div id="song-title-error" class="error-message">Please enter the song title.</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="song-artist">
+                        Artist <span style="color: #dc2626;">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="song-artist" 
+                        name="song_artist" 
+                        required
+                        placeholder='e.g., "Héctor Lavoe"'
+                    >
+                    <div id="song-artist-error" class="error-message">Please enter the artist name.</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requester-name">
+                        Your Name <span class="label-optional">(optional)</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="requester-name" 
+                        name="requester_name"
+                        placeholder="Leave blank to submit anonymously"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="song-story">
+                        Why do you love this song? <span class="label-optional">(optional)</span>
+                    </label>
+                    <textarea 
+                        id="song-story" 
+                        name="song_story"
+                        placeholder="Share your memory or why this song means so much to you..."
+                    ></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">🎵 Submit Song Request</button>
+                
+                <div id="song-success-message" class="success-message">
+                    ¡Gracias! Your song request has been submitted. DJ Washington Party will review it for the next event!
+                </div>
+                
+                <div class="song-request-examples">
+                    <h4>Popular Requests From Our Community:</h4>
+                    <ul>
+                        <li>"Aguanile" - Héctor Lavoe</li>
+                        <li>"Quimbara" - Celia Cruz</li>
+                        <li>"Idilio" - Willie Colón</li>
+                        <li>"El Día de Mi Suerte" - Héctor Lavoe</li>
+                        <li>"Plástico" - Rubén Blades & Willie Colón</li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECTION 8: FINAL CTA / EMAIL FORM -->
+                    <p>Every 2nd Sunday<br>3:00 PM - 7:00 PM<br>809 Restaurant & Lounge</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(245, 230, 211, 0.2);">
+                <p style="font-size: 14px;">Classic Salsa Sundays is an event by<br>
+                <a href="https://www.maloofentertainment.com" class="footer-link" style="font-weight: 700;">MALOOF ENTERTAINMENT</a></p>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 Classic Salsa Sundays. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // FAQ Accordion
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+        
+        // Song Request Form Handler
+        function handleSongRequestSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'SENDING...';
+            submitButton.disabled = true;
+            
+            const songTitle = form.querySelector('#song-title');
+            const songArtist = form.querySelector('#song-artist');
+            
+            let isValid = true;
+
+            // Reset error states
+            [songTitle, songArtist].forEach(input => {
+                const errorId = input.id + '-error';
+                const error = form.querySelector(`#${errorId}`);
+                if (error) {
+                    error.classList.remove('visible');
+                    input.classList.remove('border-red');
+                }
+            });
+
+            // Validate song title
+            if (!songTitle.value.trim()) {
+                form.querySelector('#song-title-error').classList.add('visible');
+                songTitle.classList.add('border-red');
+                isValid = false;
+            }
+            
+            // Validate artist
+            if (!songArtist.value.trim()) {
+                form.querySelector('#song-artist-error').classList.add('visible');
+                songArtist.classList.add('border-red');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Submit form
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        form.reset();
+                        document.getElementById('song-success-message').classList.add('visible');
+                        setTimeout(() => {
+                            document.getElementById('song-success-message').classList.remove('visible');
+                        }, 5000);
+                    } else {
+                        alert('There was an error. Please try again or text us at 813-738-2444.');
+                    }
+                }).catch(() => {
+                    alert('There was an error. Please try again or text us at 813-738-2444.');
+                }).finally(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                });
+            } else {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        }
+        
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'SENDING...';
+            submitButton.disabled = true;
+            
+            const name = form.querySelector('#name');
+            const phone = form.querySelector('#phone');
+            const email = form.querySelector('#email');
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let isValid = true;
+
+            // Reset error states
+            [name, phone, email].forEach(input => {
+                const errorId = input.id + '-error';
+                const error = form.querySelector(`#${errorId}`);
+                if (error) {
+                    error.classList.remove('visible');
+                    input.classList.remove('border-red');
+                }
+            });
+
+            // Validate name
+            if (!name.value.trim()) {
+                form.querySelector('#name-error').classList.add('visible');
+                name.classList.add('border-red');
+                isValid = false;
+            }
+            
+            // Validate email
+            if (!emailRegex.test(email.value)) {
+                form.querySelector('#email-error').classList.add('visible');
+                email.classList.add('border-red');
+                isValid = false;
+            }
+            
+            // Validate phone only if provided
+            if (phone.value.trim()) {
+                const cleanPhone = phone.value.replace(/\D/g, '');
+                if (cleanPhone.length < 10) {
+                    form.querySelector('#phone-error').classList.add('visible');
+                    phone.classList.add('border-red');
+                    isValid = false;
+                }
+            }
+
+            if (isValid) {
+                // Submit form
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        form.reset();
+                        document.getElementById('success-message').classList.add('visible');
+                        setTimeout(() => {
+                            document.getElementById('success-message').classList.remove('visible');
+                        }, 5000);
+                    } else {
+                        alert('There was an error. Please try again or call us at 813-738-2444.');
+                    }
+                }).catch(() => {
+                    alert('There was an error. Please try again or call us at 813-738-2444.');
+                }).finally(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                });
+            } else {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        }
+        
+        // Calendar Download Function
+        function downloadCalendar() {
+            const event = {
+                title: 'Classic Salsa Sundays',
+                description: 'Preserve authentic Salsa culture with free dance lesson, DJ Washington Party, and real Latino food. NO COVER.',
+                location: '809 Restaurant & Lounge, 3710 West Waters Avenue, Tampa, FL 33614',
+                start: '20251109T150000',
+                end: '20251109T190000',
+                rrule: 'FREQ=MONTHLY;BYDAY=2SU'
+            };
+            
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Classic Salsa Sundays//EN',
+                'BEGIN:VEVENT',
+                `DTSTART:${event.start}`,
+                `DTEND:${event.end}`,
+                `SUMMARY:${event.title}`,
+                `DESCRIPTION:${event.description}`,
+                `LOCATION:${event.location}`,
+                `RRULE:${event.rrule}`,
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+            
+            const blob = new Blob([icsContent], { type: 'text/calendar' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'classic-salsa-sundays.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

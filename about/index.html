@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- --- SEO SUPERIORITY BLOCK --- -->
+    <title>About Christopher Maloof | Tampa Bay's Premier MC</title>
+    <meta name="description" content="Meet Christopher Maloof, Tampa Bay's premier MC with 15+ years experience. Expert voice-over talent and dynamic host for weddings, corporate events, and Latin festivals.">
+    <meta name="keywords" content="Christopher Maloof Bio, Tampa Bay Event Host, Wedding MC Florida, Corporate Entertainer, Voice Over Talent Tampa, Latin Nightlife Host">
+    <meta name="author" content="Maloof Entertainment">
+    <link rel="canonical" href="https://maloofentertainment.com/about/">
+
+    <!-- SOCIAL MEDIA INTELLIGENCE (OPEN GRAPH) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Christopher Maloof | Premier Event Host">
+    <meta property="og:description" content="15+ years experience, 100+ events yearly. Discover the voice behind Tampa Bay's biggest celebrations.">
+    <meta property="og:url" content="https://maloofentertainment.com/about/">
+    <meta property="og:image" content="https://maloofentertainment.com/logo.png">
+    <meta property="og:site_name" content="Maloof Entertainment">
+
+    <!-- PRELOAD GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- LUXURY THEME VARIABLES --- */
+        :root {
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.5);
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #AA8C2C 100%);
+            --black: #050505;
+            --dark-gray: #121212;
+            --glass: rgba(5, 5, 5, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --white: #ffffff;
+            --font-main: 'Montserrat', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        /* --- RESET & BASE --- */
+        html { scroll-behavior: smooth; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: var(--black); 
+            color: var(--white); 
+            font-family: var(--font-main); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+            animation: siteFadeIn 0.8s ease-out forwards;
+            opacity: 0; 
+        }
+
+        @keyframes siteFadeIn {
+            to { opacity: 1; }
+        }
+        
+        a { text-decoration: none; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { width: 100%; height: auto; display: block; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 0.8rem 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .logo-container {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .logo-container img {
+            position: relative;
+            z-index: 2;
+            max-height: 100%;
+            width: auto;
+            filter: drop-shadow(0 0 8px var(--gold-glow));
+            transition: filter 0.3s ease;
+        }
+        
+        .logo-container:hover img { filter: drop-shadow(0 0 12px var(--gold)); }
+
+        .nav-logo-text {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            display: none; 
+            margin-left: 10px;
+        }
+
+        .nav-brand { display: flex; align-items: center; }
+
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+
+        /* Active State */
+        .nav-links a.active { color: var(--gold); }
+        .nav-links a.active::after { width: 100%; }
+        
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--gold); }
+
+        .menu-toggle { 
+            display: none; 
+            color: var(--gold); 
+            font-size: 1.5rem; 
+            cursor: pointer;
+            text-shadow: 0 0 5px var(--gold-glow);
+            transition: text-shadow 0.3s ease;
+        }
+        
+        .menu-toggle:hover { text-shadow: 0 0 10px var(--gold); }
+
+        /* --- PAGE HEADER --- */
+        header.page-header {
+            position: relative;
+            padding-top: 180px; 
+            padding-bottom: 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1a1a1a 0%, #050505 70%);
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-subtitle {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .header-title {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        /* --- HERO IMAGE & BIO --- */
+        section#about-bio { padding: 2rem 5% 6rem; }
+        
+        .bio-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .bio-image {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .bio-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .bio-image:hover img { transform: scale(1.02); }
+
+        .bio-text h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .bio-text p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-main);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* --- TESTIMONIALS --- */
+        section#testimonials {
+            background-color: var(--dark-gray);
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #080808;
+            padding: 2.5rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- CTA --- */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 5%;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: var(--black);
+            padding: 1rem 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            border: 1px solid var(--gold);
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* --- CONTACT FOOTER --- */
+        footer#contact {
+            background-color: #080808;
+            border-top: 1px solid #222;
+            padding: 5rem 5% 2rem;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info { flex: 1; min-width: 300px; }
+        .contact-info h3 { font-family: var(--font-serif); color: var(--gold); font-size: 2rem; margin-bottom: 1.5rem; }
+        .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: #ccc; }
+        .contact-item i { color: var(--gold); width: 20px; }
+        .contact-item a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        /* --- RESPONSIVE QUERIES --- */
+        @media (max-width: 768px) {
+            nav { padding: 0.8rem 1rem; }
+            .logo-container { width: 45px; height: 45px; margin-left: 8px; }
+            .nav-links { 
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background: var(--black);
+                padding: 2rem;
+                border-bottom: 1px solid var(--gold);
+            } 
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            
+            .header-title { font-size: 2.5rem; }
+            .bio-container { grid-template-columns: 1fr; gap: 2rem; }
+            .stats-grid { gap: 1rem; }
+            .contact-container { flex-direction: column; }
+        }
+    </style>
+
+    <!-- SCHEMA MARKUP (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Christopher Maloof",
+      "jobTitle": "Master of Ceremonies & Entertainment Host",
+      "image": "https://maloofentertainment.com/about/laughingonmic.jpg",
+      "url": "https://maloofentertainment.com/about/",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Maloof Entertainment"
+      },
+      "description": "Premier Tampa Bay MC with 15+ years experience hosting 100+ events yearly.",
+      "sameAs": [
+        "https://www.facebook.com/MaloofEntertainment/",
+        "https://www.instagram.com/maloof_entertainment/"
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAVIGATION (Root Relative) -->
+    <nav>
+        <a href="/" class="nav-brand">
+            <div class="logo-container">
+                <img src="/logo.png" alt="Maloof Entertainment Logo" onerror="this.src='/logo.jpg'; this.onerror=null; this.style.display='none'; document.querySelector('.nav-logo-text').style.display='block';">
+            </div>
+            <span class="nav-logo-text">MALOOF ENT.</span>
+        </a>
+        
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/events/">Events</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/about/" class="active">About</a></li> <!-- ACTIVE LINK -->
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header class="page-header">
+        <div class="header-content">
+            <span class="header-subtitle">Meet The Host</span>
+            <h1 class="header-title">Christopher Maloof</h1>
+            <div style="width: 60px; height: 3px; background: var(--gold); margin: 0 auto;"></div>
+        </div>
+    </header>
+
+    <!-- BIO SECTION -->
+    <section id="about-bio">
+        <div class="bio-container">
+            <div class="bio-image">
+                <img src="laughingonmic.jpg" alt="Christopher Maloof Hosting an Event">
+            </div>
+            <div class="bio-text">
+                <h2>The Voice Behind The Magic</h2>
+                <p>With over 15 years of experience and more than 100 events hosted annually, Christopher Maloof has become Tampa Bay's most sought-after Master of Ceremonies and entertainment host.</p>
+                <p>From intimate weddings to massive festivals, Christopher brings an unmatched energy and commanding stage presence that captivates audiences and elevates every event to unforgettable status.</p>
+                <p>His versatile voice-over talent and natural charisma have made him the go-to choice for corporate events, festivals, nightlife venues, and special celebrations throughout the Tampa Bay area.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>15+</h3>
+                        <p>Years Exp.</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100+</h3>
+                        <p>Events/Yr</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="section-header" style="margin-bottom: 3rem;">
+            <h2 style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--white);">Client Love</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Christopher absolutely made our wedding unforgettable! His energy was infectious and he kept everyone engaged throughout the entire reception."</p>
+                <div class="testimonial-author">— Sarah & Mike, Wedding Clients</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Professional, charismatic, and always on point. Christopher brings incredible energy to every event. He's our go-to MC!"</p>
+                <div class="testimonial-author">— Maria, Corporate Planner</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"The best host in Tampa Bay. He knows exactly how to read a room and keep the party moving. Highly recommended."</p>
+                <div class="testimonial-author">— Carlos, Festival Director</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <h2 style="font-family: var(--font-serif); font-size: 3rem; color: var(--white); margin-bottom: 1.5rem;">Ready to Elevate Your Event?</h2>
+        <a href="/contact/" class="btn-gold">Book Christopher Today</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>MALOOF ENT.</h3>
+                <p style="margin-bottom: 2rem;">Tampa Bay's Premier Event Experience. Book us for your next gala, wedding, or festival.</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:8137382444">813-738-2444</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:maloofentertainment@gmail.com">maloofentertainment@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-facebook-f"></i>
+                    <a href="https://facebook.com/maloofentertainment" target="_blank">@maloofentertainment</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-instagram"></i>
+                    <a href="https://instagram.com/maloof_entertainment" target="_blank">@maloof_entertainment</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Maloof Entertainment. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arthur Murray Re-Grand Opening — Exclusive Live Salsa Event | May 16, 2026</title>
+<meta name="description" content="The Arthur Murray Re-Grand Opening. An Exclusive Live Salsa Event. Tampa North. Saturday May 16, 2026. DJ Sammy Rodriguez. The Koko Band en vivo. 150 seats only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --espresso:    #0d0804;
+    --brown-deep:  #160c05;
+    --brown-mid:   #231508;
+    --brown-warm:  #2e1c0c;
+    --gold-dim:    #7a5218;
+    --gold:        #c48b28;
+    --gold-bright: #e8a935;
+    --gold-light:  #f5cc70;
+    --cream:       #f5ede0;
+    --cream-dim:   #c9b89a;
+    --cream-muted: #7a6a55;
+    --white:       #ffffff;
+    --ticket-url:  'https://buytickets.at/maloofentertainment/2178597';
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--espresso);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* FIXED BACKGROUND IMAGE FOR HERO (iOS SAFE) */
+  .fixed-hero-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('amlivehero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* FLOATING CTA */
+  .float-cta {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .float-cta .seats-left {
+    background: rgba(13,8,4,0.85);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-light);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 2px;
+    backdrop-filter: blur(8px);
+  }
+  .float-cta a {
+    display: block;
+    background: var(--gold);
+    color: var(--espresso);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 0 40px rgba(196,139,40,0.35);
+  }
+  .float-cta a:hover { background: var(--gold-bright); transform: translateY(-2px); }
+
+  /* SECTIONS */
+  section, .solid-bg-wrapper { 
+    position: relative; 
+    z-index: 1; 
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    /* Transparent/Overlay background to show the fixed image underneath */
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 80%, rgba(196,139,40,0.2) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 40% at 30% 20%, rgba(196,139,40,0.1) 0%, transparent 60%),
+      rgba(13, 8, 4, 0.75);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 119px,
+      rgba(196,139,40,0.03) 120px
+    );
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    /* Lower clamp minimum (26px) ensures long non-wrapping words fit on iPhone SE */
+    font-size: clamp(26px, 8vw, 112px);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--cream-dim);
+    letter-spacing: 0.08em;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.55s forwards;
+  }
+
+  .hero-date-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.7s forwards;
+  }
+  .hero-date-bar .line { width: 60px; height: 1px; background: var(--gold-dim); }
+  .hero-date-bar .date-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--espresso);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 18px 56px;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.85s forwards;
+  }
+  .hero-cta:hover { background: var(--gold-bright); transform: translateY(-2px); }
+
+  .hero-cap {
+    margin-top: 40px;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    opacity: 0;
+    animation: fadeUp 0.9s ease 1s forwards;
+  }
+  .hero-cap span { color: var(--gold); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.4s forwards;
+  }
+  .hero-scroll span {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold-dim), transparent);
+    animation: scrollPulse 2s ease-in-out 1.4s infinite;
+  }
+
+  /* ── SCARCITY BAND ── */
+  .scarcity-band {
+    background: var(--brown-mid);
+    border-top: 1px solid var(--gold-dim);
+    border-bottom: 1px solid var(--gold-dim);
+    padding: 22px 12px;
+  }
+  .scarcity-band-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Strictly force single line on mobile */
+    gap: 1%; 
+    width: 100%;
+  }
+  .scarcity-stat {
+    text-align: center;
+    flex: 1 1 0px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 2px;
+  }
+  .scarcity-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 6vw, 38px);
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .scarcity-stat .label {
+    font-size: clamp(7.5px, 2vw, 12px);
+    letter-spacing: clamp(0.05em, 0.5vw, 0.25em);
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+  .scarcity-divider {
+    width: 1px;
+    height: clamp(24px, 6vw, 40px);
+    background: var(--gold-dim);
+    flex-shrink: 0;
+  }
+
+  /* ── PROMISE ── */
+  .promise {
+    background: var(--espresso);
+    padding: 100px 24px;
+    text-align: center;
+  }
+  .promise-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .promise-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--cream);
+    margin-bottom: 28px;
+  }
+  .promise-quote em { color: var(--gold-light); font-style: normal; }
+  .promise-attr {
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+  }
+  .gold-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 24px auto;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline-section {
+    padding: 80px 24px 100px;
+    background: var(--brown-deep);
+    border-top: 1px solid rgba(196,139,40,0.15);
+  }
+  .section-label {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .section-title {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 64px;
+  }
+  .timeline {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 88px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold-dim) 10%, var(--gold-dim) 90%, transparent);
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 88px 24px 1fr;
+    gap: 0 20px;
+    margin-bottom: 52px;
+    align-items: start;
+  }
+  .t-time {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--gold-bright);
+    text-align: right;
+    padding-top: 2px;
+    line-height: 1.2;
+  }
+  .t-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--brown-deep);
+    margin-top: 6px;
+    position: relative;
+    left: -4px;
+    flex-shrink: 0;
+  }
+  .t-content {}
+  .t-head {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 4px;
+  }
+  .t-body {
+    font-size: 16px;
+    color: var(--cream-muted);
+    line-height: 1.6;
+  }
+  .t-badge {
+    display: inline-block;
+    background: rgba(196,139,40,0.15);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+
+  /* ── TICKETS ── */
+  .tickets-section {
+    padding: 80px 24px 100px;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 0%, rgba(196,139,40,0.07) 0%, transparent 70%),
+      var(--espresso);
+  }
+  .tickets-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .ticket-card {
+    border: 1px solid rgba(196,139,40,0.25);
+    padding: 40px 32px 36px;
+    background: var(--brown-warm);
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+    text-align: center;
+  }
+  .ticket-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+  .ticket-card.featured {
+    border-color: var(--gold);
+    background: var(--brown-mid);
+  }
+  .featured-tag {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--espresso);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    white-space: nowrap;
+  }
+  .ticket-type {
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .ticket-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .ticket-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+  .ticket-price sup {
+    font-size: 26px;
+    vertical-align: super;
+    color: var(--gold);
+  }
+  .ticket-divider {
+    height: 1px;
+    background: rgba(196,139,40,0.2);
+    margin-bottom: 24px;
+  }
+  .ticket-perks {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+  .ticket-perks li {
+    font-size: 15px;
+    color: var(--cream-dim);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(196,139,40,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    line-height: 1.4;
+  }
+  .ticket-perks li::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    min-width: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+  .ticket-btn {
+    display: block;
+    text-align: center;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-bright);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 14px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .ticket-btn:hover, .ticket-card.featured .ticket-btn {
+    background: var(--gold);
+    color: var(--espresso);
+  }
+  .ticket-card.featured .ticket-btn { font-weight: 500; }
+
+  .vip-note {
+    max-width: 600px;
+    margin: 32px auto 0;
+    text-align: center;
+    font-size: 15px;
+    color: var(--cream-muted);
+    line-height: 1.6;
+  }
+  .vip-note strong { color: var(--gold-light); font-weight: 400; }
+  .vip-note a { color: var(--gold); text-decoration: none; }
+  .vip-note a:hover { text-decoration: underline; }
+
+  /* ── PERFORMERS ── */
+  .performers-section {
+    padding: 80px 24px 100px;
+    background: var(--brown-deep);
+    border-top: 1px solid rgba(196,139,40,0.15);
+  }
+  .performers-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2px;
+  }
+  .performer-card {
+    background-color: var(--brown-warm);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .performer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13,8,4,0.7);
+    z-index: 1;
+  }
+  .performer-content {
+    position: relative;
+    z-index: 2;
+  }
+  .performer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    z-index: 3;
+  }
+  .performer-role {
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  }
+  .performer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+  }
+  .performer-desc {
+    font-size: 16px;
+    color: var(--cream-muted);
+    line-height: 1.7;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+  }
+  .performer-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    border-top: 1px solid var(--gold-dim);
+    padding-top: 12px;
+    width: 100%;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  }
+
+  /* ── EXPERIENCE ── */
+  .experience-section {
+    padding: 80px 24px 100px;
+    background: var(--espresso);
+  }
+  .experience-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: rgba(196,139,40,0.12);
+    border: 1px solid rgba(196,139,40,0.12);
+  }
+  .exp-item {
+    background: var(--espresso);
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .exp-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold-dim);
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+  .exp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .exp-body {
+    font-size: 15px;
+    color: var(--cream-muted);
+    line-height: 1.6;
+  }
+
+  /* ── COUNTDOWN ── */
+  .countdown-section {
+    padding: 72px 24px;
+    background: var(--brown-mid);
+    border-top: 1px solid rgba(196,139,40,0.15);
+    border-bottom: 1px solid rgba(196,139,40,0.15);
+    text-align: center;
+  }
+  .countdown-label {
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .cd-unit {}
+  .cd-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(50px, 8vw, 82px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+    min-width: 2ch;
+    display: block;
+    text-align: center;
+  }
+  .cd-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    text-align: center;
+    margin-top: 6px;
+  }
+  .cd-divider {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 62px;
+    color: var(--gold-dim);
+    line-height: 1;
+    align-self: flex-start;
+    padding-top: 4px;
+  }
+
+  /* ── VENUE ── */
+  .venue-section {
+    padding: 80px 24px 100px;
+    background: var(--brown-deep);
+    text-align: center;
+  }
+  .venue-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .venue-address {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: var(--cream-muted);
+    margin-bottom: 40px;
+  }
+  .venue-details {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .venue-detail {}
+  .venue-detail .vd-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 4px;
+  }
+  .venue-detail .vd-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--cream);
+  }
+  .map-btn {
+    display: inline-block;
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-bright);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 12px 32px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .map-btn:hover {
+    border-color: var(--gold);
+    background: rgba(196,139,40,0.08);
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    padding: 120px 24px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 50%, rgba(196,139,40,0.1) 0%, transparent 70%),
+      var(--espresso);
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 119px,
+      rgba(196,139,40,0.025) 120px
+    );
+    pointer-events: none;
+  }
+  .final-cta-eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .final-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 6vw, 74px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--cream);
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .final-cta-sub {
+    font-size: 17px;
+    color: var(--cream-muted);
+    margin-bottom: 48px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .final-cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--espresso);
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 20px 72px;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .final-cta-btn:hover { background: var(--gold-bright); transform: translateY(-2px); }
+  .final-cta-fine {
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--cream-muted);
+    margin-top: 20px;
+  }
+  .final-cta-fine span { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080502;
+    border-top: 1px solid rgba(196,139,40,0.15);
+    padding: 40px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--cream-dim);
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+  }
+  .footer-tagline {
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 20px;
+  }
+  .footer-contact {
+    font-size: 15px;
+    color: var(--cream-muted);
+    margin-bottom: 24px;
+  }
+  .footer-contact a { color: var(--gold-dim); text-decoration: none; }
+  .footer-legal {
+    font-size: 13px;
+    color: #3a2e22;
+    letter-spacing: 0.05em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50%       { opacity: 1;   transform: scaleY(1.1); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .timeline::before { left: 68px; }
+    .timeline-item { grid-template-columns: 68px 20px 1fr; }
+    .performer-card { padding: 36px 24px; }
+    .float-cta { bottom: 16px; right: 16px; }
+    .float-cta a { padding: 12px 20px; font-size: 13px; }
+    .countdown-timer { gap: 20px; }
+    .cd-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- FIXED HERO BACKGROUND (Behind everything, visible only where transparent) -->
+<div class="fixed-hero-bg"></div>
+
+<!-- FLOATING CTA -->
+<div class="float-cta">
+  <div class="seats-left">150 seats &mdash; strictly</div>
+  <a href="https://buytickets.at/maloofentertainment/2178597" target="_blank" rel="noopener">Get Tickets</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-eyebrow">Maloof Entertainment &nbsp;&bull;&nbsp; Arthur Murray Dance Studio Tampa North</div>
+
+  <h1 class="hero-title">
+    <span style="white-space: nowrap;">The Arthur Murray</span><br>
+    <em><span style="white-space: nowrap;">Re-Grand Opening</span></em>
+  </h1>
+
+  <p class="hero-subtitle">Exclusive Live Salsa Event &nbsp;&mdash;&nbsp; Tampa North</p>
+
+  <div class="hero-date-bar">
+    <div class="line"></div>
+    <div class="date-text">Saturday &nbsp;&bull;&nbsp; May 16, 2026 &nbsp;&bull;&nbsp; 7:00 PM</div>
+    <div class="line"></div>
+  </div>
+
+  <a href="https://buytickets.at/maloofentertainment/2178597" target="_blank" rel="noopener" class="hero-cta">
+    Secure Your Seat
+  </a>
+
+  <p class="hero-cap">From <span>$25</span> &nbsp;&bull;&nbsp; 150 seats only &nbsp;&bull;&nbsp; No outside alcohol</p>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── SCARCITY BAND ── -->
+<div class="scarcity-band solid-bg-wrapper">
+  <div class="scarcity-band-inner">
+    <div class="scarcity-stat">
+      <div class="num">150</div>
+      <div class="label">Seats Total</div>
+    </div>
+    <div class="scarcity-divider"></div>
+    <div class="scarcity-stat">
+      <div class="num">1</div>
+      <div class="label">Night Only</div>
+    </div>
+    <div class="scarcity-divider"></div>
+    <div class="scarcity-stat">
+      <div class="num">100</div>
+      <div class="label">Years of Arthur Murray</div>
+    </div>
+    <div class="scarcity-divider"></div>
+    <div class="scarcity-stat">
+      <div class="num">0</div>
+      <div class="label">Waitlist Spots</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROMISE ── -->
+<section class="promise">
+  <div class="promise-inner">
+    <div class="gold-rule"></div>
+    <p class="promise-quote">
+      When a brand with over 100 years of history opens its own doors and hands you the keys, <em>you show up with everything you have.</em>
+    </p>
+    <div class="gold-rule"></div>
+    <p class="promise-attr">Tampa North has always shown up for us. May 16th, we show up for Tampa North.</p>
+  </div>
+</section>
+
+<!-- ── COUNTDOWN ── -->
+<section class="countdown-section">
+  <p class="countdown-label">Time remaining until the doors open</p>
+  <div class="countdown-timer">
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-days">00</span>
+      <div class="cd-label">Days</div>
+    </div>
+    <div class="cd-divider">:</div>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-hours">00</span>
+      <div class="cd-label">Hours</div>
+    </div>
+    <div class="cd-divider">:</div>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-mins">00</span>
+      <div class="cd-label">Minutes</div>
+    </div>
+    <div class="cd-divider">:</div>
+    <div class="cd-unit">
+      <span class="cd-num" id="cd-secs">00</span>
+      <div class="cd-label">Seconds</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIMELINE ── -->
+<section class="timeline-section">
+  <p class="section-label">The Night</p>
+  <h2 class="section-title">How It Unfolds</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="t-time">6:45<br><span style="font-size:16px;color:var(--gold-dim)">PM</span></div>
+      <div class="t-dot"></div>
+      <div class="t-content">
+        <div class="t-badge">Premium Pass Only</div>
+        <div class="t-head">Doors Open — Premium Entry</div>
+        <div class="t-body">Elite Masterclass Premium Pass holders enter privately. The floor belongs to you before anyone else arrives.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="t-time">7:00<br><span style="font-size:16px;color:var(--gold-dim)">PM</span></div>
+      <div class="t-dot"></div>
+      <div class="t-content">
+        <div class="t-badge">Sharp</div>
+        <div class="t-head">Elite Masterclass Begins</div>
+        <div class="t-body">Salsa and Bachata with the world-renowned instructors of Arthur Murray Dance Studio Tampa North. Two hours on a floor built for exactly this. Not a beginner shuffle — an elite experience.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="t-time">9:00<br><span style="font-size:16px;color:var(--gold-dim)">PM</span></div>
+      <div class="t-dot"></div>
+      <div class="t-content">
+        <div class="t-badge">General Admission Opens</div>
+        <div class="t-head">DJ Sammy Rodriguez</div>
+        <div class="t-body">Doors open for General Admission. A New York City legend takes the decks. Sammy does not fill time between sets — he controls the room. Tú sabes la diferencia.</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="t-time">~10:15<br><span style="font-size:16px;color:var(--gold-dim)">PM</span></div>
+      <div class="t-dot"></div>
+      <div class="t-content">
+        <div class="t-badge">En Vivo</div>
+        <div class="t-head">The Koko Band Goes Live</div>
+        <div class="t-body">Tampa Bay's undisputed Salsa band for real dancers. Explosive percussion, a magnetic frontman, Salsa, Bachata, Merengue sets built for the floor. En fuego — until 1:00 AM.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TICKETS ── -->
+<section class="tickets-section">
+  <p class="section-label">Ticketing</p>
+  <h2 class="section-title">Choose Your Experience</h2>
+
+  <div class="tickets-grid">
+
+    <div class="ticket-card">
+      <div class="ticket-type">Entry</div>
+      <div class="ticket-name">General<br>Admission</div>
+      <div class="ticket-price"><sup>$</sup>25</div>
+      <div class="ticket-divider"></div>
+      <ul class="ticket-perks">
+        <li>Entry at 9:00 PM sharp</li>
+        <li>DJ Sammy Rodriguez set</li>
+        <li>The Koko Band live until 1 AM</li>
+        <li>Premium appetizer spread included</li>
+        <li>Licensed premium mobile bar access</li>
+        <li>Professional wood dance floor</li>
+      </ul>
+      <a href="https://buytickets.at/maloofentertainment/2178597" target="_blank" rel="noopener" class="ticket-btn">Get This Ticket</a>
+    </div>
+
+    <div class="ticket-card featured">
+      <div class="featured-tag">Most Popular</div>
+      <div class="ticket-type">Full Experience</div>
+      <div class="ticket-name">Elite Masterclass<br>Premium Pass</div>
+      <div class="ticket-price"><sup>$</sup>65</div>
+      <div class="ticket-divider"></div>
+      <ul class="ticket-perks">
+        <li>Private early entry at 6:45 PM</li>
+        <li>2-hour Elite Masterclass — Salsa & Bachata</li>
+        <li>Instruction by Arthur Murray's world-renowned faculty</li>
+        <li>All General Admission perks included</li>
+        <li>DJ Sammy Rodriguez + The Koko Band live</li>
+        <li>Premium appetizer spread + licensed mobile bar</li>
+      </ul>
+      <a href="https://buytickets.at/maloofentertainment/2178597" target="_blank" rel="noopener" class="ticket-btn">Get This Ticket</a>
+    </div>
+
+    <div class="ticket-card">
+      <div class="ticket-type">Add-On</div>
+      <div class="ticket-name">VIP Basecamp<br>Table</div>
+      <div class="ticket-price"><sup>$</sup>75</div>
+      <div class="ticket-divider"></div>
+      <ul class="ticket-perks">
+        <li>Reserved premium seating for up to 4 guests</li>
+        <li>Prime placement on the floor</li>
+        <li>Your home base for the entire night</li>
+        <li>Must be purchased with a GA or Premium Pass per guest</li>
+        <li>Strictly limited — first come, first served</li>
+      </ul>
+      <a href="https://buytickets.at/maloofentertainment/2178597" target="_blank" rel="noopener" class="ticket-btn">Reserve a Table</a>
+    </div>
+
+  </div>
+
+  <p class="vip-note">
+    <strong>Arthur Murray students:</strong> Contact <a href="mailto:Kimber@arthurmurraycenters.com">Arthur Murray Dance Studio Tampa North</a> directly for your exclusive $10 promo code. &nbsp;&bull;&nbsp; Maximum 6 tickets per order. When 150 tickets are sold, the link closes. There is no waitlist.
+  </p>
+</section>
+
+<!-- ── PERFORMERS ── -->
+<section class="performers-section">
+  <p class="section-label">The Talent</p>
+  <h2 class="section-title">The Artists</h2>
+
+  <div class="performers-grid">
+
+    <div class="performer-card" style="background-image: url('koko1.jpg'); background-size: cover; background-position: center;">
+      <div class="performer-overlay"></div>
+      <div class="performer-content">
+        <div class="performer-role">Live Band</div>
+        <div class="performer-name">The Koko Band</div>
+        <div class="performer-desc">
+          Tampa Bay's undisputed go-to Salsa band for real dancers. Directed by Jorge Escalante, The Koko Band delivers explosive percussion, a magnetic frontman, and sets of Salsa, Bachata, and Merengue tailored specifically for the floor — not for background ambiance. When they play, the room does not empty. It fills.
+        </div>
+        <div class="performer-tag">Salsa &nbsp;&bull;&nbsp; Bachata &nbsp;&bull;&nbsp; Merengue &nbsp;&bull;&nbsp; En Vivo</div>
+      </div>
+    </div>
+
+    <div class="performer-card" style="background-image: url('djsammy.jpg'); background-size: cover; background-position: center;">
+      <div class="performer-overlay"></div>
+      <div class="performer-content">
+        <div class="performer-role">DJ</div>
+        <div class="performer-name">DJ Sammy Rodriguez</div>
+        <div class="performer-desc">
+          A New York City legend behind the decks. DJ Sammy Rodriguez has real, authentic experience controlling rooms that most DJs only dream about. He reads a crowd the way a conductor reads an orchestra. By the time his set ends, the room is exactly where it needs to be for The Koko Band.
+        </div>
+        <div class="performer-tag">New York City &nbsp;&bull;&nbsp; Latin Specialist &nbsp;&bull;&nbsp; 9:00 PM Set</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section class="experience-section">
+  <p class="section-label">The Experience</p>
+  <h2 class="section-title" style="text-align:center;margin-bottom:48px;font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,58px);font-weight:300;color:var(--cream);">A Dancer's Purist Night</h2>
+
+  <div class="experience-grid">
+
+    <div class="exp-item">
+      <div class="exp-icon">I</div>
+      <div class="exp-title">Professional Wood Floor</div>
+      <div class="exp-body">A pristine professional dance floor inside one of the world's most iconic studios. Built for exactly this.</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-icon">II</div>
+      <div class="exp-title">Licensed Mobile Bar</div>
+      <div class="exp-body">A fully state-licensed premium mobile bar set up inside the venue all night. No lines. No chaos. Walk up, order, get back on the floor.</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-icon">III</div>
+      <div class="exp-title">Premium Appetizers</div>
+      <div class="exp-body">A premium appetizer spread is included with your admission. You come to dance. We handle the rest.</div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-icon">IV</div>
+      <div class="exp-title">150 People. Strictly.</div>
+      <div class="exp-body">Not a soft cap. A hard limit that protects the experience of every single person in that room. No exceptions.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── VENUE ── -->
+<section class="venue-section">
+  <p class="section-label">Location</p>
+  <div class="gold-rule"></div>
+  <h2 class="venue-name">Arthur Murray Dance Studio Tampa North</h2>
+  <p class="venue-address">14436 N Dale Mabry Hwy, Tampa, FL 33618</p>
+
+  <div class="venue-details">
+    <div class="venue-detail">
+      <div class="vd-label">Date</div>
+      <div class="vd-val">Saturday, May 16, 2026</div>
+    </div>
+    <div class="venue-detail">
+      <div class="vd-label">Doors</div>
+      <div class="vd-val">6:45 PM / 9:00 PM</div>
+    </div>
+    <div class="venue-detail">
+      <div class="vd-label">Event Ends</div>
+      <div class="vd-val">1:00 AM</div>
+    </div>
+    <div class="venue-detail">
+      <div class="vd-label">Parking</div>
+      <div class="vd-val">Complimentary On Site</div>
+    </div>
+  </div>
+
+  <a href="https://maps.google.com?q=14436+N+Dale+Mabry+Hwy+Tampa+FL+33618" target="_blank" rel="noopener" class="map-btn">Get Directions</a>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <p class="final-cta-eyebrow">The Clock Is Running</p>
+  <h2 class="final-cta-title">Don't read about this one<br>on Sunday morning.</h2>
+  <p class="final-cta-sub">150 seats. One night. When the link closes, it closes. Be in the room when it happens.</p>
+
+  <div>
+    <a href="https://buytickets.at/maloofentertainment/2178597" target="_blank" rel="noopener" class="final-cta-btn" style="display:inline-block; margin-bottom: 20px;">
+      Secure Your Seat Now
+    </a>
+  </div>
+
+  <p class="final-cta-fine">From <span>$25</span> &nbsp;&bull;&nbsp; No waitlist &nbsp;&bull;&nbsp; Arthur Murray Dance Studio Tampa North &nbsp;&bull;&nbsp; May 16, 2026</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">Maloof Entertainment</div>
+  <div class="footer-tagline">Tampa Bay's Latin Entertainment &amp; Event Production</div>
+  <div class="footer-contact">
+    <a href="tel:8137382444">813-738-2444</a> &nbsp;&bull;&nbsp; maloofentertainment.com
+  </div>
+  <div class="footer-legal">&copy; 2026 Maloof Entertainment. All rights reserved. Event details subject to change.</div>
+</footer>
+
+<script>
+  function updateCountdown() {
+    var target = new Date('2026-05-16T19:00:00');
+    var now = new Date();
+    var diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(
+    '.ticket-card, .performer-card, .exp-item, .timeline-item, .scarcity-stat'
+  ).forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
