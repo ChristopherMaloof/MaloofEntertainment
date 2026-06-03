@@ -243,148 +243,6 @@
         .footer-social a:hover { background: var(--gold); color: var(--black); transform: translateY(-5px); }
         .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 4rem; font-size: 0.8rem; color: #ccc; }
         
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; justify-cont        nav {
-            position: fixed; top: 0; width: 100%; padding: 0.8rem 2rem;
-            background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
-            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid transparent; transition: all 0.4s ease;
-        }
-        nav.scrolled {
-            background: var(--black);
-            border-bottom: 1px solid var(--glass-border); 
-            padding: 0.6rem 2rem; 
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-        }
-        .nav-brand { display: flex; align-items: center; }
-        .logo-container { position: relative; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-left: 10px; }
-        .logo-container img { position: relative; z-index: 2; max-height: 100%; width: auto; filter: drop-shadow(0 0 8px var(--gold-glow)); transition: filter 0.3s ease; }
-        .logo-container:hover img { filter: drop-shadow(0 0 12px var(--gold)); }
-        .nav-links { display: flex; gap: 2.5rem; }
-        .nav-links a { color: var(--white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; position: relative; }
-        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--gold); transition: width 0.3s; }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-links a:hover { color: var(--gold); }
-        .menu-toggle { display: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; text-shadow: 0 0 5px var(--gold-glow); transition: text-shadow 0.3s ease; }
-        .menu-toggle:hover { text-shadow: 0 0 10px var(--gold); }
-
-        /* --- HERO --- */
-        header#home { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center; }
-        .video-bg { position: fixed; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: -10; object-fit: cover; filter: brightness(0.3); }
-        header#home::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.9) 100%); z-index: 0; }
-        .hero-content { position: relative; z-index: 1; padding: 0 1rem; width: 100%; max-width: 1200px; padding-top: 80px; }
-        
-        .hero-title { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5.5rem); letter-spacing: 1px; text-transform: uppercase; line-height: 1.05; margin-bottom: 1.5rem; color: var(--white); text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
-        .hero-sub { font-size: clamp(1.1rem, 2vw, 1.3rem); color: #ccc; margin-bottom: 3rem; line-height: 1.6; text-shadow: 0 2px 10px rgba(0,0,0,0.8); font-weight: 300; }
-        
-        .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-gradient); color: var(--black); padding: 1rem 2.2rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.4); border: 1px solid var(--gold); cursor: pointer; transition: all 0.3s ease; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3); background: transparent; color: var(--gold); }
-        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: rgba(10,10,10,0.6); color: var(--white); padding: 1rem 2.2rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; border: 1px solid var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.4); backdrop-filter: blur(5px); transition: all 0.3s ease; }
-        .btn-secondary:hover { transform: translateY(-3px); background: rgba(212, 175, 55, 0.1); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2); color: var(--gold); }
-
-        /* --- SOCIAL PROOF --- */
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
-        .stat-item .stat-num { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.5rem); color: var(--gold); line-height: 1; margin-bottom: 0.5rem; text-shadow: 0 0 20px var(--gold-glow); }
-        .stat-item .stat-label { color: var(--white); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* --- THREE LANES --- */
-        .lanes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; max-width: 1200px; margin: 0 auto; }
-        .lane-card { background: var(--dark-gray); border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 8px; padding: 3rem 2rem; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; display: flex; flex-direction: column; }
-        .lane-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
-        .lane-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 1.5rem; }
-        .lane-title { font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .lane-body { color: #aaa; font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; flex-grow: 1; }
-        .lane-btn { color: var(--gold); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid var(--gold); padding-bottom: 3px; display: inline-block; align-self: center; transition: color 0.3s; }
-        .lane-btn:hover { color: var(--white); border-bottom-color: var(--white); }
-
-        /* --- PERSONAL STATEMENT --- */
-        .statement-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto; }
-        .statement-img img { width: 100%; border-radius: 4px; border: 1px solid var(--gold); box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
-        .statement-quote { font-size: 1.15rem; color: #ddd; line-height: 1.8; font-style: italic; margin-bottom: 2rem; position: relative; }
-        .statement-quote::before { content: '\201C'; font-family: var(--font-display); font-size: 5rem; color: var(--gold); opacity: 0.2; position: absolute; top: -30px; left: -20px; line-height: 1; }
-        .statement-author strong { display: block; color: var(--white); font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 1px; margin-bottom: 2px; }
-        .statement-author span { color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* --- SCROLL REVEAL ANIMATIONS --- */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* --- SECTION BASE --- */
-        section { padding: 6rem 5%; background-color: var(--black); }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-header h2 { font-family: var(--font-display); font-size: 3rem; color: var(--white); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .section-header .divider { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
-
-        /* --- DYNAMIC CAROUSEL --- */
-        .carousel-section { background: var(--dark-gray); padding-top: 4rem; padding-bottom: 2rem; position: relative; z-index: 2; border-top: 1px solid #222; }
-        .swiper { width: 100%; padding: 20px 0 50px 0; }
-        .swiper-wrapper { transition-timing-function: linear !important; }
-        .swiper-slide { width: 320px; transition: transform 0.3s ease; height: auto; display: flex; }
-        .swiper-slide-active { transform: scale(1.05); z-index: 2; }
-        
-        .carousel-card {
-            background: var(--black); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            border: 1px solid #222; cursor: pointer; display: flex; flex-direction: column; width: 100%; transition: all 0.3s;
-        }
-        .carousel-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px var(--gold-glow); }
-        .carousel-card.active-card { border: 2px solid var(--gold); transform: translateY(-10px); }
-        
-        .card-img-wrap { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #000; }
-        .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .carousel-card:hover .card-img-wrap img { transform: scale(1.05); }
-        
-        .card-date-badge {
-            position: absolute; top: 15px; right: 15px; background: var(--gold-gradient); color: #000;
-            padding: 5px 12px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 10;
-        }
-
-        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-title { font-family: var(--font-display); font-size: 1.6rem; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
-        .card-teaser { font-size: 0.85rem; color: #ccc; flex-grow: 1; margin-bottom: 1rem; line-height: 1.5; }
-        .card-btn { color: var(--white); font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 5px; }
-        .card-btn i { transition: transform 0.3s; }
-        .carousel-card:hover .card-btn i { transform: translateX(5px); color: var(--gold); }
-
-        /* --- ACCORDION EXPANSION --- */
-        #event-details-expansion {
-            max-width: 1200px; margin: 0 auto; height: 0; overflow: hidden; transition: height 0.5s ease-in-out, opacity 0.4s ease;
-            opacity: 0; background: var(--dark-gray); border-radius: 8px; border: 1px solid var(--gold);
-        }
-        #event-details-expansion.expanded { height: auto; opacity: 1; margin-bottom: 4rem; padding: 2rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        
-        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-        .details-content h3 { font-family: var(--font-display); font-size: 3rem; color: var(--white); margin-bottom: 1rem; text-transform: uppercase; line-height: 1.1; }
-        .details-content p { color: #ddd; font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; }
-        
-        .details-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 6px; border-left: 3px solid var(--gold); }
-        .meta-item { display: flex; align-items: start; gap: 10px; }
-        .meta-item i { color: var(--gold); font-size: 1.2rem; margin-top: 3px; }
-        .meta-text strong { display: block; color: var(--white); font-size: 0.9rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px;}
-        .meta-text span { color: #aaa; font-size: 0.9rem; }
-
-        .details-map iframe { width: 100%; height: 100%; min-height: 350px; border-radius: 6px; border: 1px solid #333; }
-        .details-actions { display: flex; gap: 1rem; margin-top: 1rem; }
-        
-        .btn-close-details { background: transparent; border: 1px solid #555; color: #fff; padding: 0.8rem 1.5rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; border-radius: 4px; }
-        .btn-close-details:hover { background: #333; }
-
-        /* --- FAQ --- */
-        .faq-section details { background: var(--dark-gray); margin-bottom: 1rem; border-radius: 4px; border: 1px solid #333; overflow: hidden; }
-        .faq-section summary { padding: 1.2rem; cursor: pointer; font-weight: 600; color: var(--gold); list-style: none; transition: background 0.3s; }
-        .faq-section summary:hover { background: rgba(255,255,255,0.05); }
-        .faq-section details[open] summary { border-bottom: 1px solid #333; }
-        .faq-section p { padding: 1.2rem; color: #ddd; line-height: 1.6; font-size: 0.95rem; }
-
-        /* --- FOOTER & WHATSAPP --- */
-        footer#contact { background-color: transparent; padding: 5rem 5% 2rem; position: relative; background: linear-gradient(to top, rgba(10,10,10,1) 0%, transparent 100%); border-top: 1px solid #1a1a1a; }
-        footer#contact h3, footer#contact p, footer#contact a, .footer-bottom { text-shadow: 0 2px 10px rgba(0,0,0,1); position: relative; z-index: 2; }
-        .footer-logo img { max-width: 120px; margin: 0 auto 2rem; display: block; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-        .footer-social { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; }
-        .footer-social a { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); display: flex; align-items: center; justify-content: center; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); }
-        .footer-social a:hover { background: var(--gold); color: var(--black); transform: translateY(-5px); }
-        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 4rem; font-size: 0.8rem; color: #ccc; }
-        
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; animation: float-pulse 2s infinite; }
         .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
         @keyframes float-pulse { 0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.5); transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); transform: translateY(0px); } }
@@ -450,8 +308,10 @@
                 if(type === 'fourth-sunday') d = getNth(0, 4, y, m);
                 if(type === 'fourth-saturday') d = getNth(6, 4, y, m);
                 if(type === 'one-off-may16') d = new Date(2026, 4, 16);
+                if(type === 'one-off-june5') d = new Date(2026, 5, 5);
+                if(type === 'every-thursday') { let td = new Date(now); let daysUntil = (4 - td.getDay() + 7) % 7; td.setDate(td.getDate() + daysUntil); return td; }
 
-                if(d < now && type !== 'one-off-may16') {
+                if(d < now && type !== 'one-off-may16' && type !== 'one-off-june5') {
                     m++; if(m > 11) { m = 0; y++; }
                     if(type === 'first-friday') d = getFirst(5, y, m);
                     if(type === 'second-saturday') d = getNth(6, 2, y, m);
@@ -460,6 +320,7 @@
                     if(type === 'fourth-wednesday') d = getNth(3, 4, y, m);
                     if(type === 'fourth-sunday') d = getNth(0, 4, y, m);
                     if(type === 'fourth-saturday') d = getNth(6, 4, y, m);
+                    if(type === 'every-thursday') { let td = new Date(now); let daysUntil = (4 - td.getDay() + 7) % 7; td.setDate(td.getDate() + daysUntil); return td; }
                 }
 
                 // Launch date exception for Lutz Latin Nights
@@ -486,7 +347,7 @@
                     id: 'salsa-sol',
                     type: 'fourth-sunday',
                     name: 'Salsa Sol Sessions',
-                    desc: "Salsa Sol Sessions isn't a club scene—it's a Sunday afternoon gathering for the community. Featuring Kenny Barcenas bringing live guitar and percussion to authentic, classic salsa that lives in your bones. Enjoy Babe Coffee Lounge's full menu, including their famous lobster empanadas and mimosa flights, in a relaxed, family-friendly space. No pressure, no dress code, just real music and real people.",
+                    desc: "Salsa Sol Sessions is not a club night. It is a Sunday afternoon built for the people who grew up with this music. Every fourth Sunday at Babe Coffee Lounge in Land O Lakes, Kenny Barcenas brings live guitar and percussion to a room that runs on community, not cover charges. The music is classic, the crowd is warm, and the afternoon takes care of the rest. No dress code. No cover. Just real music, real people, and a Sunday that feels the way it used to. Pa' la gente.",
                     startH: 15, startM: 0, endH: 19, endM: 0,
                     hasLesson: false,
                     img: 'flyer1.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639',
@@ -495,8 +356,8 @@
                 {
                     id: '809',
                     type: 'first-sunday',
-                    name: 'Classic Salsa Sunday',
-                    desc: "Some nights are about trends. This one is about tradition. Classic Salsa Sundays at the 809 Lounge is a matinee built for people who love classic salsa dancing Tampa the way it was meant to be felt — deep cuts on vinyl, Salsa Dura, Live Latin Bands, and a room full of dancers who respect the roots. The afternoon opens at 3:00 PM with a complimentary beginner salsa lesson Tampa (no partner required), then flows into open dancing until 7:00 PM on the first Sunday of every month. If you've been searching for the best Sunday salsa Tampa has to offer, you just found it.",
+                    name: 'Classic Salsa Sundays',
+                    desc: "Some nights are built on trends. Classic Salsa Sundays at 809 Lounge in Tampa is built on tradition. Every first Sunday of the month, the Tampa Bay Latin community gathers for a classic Salsa matinee rooted in Salsa Dura, deep cuts, and a live performance from Koko Band directed by Jorge Escalante. The afternoon opens at 3:00 PM with a complimentary beginner Salsa lesson with nationally touring instructor Jenny Marie, no partner required. DJ Pechocho keeps the energy moving until 7:00 PM. No cover charge. Walk in. If you have been looking for authentic Sunday Salsa dancing in Tampa Bay, this is the room.",
                     startH: 15, startM: 0, endH: 19, endM: 0,
                     img: 'flyer3.jpg', venue: '809 Lounge', address: '3710 W Waters Ave', city: 'Tampa', zip: '33614',
                     lat: 28.0249, lng: -82.5063, price: "0", url: "https://maloofentertainment.com/#classic-salsa"
@@ -504,43 +365,52 @@
                 {
                     id: 'quality-inn',
                     type: 'second-saturday',
-                    name: 'Quality Inn NPR Latin Night',
-                    desc: "Pasco County finally has its own Saturday night. Maloof Entertainment brings a full Latin production to the Grand Ballroom at Quality Inn & Suites Conference Center in New Port Richey — The Koko Band live, DJ Mike Sensation, and two complimentary dance classes to kick off the night. Elba teaches Ladies Traditional Bachata at 8 PM. Jenny Morano teaches Salsa at 8:30 PM. DJ Mike Sensation — Tampa Bay's most recognized Latin DJ — takes over at 9 PM. Doors open at 7:30 PM. Presale tickets are $12 — price goes to $15 at the door. No experience needed. No partner required. Just show up.",
-                    startH: 19, startM: 30, endH: 26, endM: 0,
-                    lessonH: 20, lessonM: 0,
-                    img: 'flyer2.jpg', venue: 'Grand Ballroom at Quality Inn & Suites', address: '5316 US Hwy 19 N', city: 'New Port Richey', zip: '34652',
-                    lat: 28.2442, lng: -82.7196, price: "12", url: "https://buytickets.at/maloofentertainment/2161470"
+                    name: 'La Noche Grande',
+                    desc: "Pasco County's Saturday night finally has a name. La Noche Grande brings the New Port Richey Latin community together every second Saturday at Taco Tequila Co inside the Quality Inn on US-19. DJ Mike Sensation runs the floor all night with his signature mix of Salsa, Bachata, and Merengue. The night opens with a complimentary Salsa lesson with Jenny Marie at 8:30 PM. Doors open at 8:00 PM. Presale tickets are $8 online and $10 at the door. The space flows indoor to outdoor, giving the night room to breathe. No experience needed. No partner required. New Port Richey, your Latin night is here.",
+                    startH: 20, startM: 0, endH: 26, endM: 0,
+                    lessonH: 20, lessonM: 30,
+                    img: 'flyer2.jpg', venue: 'Taco Tequila Co at Quality Inn', address: '5316 US Hwy 19 N', city: 'New Port Richey', zip: '34652',
+                    lat: 28.2442, lng: -82.7196, price: "8", url: "https://ticketscandy.com/e/la-noche-grande-nprs-latin-night-returns-june-13-2026-18091"
                 },
                 {
                     id: 'la-sala',
                     type: 'third-friday',
                     name: 'La Sala at Babe Coffee Lounge',
-                    desc: "La Sala is the newest Latin night in Tampa Bay — and it's launching at one of the most unique venues in the region. Babe Coffee Lounge in Land O Lakes opens its doors every third Friday for a night of Salsa, Bachata, and Merengue with a complimentary ladies styling Salsa class by Jenny Marie at 8:30 PM and DJ Kama keeping the energy going until 1 AM. Whether you're a seasoned dancer or stepping onto the floor for the first time, La Sala is built for you — beginner friendly, no partner needed. Come dressed, come ready, and come expecting something different.",
-                    startH: 20, startM: 0, endH: 25, endM: 0,
-                    lessonH: 20, lessonM: 30,
-                    img: 'flyer4.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd', city: 'Land O Lakes', zip: '34639',
+                    desc: "La Sala is Land O Lakes' Latin night, held every third Friday at Babe Coffee Lounge. The room holds 70 people. That is the point. Elba opens the evening at 7:30 PM with a ladies Traditional Bachata class. Jenny Marie follows at 8:00 PM with a ladies Salsa Styling class. DJ Kama keeps the floor moving until 1:00 AM. No cover. Walk in. Come dressed and ready to move. If you have been driving to Tampa for a Latin night that actually feels like something, this is what you have been looking for in Land O Lakes.",
+                    startH: 19, startM: 0, endH: 25, endM: 0,
+                    lessonH: 19, lessonM: 30,
+                    img: 'flyer4.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639',
                     lat: 28.2117, lng: -82.4598, price: "0", url: "https://maloofentertainment.com/events/"
-                },
-                {
-                    id: 'arthur-murray',
-                    type: 'one-off-may16',
-                    name: 'The Re-Grand Opening',
-                    desc: "This is a Dancer's Purist live Salsa experience on the professional wood floors of the 100-year global brand, Arthur Murray. Strictly capped at 150 attendees. We celebrate band director Jorge Escalante's birthday with Koko Band en vivo and NYC legend DJ Sammy Rodriguez. Enjoy the freedom of a pure BYOB experience, no bar lines, just dancing. A premium appetizer spread is included. Esta noche es exclusiva. The last time you really danced, you remembered who you were. Sábado, remember again.",
-                    startH: 21, startM: 0, endH: 25, endM: 0,
-                    hasLesson: true,
-                    lessonH: 19, lessonM: 0,
-                    img: 'flyer5.jpg', venue: 'Arthur Murray Dance Studio', address: '14436 N Dale Mabry Hwy', city: 'Tampa', zip: '33618',
-                    lat: 28.0820, lng: -82.5046, price: "25", url: "https://buytickets.at/maloofentertainment/2178597"
                 },
                 {
                     id: 'lutz-latin',
                     type: 'fourth-saturday',
                     name: 'Lutz Latin Nights',
-                    desc: "The drive to Tampa is over. Lutz finally has its own Latin night. Join us at this modern neighborhood bar for an intimate evening of authentic live music. Kenny Barcenas brings acoustic guitar and percussion, followed by DJ Mike Sensation keeping the floor moving. Come early for a complimentary Salsa lesson with nationally touring professional Jenny Marie. This is a community gathering with complimentary entry. Walk in, grab a drink, and enjoy the night.",
+                    desc: "Lutz has its own Latin night now. Every fourth Saturday at The Drinks at 9 Bar and Grill on Dale Mabry, the room fills up for a full night of Salsa, Bachata, and live Latin music. Doors open at 7:00 PM with happy hour for the first hour. Jenny Marie, one of the top-ranked Salsa instructors in the country, leads a complimentary lesson at 8:30 PM. Live music and DJ keep the floor moving after that. $5 at the door, cash. Walk in. Lutz, you no longer have to drive to Tampa for this.",
                     startH: 19, startM: 0, endH: 26, endM: 0,
                     hasLesson: true,
                     lessonH: 20, lessonM: 30,
-                    img: 'flyer6.jpg', venue: 'The Drinks at 9 Bar & Grill', address: 'Lutz', city: 'Lutz', zip: '33548',
+                    img: 'flyer6.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548',
+                    lat: 28.1362, lng: -82.4608, price: "5", url: "https://maloofentertainment.com/events/"
+                },
+                {
+                    id: 'slow-burn',
+                    type: 'every-thursday',
+                    name: 'Slow Burn',
+                    desc: "Slow Burn is Tampa Bay's Bachata and cigar night, and it runs every Thursday at The Drinks at 9 Bar and Grill in Lutz. Jenny Marie leads a Bachata lesson at 8:00 PM. DJ Mike Sensation takes over at 9:00 PM and keeps the floor moving until close. Outside, the Slow Burn Lounge is a dedicated cigar patio presented by Tainas Cigars, where the night slows down just enough to feel it. $5 at the door, cash. No reservations needed. Come early, stay late, and let the night do what it does.",
+                    startH: 19, startM: 0, endH: 26, endM: 0,
+                    hasLesson: false,
+                    img: 'slow-burn.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548',
+                    lat: 28.1362, lng: -82.4608, price: "5", url: "https://maloofentertainment.com/events/"
+                },
+                {
+                    id: 'back-to-freestyle',
+                    type: 'one-off-june5',
+                    name: 'Back to Freestyle',
+                    desc: "The songs you memorized riding in the back seat in 1989 never left you. Back to Freestyle brings the sound of Stevie B, Lisa Lisa, TKA, Expose, Shannon, The Cover Girls, Debbie Deb, and more to The Drinks at 9 Bar and Grill in Lutz. DJ Richie Rumbero runs the full freestyle catalog all night. Doors open at 7:00 PM with happy hour for the first hour. Complimentary entry. This is the intimate room before the arena summer kicks in. Real heads show up first.",
+                    startH: 19, startM: 0, endH: 26, endM: 0,
+                    hasLesson: false,
+                    img: 'back-to-freestyle.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548',
                     lat: 28.1362, lng: -82.4608, price: "0", url: "https://maloofentertainment.com/events/"
                 }
             ];
@@ -595,10 +465,10 @@
                 },
                 {
                     "@type": "EventSeries",
-                    "name": "Quality Inn NPR Latin Night – Second Saturday Latin Night New Port Richey",
-                    "description": "Monthly second Saturday Latin night at the Grand Ballroom, Quality Inn & Suites Conference Center, New Port Richey. Koko Band live, DJ Mike Sensation, Bachata class at 8 PM with Elba, Salsa class at 8:30 PM with Jenny Morano. $12 presale / $15 door.",
-                    "url": "https://buytickets.at/maloofentertainment/2161470",
-                    "location": { "@type": "Place", "name": "Grand Ballroom at Quality Inn & Suites", "address": { "@type": "PostalAddress", "streetAddress": "5316 US Hwy 19 N", "addressLocality": "New Port Richey", "addressRegion": "FL", "postalCode": "34652", "addressCountry": "US" } },
+                    "name": "La Noche Grande - Second Saturday Latin Night New Port Richey",
+                    "description": "Monthly second Saturday Latin night at Taco Tequila Co inside Quality Inn in New Port Richey. DJ Mike Sensation, complimentary Salsa lesson at 8:30 PM with Jenny Marie. $8 online presale, $10 at the door. Indoor and outdoor flow.",
+                    "url": "https://ticketscandy.com/e/la-noche-grande-nprs-latin-night-returns-june-13-2026-18091",
+                    "location": { "@type": "Place", "name": "Taco Tequila Co at Quality Inn", "address": { "@type": "PostalAddress", "streetAddress": "5316 US Hwy 19 N", "addressLocality": "New Port Richey", "addressRegion": "FL", "postalCode": "34652", "addressCountry": "US" } },
                     "organizer": { "@id": "https://maloofentertainment.com/#organization" }
                 },
                 {
@@ -612,9 +482,25 @@
                 {
                     "@type": "EventSeries",
                     "name": "Lutz Latin Nights",
-                    "description": "Monthly fourth Saturday Latin night at The Drinks at 9 Bar & Grill in Lutz. Live acoustic Latin music by Kenny Barcenas, DJ Mike Sensation, and a complimentary Salsa lesson. Complimentary entry.",
+                    "description": "Monthly fourth Saturday Latin night at The Drinks at 9 Bar and Grill in Lutz, FL. Live Latin music, DJ, complimentary Salsa lesson with Jenny Marie at 8:30 PM. $5 cover at the door.",
                     "url": "https://maloofentertainment.com/events/",
                     "location": { "@type": "Place", "name": "The Drinks at 9 Bar & Grill", "address": { "@type": "PostalAddress", "streetAddress": "Lutz", "addressLocality": "Lutz", "addressRegion": "FL", "postalCode": "33548", "addressCountry": "US" } },
+                    "organizer": { "@id": "https://maloofentertainment.com/#organization" }
+                },
+                {
+                    "@type": "EventSeries",
+                    "name": "Slow Burn - Thursday Bachata and Cigar Night Lutz",
+                    "description": "Weekly Thursday Bachata and cigar night at The Drinks at 9 Bar and Grill in Lutz, FL. Bachata lesson with Jenny Marie at 8:00 PM. DJ Mike Sensation until close. Slow Burn Lounge outdoor cigar patio presented by Tainas Cigars. $5 cover at the door.",
+                    "url": "https://maloofentertainment.com/events/",
+                    "location": { "@type": "Place", "name": "The Drinks at 9 Bar & Grill", "address": { "@type": "PostalAddress", "streetAddress": "17667 Dale Mabry Hwy", "addressLocality": "Lutz", "addressRegion": "FL", "postalCode": "33548", "addressCountry": "US" } },
+                    "organizer": { "@id": "https://maloofentertainment.com/#organization" }
+                },
+                {
+                    "@type": "EventSeries",
+                    "name": "Back to Freestyle - 80s and 90s Freestyle Night Lutz",
+                    "description": "80s and 90s freestyle music night at The Drinks at 9 Bar and Grill in Lutz, FL. Featuring Stevie B, Lisa Lisa, TKA, Expose, Shannon, The Cover Girls, Debbie Deb, and more. DJ Richie Rumbero. Friday, June 5, 2026. Doors 7:00 PM. Complimentary entry.",
+                    "url": "https://maloofentertainment.com/events/",
+                    "location": { "@type": "Place", "name": "The Drinks at 9 Bar & Grill", "address": { "@type": "PostalAddress", "streetAddress": "17667 Dale Mabry Hwy", "addressLocality": "Lutz", "addressRegion": "FL", "postalCode": "33548", "addressCountry": "US" } },
                     "organizer": { "@id": "https://maloofentertainment.com/#organization" }
                 }
             ];
@@ -719,10 +605,10 @@
             schemaGraph.push({
                 "@type": "FAQPage",
                 "mainEntity": [
-                    { "@type": "Question", "name": "Where can I dance salsa in Tampa Bay?", "acceptedAnswer": { "@type": "Answer", "text": "Maloof Entertainment hosts six recurring monthly Latin nights: Classic Salsa Sundays at 809 Lounge Tampa (first Sunday, 3 PM), La Sala at Babe Coffee Lounge in Land O Lakes (third Friday, 7 PM), Quality Inn Latin Night in New Port Richey (second Saturday, 7:30 PM), Lutz Latin Nights at The Drinks at 9 Bar & Grill in Lutz (fourth Saturday, 7 PM), Salsa Sol Sessions at Babe Coffee Lounge (fourth Sunday, 3 PM, pa' la gente), and Arthur Murray Re-Grand Opening Series in Tampa (third Saturday, 9 PM). All recurring events include a complimentary beginner salsa lesson unless noted." } },
+                    { "@type": "Question", "name": "Where can I dance salsa in Tampa Bay?", "acceptedAnswer": { "@type": "Answer", "text": "Maloof Entertainment hosts seven active Latin events across Tampa Bay: Classic Salsa Sundays at 809 Lounge Tampa (first Sunday, 3 PM), La Noche Grande at Taco Tequila Co inside Quality Inn in New Port Richey (second Saturday, 8 PM), La Sala at Babe Coffee Lounge in Land O Lakes (third Friday, 7 PM), Salsa Sol Sessions at Babe Coffee Lounge in Land O Lakes (fourth Sunday, 3 PM), Lutz Latin Nights at The Drinks at 9 Bar and Grill in Lutz (fourth Saturday, 7 PM), Slow Burn Bachata and cigar night in Lutz (every Thursday, 8 PM), and Back to Freestyle in Lutz (Friday, June 5, 7 PM). Most events include a complimentary beginner lesson." } },
                     { "@type": "Question", "name": "Do I need to know how to dance?", "acceptedAnswer": { "@type": "Answer", "text": "No experience required. Every event starts with a beginner-friendly lesson covering basic steps and timing. Most people who attend have never danced before. You will be moving confidently within 30 minutes." } },
                     { "@type": "Question", "name": "Do I need a dance partner?", "acceptedAnswer": { "@type": "Answer", "text": "No partner needed at any of our events. Most people attend solo or in groups of friends. During lessons we rotate partners so you practice with multiple people and meet the room naturally." } },
-                    { "@type": "Question", "name": "What time do the beginner lessons start?", "acceptedAnswer": { "@type": "Answer", "text": "La Sala at Babe Coffee Lounge (Third Friday, Land O Lakes) ladies styling Salsa class at 8:30 PM. Classic Salsa Sunday (First Sunday, Tampa) lesson at 3:00 PM." } },
+                    { "@type": "Question", "name": "What time do the beginner lessons start?", "acceptedAnswer": { "@type": "Answer", "text": "Classic Salsa Sundays at 809 Lounge Tampa (first Sunday): Salsa lesson at 3:00 PM with Jenny Marie. La Sala at Babe Coffee Lounge Land O Lakes (third Friday): Bachata class 7:30 PM with Elba, Salsa Styling 8:00 PM with Jenny Marie. La Noche Grande New Port Richey (second Saturday): Salsa lesson 8:30 PM with Jenny Marie. Lutz Latin Nights (fourth Saturday): Salsa lesson 8:30 PM with Jenny Marie. Slow Burn Lutz (every Thursday): Bachata lesson 8:00 PM with Jenny Marie." } },
                     { "@type": "Question", "name": "Is parking available and is it free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, free or accessible parking at all venues. Babe Coffee Lounge has convenient parking on site. 809 Lounge has its own parking lot." } },
                     { "@type": "Question", "name": "What is the dress code?", "acceptedAnswer": { "@type": "Answer", "text": "Smart Casual or Dressy Casual at most events. La Sala at Babe Coffee Lounge — come looking great and feeling yourself. Classic Salsa Sunday at 809 Lounge is relaxed and family-friendly. When in doubt, dress up a little — the crowd tends to look good." } },
                     { "@type": "Question", "name": "What are the age requirements?", "acceptedAnswer": { "@type": "Answer", "text": "La Sala at Babe Coffee Lounge (Third Friday) is 21+. Classic Salsa Sunday at 809 Lounge is the exception — it is a daytime matinee from 3:00 PM to 7:00 PM and is family-friendly and all ages welcome." } },
@@ -843,8 +729,8 @@
 
     <!-- AEO SPEAKABLE (UNTOUCHED PER SEO RULES) -->
     <div class="seo-hidden" aria-hidden="true">
-        <p class="aeo-speakable">Maloof Entertainment produces Tampa Bay's best Latin nightlife events. Six recurring monthly Latin nights feature live salsa bands, bachata DJs, and beginner-friendly dance lessons across Tampa Bay and Pinellas County. No dance experience required. No partner needed.</p>
-        <p class="aeo-speakable">Where to go salsa dancing in Tampa Bay: Maloof Entertainment hosts six recurring monthly Latin nights: Classic Salsa Sundays at 809 Lounge Tampa (first Sunday, 3 PM), La Sala at Babe Coffee Lounge in Land O Lakes (third Friday, 7 PM), Quality Inn Latin Night in New Port Richey (second Saturday, 7:30 PM), Lutz Latin Nights at The Drinks at 9 Bar & Grill in Lutz (fourth Saturday, 7 PM), Salsa Sol Sessions at Babe Coffee Lounge (fourth Sunday, 3 PM, pa' la gente), and Arthur Murray Re-Grand Opening Series in Tampa (third Saturday, 9 PM). All recurring events include a complimentary beginner salsa lesson unless noted.</p>
+        <p class="aeo-speakable">Maloof Entertainment produces Tampa Bay's best Latin nightlife events. Seven active events feature live Latin bands, bachata DJs, and beginner-friendly dance lessons across Tampa Bay and Pinellas County. No dance experience required. No partner needed.</p>
+        <p class="aeo-speakable">Where to go salsa dancing in Tampa Bay: Maloof Entertainment hosts seven active Latin events: Classic Salsa Sundays at 809 Lounge Tampa (first Sunday, 3 PM), La Noche Grande at Taco Tequila Co inside Quality Inn in New Port Richey (second Saturday, 8 PM), La Sala at Babe Coffee Lounge in Land O Lakes (third Friday, 7 PM), Salsa Sol Sessions at Babe Coffee Lounge in Land O Lakes (fourth Sunday, 3 PM), Lutz Latin Nights at The Drinks at 9 Bar and Grill in Lutz (fourth Saturday, 7 PM), Slow Burn Bachata and cigar night at The Drinks at 9 Bar and Grill in Lutz (every Thursday, 8 PM), and Back to Freestyle at The Drinks at 9 Bar and Grill in Lutz (Friday, June 5, 7 PM). Most events include a complimentary beginner lesson.</p>
         <p class="aeo-speakable">La Sala is a monthly Latin night at Babe Coffee Lounge in Land O Lakes, Florida, held every third Friday. Ladies styling Salsa class with Jenny Marie at 8:30 PM and DJ Kama until 1 AM. Complimentary entry. Produced by Maloof Entertainment.</p>
         <p class="aeo-speakable">How much does it cost to go to a Latin night in Tampa Bay? Maloof Entertainment events range from complimentary entry at Classic Salsa Sundays and La Sala at Babe Coffee Lounge to ticketed special events. All events include a complimentary beginner salsa lesson.</p>
     </div>
@@ -861,8 +747,8 @@
                 <div class="stat-label">Events Produced</div>
             </div>
             <div class="stat-item reveal">
-                <div class="stat-num">6</div>
-                <div class="stat-label">Active Recurring Events</div>
+                <div class="stat-num">7</div>
+                <div class="stat-label">Active Events</div>
             </div>
             <div class="stat-item reveal">
                 <div class="stat-num">10,000+</div>
@@ -950,10 +836,10 @@
             <div class="divider"></div>
         </div>
         <div style="max-width: 800px; margin: 0 auto;" class="reveal">    
-            <details><summary>Where can I dance salsa in Tampa Bay?</summary><div><p>Maloof Entertainment hosts six recurring monthly Latin nights: Classic Salsa Sundays at 809 Lounge Tampa (first Sunday, 3 PM), La Sala at Babe Coffee Lounge in Land O Lakes (third Friday, 7 PM), Quality Inn Latin Night in New Port Richey (second Saturday, 7:30 PM), Lutz Latin Nights at The Drinks at 9 Bar & Grill in Lutz (fourth Saturday, 7 PM), Salsa Sol Sessions at Babe Coffee Lounge (fourth Sunday, 3 PM, pa' la gente), and Arthur Murray Re-Grand Opening Series in Tampa (third Saturday, 9 PM). All recurring events include a complimentary beginner salsa lesson unless noted.</p></div></details>    
+            <details><summary>Where can I dance salsa in Tampa Bay?</summary><div><p>Maloof Entertainment hosts seven active Latin events across Tampa Bay: Classic Salsa Sundays at 809 Lounge Tampa (first Sunday, 3 PM), La Noche Grande at Taco Tequila Co inside Quality Inn in New Port Richey (second Saturday, 8 PM), La Sala at Babe Coffee Lounge in Land O Lakes (third Friday, 7 PM), Salsa Sol Sessions at Babe Coffee Lounge in Land O Lakes (fourth Sunday, 3 PM), Lutz Latin Nights at The Drinks at 9 Bar and Grill in Lutz (fourth Saturday, 7 PM), Slow Burn Bachata and cigar night in Lutz (every Thursday, 8 PM), and Back to Freestyle in Lutz (Friday, June 5, 7 PM). Most events include a complimentary beginner lesson.</p></div></details>    
             <details><summary>Do I need to know how to dance?</summary><div><p><strong>No experience required.</strong> Every single event starts with a beginner-friendly lesson covering basic steps and timing. Most people who attend have never danced before. You will be moving confidently within 30 minutes.</p></div></details>    
             <details><summary>Do I need a dance partner?</summary><div><p><strong>No partner needed at any of our events.</strong> Most people attend solo or in groups of friends. During lessons we rotate partners so you practice with multiple people and meet the room naturally.</p></div></details>    
-            <details><summary>What time do the beginner lessons start?</summary><div><p>La Sala at Babe Coffee Lounge (Third Friday, Land O Lakes) ladies styling Salsa class at 8:30 PM. Classic Salsa Sunday (First Sunday, Tampa) lesson at 3:00 PM.</p></div></details>    
+            <details><summary>What time do the beginner lessons start?</summary><div><p>Classic Salsa Sundays at 809 Lounge in Tampa (first Sunday): Salsa lesson at 3:00 PM with Jenny Marie. La Sala at Babe Coffee Lounge in Land O Lakes (third Friday): Bachata class at 7:30 PM with Elba, Salsa Styling class at 8:00 PM with Jenny Marie. La Noche Grande in New Port Richey (second Saturday): Salsa lesson at 8:30 PM with Jenny Marie. Lutz Latin Nights (fourth Saturday): Salsa lesson at 8:30 PM with Jenny Marie. Slow Burn in Lutz (every Thursday): Bachata lesson at 8:00 PM with Jenny Marie.</p></div></details>    
             <details><summary>Is parking available and is it free?</summary><div><p>Yes, free or accessible parking at all venues. Babe Coffee Lounge has convenient parking on site. 809 Lounge has its own parking lot.</p></div></details>    
             <details><summary>What is the dress code?</summary><div><p>Smart Casual or Dressy Casual at most events. La Sala at Babe Coffee Lounge — come looking great and feeling yourself. Classic Salsa Sunday at 809 Lounge is relaxed and family-friendly. When in doubt, dress up a little — the crowd tends to look good.</p></div></details>    
             <details><summary>What are the age requirements?</summary><div><p>La Sala at Babe Coffee Lounge (Third Friday) is 21+. Classic Salsa Sunday at 809 Lounge is the exception — it is a daytime matinee from 3:00 PM to 7:00 PM and is family-friendly and all ages welcome.</p></div></details>    
@@ -1044,8 +930,8 @@
             'salsa-sol': {
                 title: 'Salsa Sol Sessions',
                 tagline: 'Fourth Sundays @ Babe Coffee Lounge · Land O Lakes',
-                copy: "Salsa Sol Sessions isn't a club scene—it's a Sunday afternoon gathering for the community. Featuring Kenny Barcenas bringing live guitar and percussion to authentic, classic salsa that lives in your bones. Enjoy Babe Coffee Lounge's full menu, including their famous lobster empanadas and mimosa flights, in a relaxed, family-friendly space. No pressure, no dress code, just real music and real people.",
-                time: '3:00 PM – 7:00 PM | Live Music',
+                copy: "Salsa Sol Sessions is not a club night. It is a Sunday afternoon built for the people who grew up with this music. Every fourth Sunday at Babe Coffee Lounge in Land O Lakes, Kenny Barcenas brings live guitar and percussion to a room that runs on community, not cover charges. The music is classic, the crowd is warm, and the afternoon takes care of the rest. No dress code. No cover. Just real music, real people, and a Sunday that feels the way it used to. Pa' la gente.",
+                time: '3:00 PM to 7:00 PM | Kenny Barcenas Live',
                 cover: 'Complimentary Entry',
                 mapUrl: 'https://maps.google.com/maps?q=5132+Land+O+Lakes+Blvd,+Land+O+Lakes,+FL+34639&t=&z=15&ie=UTF8&iwloc=&output=embed',
                 actionText: 'Get Directions',
@@ -1053,53 +939,63 @@
             },
             '809': {
                 title: 'Classic Salsa Sundays',
-                tagline: 'First Sundays @ 809 Lounge Tampa',
-                copy: "Some nights are about trends. This one is about tradition. Classic Salsa Sundays at the 809 Lounge is a matinee built for people who love classic salsa dancing Tampa the way it was meant to be felt — deep cuts on vinyl, Salsa Dura, Live Latin Bands, and a room full of dancers who respect the roots. The afternoon opens at 3:00 PM with a complimentary beginner salsa lesson Tampa (no partner required), then flows into open dancing until 7:00 PM on the first Sunday of every month. If you've been searching for the best Sunday salsa Tampa has to offer, you just found it.",
-                time: '3:00 PM Lesson | Social until 7:00 PM',
-                cover: 'FREE ENTRY',
+                tagline: 'First Sundays @ 809 Lounge · Tampa',
+                copy: "Some nights are built on trends. Classic Salsa Sundays at 809 Lounge in Tampa is built on tradition. Every first Sunday of the month, the Tampa Bay Latin community gathers for a classic Salsa matinee rooted in Salsa Dura, deep cuts, and a live performance from Koko Band directed by Jorge Escalante. The afternoon opens at 3:00 PM with a complimentary beginner Salsa lesson with nationally touring instructor Jenny Marie, no partner required. DJ Pechocho keeps the energy moving until 7:00 PM. No cover charge. Walk in. If you have been looking for authentic Sunday Salsa dancing in Tampa Bay, this is the room.",
+                time: '3:00 PM Salsa Lesson | Koko Band Live | Open Dancing until 7:00 PM',
+                cover: 'Complimentary Entry',
                 mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.984508255559!2d-82.50631682573251!3d28.02494931141417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c1133501914f%3A0xfc44c7c992528e39!2s809%20Lounge%20Restaurant%20%26%20Grill!5e0!3m2!1sen!2sus!4v1770002862871!5m2!1sen!2sus',
-                actionText: 'Reserve Table',
-                actionLink: 'https://www.eventbrite.com/e/dinner-drinks-live-salsa-the-red-black-valentines-affair-809-lounge-tickets-1980289175231'
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=3710+W+Waters+Ave+Tampa+FL+33614'
             },
             'quality-inn': {
-                title: 'Quality Inn NPR Latin Night',
-                tagline: 'Second Saturdays @ Grand Ballroom · New Port Richey',
-                copy: "Pasco County finally has its own Saturday night. Maloof Entertainment brings a full Latin production to the Grand Ballroom at Quality Inn & Suites Conference Center in New Port Richey — The Koko Band live, DJ Mike Sensation, and two complimentary dance classes to kick off the night. Elba teaches Ladies Traditional Bachata at 8 PM. Jenny Morano teaches Salsa at 8:30 PM. DJ Mike Sensation — Tampa Bay's most recognized Latin DJ — takes over at 9 PM with his signature Salsa, Bachata, and Merengue mix. Doors open at 7:30 PM. Presale tickets are $12 — price goes to $15 at the door. No experience needed. No partner required. Just show up.",
-                time: '7:30 PM Doors | 8:00 PM Bachata Class | 8:30 PM Salsa Class | 9:00 PM DJ Mike Sensation',
-                cover: '$12 Presale · $15 at the Door',
+                title: 'La Noche Grande',
+                tagline: 'Second Saturdays @ Taco Tequila Co · New Port Richey',
+                copy: "Pasco County's Saturday night finally has a name. La Noche Grande brings the New Port Richey Latin community together every second Saturday at Taco Tequila Co inside the Quality Inn on US-19. DJ Mike Sensation runs the floor all night with his signature mix of Salsa, Bachata, and Merengue. The night opens with a complimentary Salsa lesson with Jenny Marie at 8:30 PM. Doors open at 8:00 PM. Presale tickets are $8 online and $10 at the door. The space flows indoor to outdoor, giving the night room to breathe. No experience needed. No partner required. New Port Richey, your Latin night is here.",
+                time: '8:00 PM Doors | 8:30 PM Salsa Lesson | DJ Mike Sensation',
+                cover: '$8 Online Presale · $10 at the Door',
                 mapUrl: 'https://maps.google.com/maps?q=5316+US+Hwy+19+N,+New+Port+Richey,+FL+34652&t=&z=15&ie=UTF8&iwloc=&output=embed',
-                actionText: 'Get Tickets — $12 Presale',
-                actionLink: 'https://buytickets.at/maloofentertainment/2161470'
+                actionText: 'Get Tickets — $8 Online',
+                actionLink: 'https://ticketscandy.com/e/la-noche-grande-nprs-latin-night-returns-june-13-2026-18091'
             },
             'la-sala': {
                 title: 'La Sala',
                 tagline: 'Third Fridays @ Babe Coffee Lounge · Land O Lakes',
-                copy: "La Sala is the newest Latin night in Tampa Bay — and it's launching at one of the most unique venues in the region. Babe Coffee Lounge in Land O Lakes opens its doors every third Friday for a night of Salsa, Bachata, and Merengue with a complimentary ladies styling Salsa class by Jenny Marie at 8:30 PM and DJ Kama keeping the energy going until 1 AM. Whether you're a seasoned dancer or stepping onto the floor for the first time, La Sala is built for you — beginner friendly, no partner needed. Come dressed, come ready, and come expecting something different.",
-                time: '8:30 PM Lesson | DJ Kama until 1:00 AM',
+                copy: "La Sala is Land O Lakes' Latin night, held every third Friday at Babe Coffee Lounge. The room holds 70 people. That is the point. Elba opens the evening at 7:30 PM with a ladies Traditional Bachata class. Jenny Marie follows at 8:00 PM with a ladies Salsa Styling class. DJ Kama keeps the floor moving until 1:00 AM. No cover. Walk in. Come dressed and ready to move. If you have been driving to Tampa for a Latin night that actually feels like something, this is what you have been looking for in Land O Lakes.",
+                time: '7:30 PM Bachata Class | 8:00 PM Salsa Class | DJ Kama until 1:00 AM',
                 cover: 'Complimentary Entry',
                 mapUrl: 'https://maps.google.com/maps?q=5132+Land+O+Lakes+Blvd,+Land+O+Lakes,+FL+34639&t=&z=15&ie=UTF8&iwloc=&output=embed',
                 actionText: 'Get Directions',
                 actionLink: 'https://maps.google.com/?q=5132+Land+O+Lakes+Blvd+Land+O+Lakes+FL+34639'
             },
-            'arthur-murray': {
-                title: 'The Re-Grand Opening',
-                tagline: 'Saturday, May 16 @ Arthur Murray Dance Studio · Tampa North',
-                copy: "This is a Dancer's Purist live Salsa experience on the professional wood floors of the 100-year global brand, Arthur Murray. Strictly capped at 150 attendees. We celebrate band director Jorge Escalante's birthday with Koko Band en vivo and NYC legend DJ Sammy Rodriguez. Enjoy the freedom of a pure BYOB experience, no bar lines, just dancing. A premium appetizer spread is included. Esta noche es exclusiva. The last time you really danced, you remembered who you were. Sábado, remember again.",
-                time: '6:45 PM Premium Entry | 7:00 PM Elite Masterclass | 9:00 PM General Admission',
-                cover: '$25 GA · $65 Premium Pass',
-                mapUrl: 'https://maps.google.com/maps?q=14436+N+Dale+Mabry+Hwy,+Tampa,+FL+33618&t=&z=15&ie=UTF8&iwloc=&output=embed',
-                actionText: 'Get Tickets, $25 GA',
-                actionLink: 'https://buytickets.at/maloofentertainment/2178597'
-            },
             'lutz-latin': {
                 title: 'Lutz Latin Nights',
                 tagline: 'Fourth Saturdays @ The Drinks at 9 Bar & Grill · Lutz',
-                copy: "The drive to Tampa is over. Lutz finally has its own Latin night. Join us at this modern neighborhood bar for an intimate evening of authentic live music. Kenny Barcenas brings acoustic guitar and percussion, followed by DJ Mike Sensation keeping the floor moving. Come early for a complimentary Salsa lesson with nationally touring professional Jenny Marie. This is a community gathering with complimentary entry. Walk in, grab a drink, and enjoy the night.",
-                time: '7:00 PM Doors | 8:30 PM Salsa Lesson | Live Music & DJ',
+                copy: "Lutz has its own Latin night now. Every fourth Saturday at The Drinks at 9 Bar and Grill on Dale Mabry, the room fills up for a full night of Salsa, Bachata, and live Latin music. Doors open at 7:00 PM with happy hour for the first hour. Jenny Marie, one of the top-ranked Salsa instructors in the country, leads a complimentary lesson at 8:30 PM. Live music and DJ keep the floor moving after that. $5 at the door, cash. Walk in. Lutz, you no longer have to drive to Tampa for this.",
+                time: '7:00 PM Doors | Happy Hour until 8:00 PM | 8:30 PM Salsa Lesson',
+                cover: '$5 at the Door, Cash',
+                mapUrl: 'https://maps.google.com/maps?q=The+Drinks+at+9+Bar+and+Grill+Lutz+FL&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=17667+Dale+Mabry+Hwy+Lutz+FL+33548'
+            },
+            'slow-burn': {
+                title: 'Slow Burn',
+                tagline: 'Every Thursday @ The Drinks at 9 Bar & Grill · Lutz',
+                copy: "Slow Burn is Tampa Bay's Bachata and cigar night, and it runs every Thursday at The Drinks at 9 Bar and Grill in Lutz. Jenny Marie leads a Bachata lesson at 8:00 PM. DJ Mike Sensation takes over at 9:00 PM and keeps the floor moving until close. Outside, the Slow Burn Lounge is a dedicated cigar patio presented by Tainas Cigars, where the night slows down just enough to feel it. $5 at the door, cash. No reservations needed. Come early, stay late, and let the night do what it does.",
+                time: '8:00 PM Bachata Lesson | 9:00 PM DJ Mike Sensation until Close',
+                cover: '$5 at the Door, Cash',
+                mapUrl: 'https://maps.google.com/maps?q=The+Drinks+at+9+Bar+and+Grill+Lutz+FL&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=17667+Dale+Mabry+Hwy+Lutz+FL+33548'
+            },
+            'back-to-freestyle': {
+                title: 'Back to Freestyle',
+                tagline: 'Friday, June 5 @ The Drinks at 9 Bar & Grill · Lutz',
+                copy: "The songs you memorized riding in the back seat in 1989 never left you. Back to Freestyle brings the sound of Stevie B, Lisa Lisa, TKA, Expose, Shannon, The Cover Girls, Debbie Deb, and more to The Drinks at 9 Bar and Grill in Lutz. DJ Richie Rumbero runs the full freestyle catalog all night. Doors open at 7:00 PM with happy hour for the first hour. Complimentary entry. This is the intimate room before the arena summer kicks in. Real heads show up first.",
+                time: '7:00 PM Doors | Happy Hour until 8:00 PM | DJ Richie Rumbero',
                 cover: 'Complimentary Entry',
                 mapUrl: 'https://maps.google.com/maps?q=The+Drinks+at+9+Bar+and+Grill+Lutz+FL&t=&z=15&ie=UTF8&iwloc=&output=embed',
                 actionText: 'Get Directions',
-                actionLink: 'https://maps.google.com/?q=The+Drinks+at+9+Bar+and+Grill+Lutz+FL'
+                actionLink: 'https://maps.google.com/?q=17667+Dale+Mabry+Hwy+Lutz+FL+33548'
             }
         };
 
@@ -1148,7 +1044,7 @@
                             disableOnInteraction: false,
                             pauseOnMouseEnter: true
                         },
-                        speed: 14000,
+                        speed: 10000,
                         breakpoints: {
                             768: { spaceBetween: 30 }
                         }
@@ -1207,8 +1103,10 @@
             const dateStr = evData ? evData.nextDateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) : '';
 
             // Handle specific audience tagline
-            const audienceText = id === 'arthur-murray' 
-                ? 'Strictly Capped at 150 Attendees' 
+            const audienceText = id === 'slow-burn'
+                ? 'Bachata Night, All Welcome'
+                : id === 'back-to-freestyle'
+                ? 'All Freestyle Music Lovers Welcome'
                 : 'Beginner Friendly, No Partner Needed';
 
             container.innerHTML = `
