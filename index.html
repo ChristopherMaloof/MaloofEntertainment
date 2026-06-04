@@ -538,6 +538,16 @@
                     }
                 }
 
+                // Exception to skip June 4th for Slow Burn, show June 11th next
+                if (ev.id === 'slow-burn') {
+                    const exceptionDate = new Date(2026, 5, 11); // June 11, 2026
+                    const today = new Date();
+                    today.setHours(0,0,0,0);
+                    if (today <= exceptionDate) {
+                        d = exceptionDate;
+                    }
+                }
+
                 ev.nextDateObj = d; 
                 const sDate = formatDateISO(d, ev.startH, ev.startM);
                 let eH = ev.endH; let eD = new Date(d); if(eH >= 24) { eH -= 24; eD.setDate(eD.getDate()+1); }
