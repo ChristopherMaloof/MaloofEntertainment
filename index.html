@@ -1016,9 +1016,10 @@
             // Build the Carousel Cards — only if wrapper exists in DOM
             const wrapper = document.getElementById('carousel-wrapper');
             if (wrapper) {
-                // By not using .sort() here, we respect the exact order eventsData was defined
+                // Sort events chronologically by nextDateObj
                 const otherEvents = (window.maloofEvents || [])
-                    .filter(ev => ev.id !== 'red-thread');
+                    .filter(ev => ev.id !== 'red-thread')
+                    .sort((a, b) => a.nextDateObj - b.nextDateObj);
 
                 otherEvents.forEach(ev => {
                     const dateString = ev.nextDateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
