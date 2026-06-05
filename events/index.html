@@ -22,8 +22,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500;700&display=swap"></noscript>
-    
-    <!-- ICONS & SWIPER -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -60,7 +58,6 @@
         ul { list-style: none; }
         img { width: 100%; height: auto; display: block; }
 
-        /* --- NAVIGATION --- */
         nav {
             position: fixed; top: 0; width: 100%; padding: 0.8rem 2rem;
             background: var(--glass);
@@ -86,7 +83,6 @@
         .menu-toggle { display: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; text-shadow: 0 0 5px var(--gold-glow); transition: text-shadow 0.3s ease; }
         .menu-toggle:hover { text-shadow: 0 0 10px var(--gold); }
 
-        /* --- PAGE HEADER --- */
         header.page-header {
             position: relative;
             padding-top: 160px;
@@ -100,13 +96,9 @@
         .header-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; letter-spacing: 1px; line-height: 1.05; margin-bottom: 1.5rem; color: var(--white); }
         .header-divider { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
 
-        /* --- SECTION BASE --- */
-        section { padding: 6rem 5%; background-color: var(--black); }
-        .section-header { text-align: center; margin-bottom: 3rem; }
-        .section-header h2 { font-family: var(--font-display); font-size: 3rem; color: var(--white); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-        .section-header .divider { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- DYNAMIC CAROUSEL --- */
         .carousel-section { background: var(--dark-gray); padding-top: 4rem; padding-bottom: 2rem; position: relative; z-index: 2; border-top: 1px solid #222; }
         .swiper { width: 100%; padding: 20px 0 50px 0; }
         .swiper-wrapper { transition-timing-function: linear !important; }
@@ -137,7 +129,6 @@
         .card-btn i { transition: transform 0.3s; }
         .carousel-card:hover .card-btn i { transform: translateX(5px); color: var(--gold); }
 
-        /* --- ACCORDION EXPANSION --- */
         #event-details-expansion {
             max-width: 1200px; margin: 0 auto; height: 0; overflow: hidden; transition: height 0.5s ease-in-out, opacity 0.4s ease;
             opacity: 0; background: var(--dark-gray); border-radius: 8px; border: 1px solid var(--gold);
@@ -157,41 +148,23 @@
         .details-map iframe { width: 100%; height: 100%; min-height: 350px; border-radius: 6px; border: 1px solid #333; }
         .details-actions { display: flex; gap: 1rem; margin-top: 1rem; }
         
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-gradient); color: var(--black); padding: 1rem 2.2rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.4); border: 1px solid var(--gold); cursor: pointer; transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3); background: transparent; color: var(--gold); }
         .btn-close-details { background: transparent; border: 1px solid #555; color: #fff; padding: 0.8rem 1.5rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; border-radius: 4px; }
         .btn-close-details:hover { background: #333; }
-        
-        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold-gradient); color: var(--black); padding: 1rem 2.2rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.4); border: 1px solid var(--gold); cursor: pointer; transition: all 0.3s ease; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3); background: transparent; color: var(--gold); }
 
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .feedback-section { padding: 6rem 5%; background: var(--black); border-top: 1px solid #1a1a1a; }
+        .feedback-container { max-width: 700px; margin: 0 auto; text-align: center; background: var(--dark-gray); padding: 3.5rem 3rem; border-radius: 8px; border: 1px solid var(--glass-border); box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+        .feedback-container h2 { font-family: var(--font-display); font-size: 2.5rem; color: var(--white); text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 1px; }
+        .feedback-container p { color: #aaa; margin-bottom: 2.5rem; font-size: 0.95rem; line-height: 1.6; }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        .form-control { width: 100%; padding: 1rem 1.2rem; background: rgba(0,0,0,0.5); border: 1px solid #333; color: var(--white); border-radius: 4px; font-family: var(--font-main); font-size: 0.95rem; transition: all 0.3s ease; }
+        .form-control:focus { outline: none; border-color: var(--gold); background: #000; box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
+        .form-control option { background: var(--dark-gray); color: var(--white); }
+        .btn-submit { width: 100%; background: var(--gold-gradient); color: var(--black); padding: 1.2rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border: 1px solid var(--gold); border-radius: 4px; cursor: pointer; transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); background: transparent; color: var(--gold); }
+        #feedbackSuccess { display: none; margin-top: 1.5rem; padding: 1rem; background: rgba(37, 211, 102, 0.1); border: 1px solid #25d366; color: #25d366; border-radius: 4px; font-weight: 600; text-align: center; }
 
-        /* --- FEEDBACK FORM --- */
-        .feedback-section { padding: 4rem 5%; background: var(--black); border-top: 1px solid #222; }
-        .feedback-container { max-width: 700px; margin: 0 auto; background: var(--dark-gray); padding: 3rem; border-radius: 8px; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
-        .feedback-container h2 { font-family: var(--font-display); font-size: 2.2rem; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; text-align: center; }
-        .feedback-container p { color: #aaa; text-align: center; margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.5; }
-        
-        .form-group { margin-bottom: 1.5rem; }
-        .form-control { width: 100%; padding: 1rem 1.2rem; background: var(--black); border: 1px solid #333; color: var(--white); border-radius: 4px; font-family: var(--font-main); transition: border-color 0.3s, box-shadow 0.3s; font-size: 0.95rem; }
-        .form-control:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 10px rgba(212, 175, 55, 0.2); }
-        
-        select.form-control { 
-            appearance: none; 
-            -webkit-appearance: none; 
-            background-image: url('data:image/svg+xml;utf8,<svg fill="%23D4AF37" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); 
-            background-repeat: no-repeat; 
-            background-position-x: 96%; 
-            background-position-y: center; 
-            cursor: pointer;
-        }
-        
-        .btn-submit { width: 100%; background: var(--gold-gradient); color: var(--black); border: 1px solid var(--gold); padding: 1.2rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; cursor: pointer; transition: all 0.3s; margin-top: 1rem; }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212,175,55,0.3); background: transparent; color: var(--gold); }
-        
-        .success-msg { display: none; background: rgba(37, 211, 102, 0.1); color: #25d366; padding: 1.2rem; border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 4px; text-align: center; margin-top: 1.5rem; font-weight: 600; letter-spacing: 1px; }
-
-        /* --- PROFESSIONAL FOOTER --- */
         footer#contact { padding: 5rem 5% 2rem; position: relative; background: linear-gradient(to top, rgba(10,10,10,1) 0%, #080808 100%); border-top: 1px solid #1a1a1a; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto 4rem auto; align-items: start; }
         
@@ -219,12 +192,10 @@
         .footer-social-small a { color: #888; font-size: 1.5rem; transition: color 0.3s, transform 0.3s; }
         .footer-social-small a:hover { color: var(--gold); transform: translateY(-3px); }
 
-        /* --- WHATSAPP FLOAT --- */
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; animation: float-pulse 2s infinite; }
         .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
         @keyframes float-pulse { 0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.5); transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); transform: translateY(0px); } }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 1024px) {
             .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
         }
@@ -244,6 +215,7 @@
             .footer-contact-list li { flex-direction: column; align-items: center; text-align: center; gap: 5px; }
             .footer-bottom { flex-direction: column; justify-content: center; text-align: center; }
             .areas-served-list { column-count: 1; }
+            .feedback-container { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -267,46 +239,39 @@
     </nav>
 
     <header class="page-header">
-        <div class="header-content">
+        <div class="header-content reveal">
             <span class="header-subtitle">Mark Your Calendar</span>
             <h1 class="header-title">Upcoming Latin Night Events</h1>
             <div class="header-divider"></div>
         </div>
     </header>
 
-    <!-- CAROUSEL SECTION REPLACING OLD GRID -->
     <section id="events" class="carousel-section">
-        <div class="section-header reveal">
-            <h2>Experience The Nights</h2>
-            <div class="divider"></div>
-        </div>
-        
         <div class="swiper event-swiper reveal">
             <div class="swiper-wrapper" id="carousel-wrapper">
-                <!-- Dynamic Content Rendered Here -->
+                <!-- Dynamic Content Rendered Here via JavaScript -->
             </div>
         </div>
 
         <!-- ACCORDION EXPANSION AREA -->
         <div id="event-details-expansion">
-            <!-- Rendered dynamically via JS -->
+            <!-- Rendered dynamically via JavaScript -->
         </div>
     </section>
 
-    <!-- EVENT FEEDBACK FORM -->
     <section class="feedback-section">
         <div class="feedback-container reveal">
             <h2>Share Your Experience</h2>
             <p>We are constantly striving to elevate Tampa Bay's Latin nightlife. Let us know how your night was. Your feedback is completely anonymous.</p>
             
-            <form id="feedbackForm" onsubmit="submitFeedback(event)">
+            <form id="feedbackForm" action="https://formspree.io/f/mdkdyrjv" method="POST" onsubmit="submitFeedback(event)">
                 <div class="form-group">
-                    <select class="form-control" required aria-label="Select Event">
+                    <select class="form-control" name="Attended_Event" required aria-label="Select Event">
                         <option value="" disabled selected>Select the event you attended...</option>
                         <option value="salsa-sol">Salsa Sol Sessions (Land O Lakes)</option>
                         <option value="classic-salsa">Classic Salsa Sundays (Tampa)</option>
-                        <option value="la-noche-grande">La Noche Grande (New Port Richey)</option>
-                        <option value="la-sala">La Sala (Land O Lakes)</option>
+                        <option value="la-noche">La Noche Grande (New Port Richey)</option>
+                        <option value="la-sala">La Sala at Babe Coffee Lounge (Land O Lakes)</option>
                         <option value="lutz-latin">Lutz Latin Nights (Lutz)</option>
                         <option value="slow-burn">Slow Burn (Lutz)</option>
                         <option value="back-to-freestyle">Back to Freestyle (Lutz)</option>
@@ -315,22 +280,18 @@
                 </div>
                 
                 <div class="form-group">
-                    <textarea class="form-control" rows="5" placeholder="Tell us what you loved or what we can do to make it even better next time..." required aria-label="Your feedback"></textarea>
+                    <textarea class="form-control" name="Feedback_Details" rows="5" placeholder="Tell us what you loved or what we can do to make it even better next time..." required aria-label="Your feedback"></textarea>
                 </div>
                 
                 <button type="submit" class="btn-submit"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Submit Anonymously</button>
                 
-                <div id="feedbackSuccess" class="success-msg">
-                    <i class="fas fa-check-circle" style="margin-right: 5px;"></i> Thank you for your feedback! It helps us keep the floor moving.
-                </div>
+                <div id="feedbackSuccess">Thank you! Your feedback has been sent anonymously.</div>
             </form>
         </div>
     </section>
 
-    <!-- PROFESSIONAL FOOTER -->
     <footer id="contact">
         <div class="footer-grid">
-            
             <!-- Column 1: Brand -->
             <div class="footer-col">
                 <img src="/logo.png" alt="Maloof Entertainment Logo" class="footer-logo-img" loading="lazy">
@@ -395,7 +356,6 @@
                     <li><a href="/about">About Us</a></li>
                 </ul>
             </div>
-            
         </div>
         
         <div class="footer-bottom">
@@ -411,10 +371,9 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SWIPER JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // 1. GENERATE DYNAMIC DATES AND GLOBAL ARRAY
+        // DATE ENGINE & GLOBAL EVENTS ARRAY (Matches index.html exactly)
         (function() {
             function getNextDate(type) {
                 const now = new Date();
@@ -463,61 +422,123 @@
                     if(type === 'every-thursday') { let td = new Date(now); let daysUntil = (4 - td.getDay() + 7) % 7; td.setDate(td.getDate() + daysUntil); return td; }
                 }
 
-                // Launch date exception for Lutz Latin Nights
+                // Launch & Exception Dates
                 if (type === 'fourth-saturday') {
                     const launchDate = new Date(2026, 4, 23); // May 23, 2026
-                    const today = new Date();
-                    today.setHours(0,0,0,0);
-                    if (today <= launchDate) {
-                        d = launchDate;
-                    }
+                    const today = new Date(); today.setHours(0,0,0,0);
+                    if (today <= launchDate) d = launchDate;
                 }
 
                 return d;
             }
 
             const eventsData = [
-                { id: 'salsa-sol', type: 'fourth-sunday', name: 'Salsa Sol Sessions', img: '/flyer1.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639' },
-                { id: '809', type: 'first-sunday', name: 'Classic Salsa Sundays', img: '/flyer3.jpg', venue: '809 Lounge', address: '3710 W Waters Ave', city: 'Tampa', zip: '33614' },
-                { id: 'quality-inn', type: 'second-saturday', name: 'La Noche Grande', img: '/flyer2.jpg', venue: 'Taco Tequila Co at Quality Inn', address: '5316 US Hwy 19 N', city: 'New Port Richey', zip: '34652' },
-                { id: 'la-sala', type: 'third-friday', name: 'La Sala at Babe Coffee Lounge', img: '/flyer4.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639' },
-                { id: 'lutz-latin', type: 'fourth-saturday', name: 'Lutz Latin Nights', img: '/flyer6.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548' },
-                { id: 'slow-burn', type: 'every-thursday', name: 'Slow Burn', img: '/flyer7.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548' },
-                { id: 'back-to-freestyle', type: 'one-off-june5', name: 'Back to Freestyle', img: '/flyer5.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548' }
+                {
+                    id: 'salsa-sol',
+                    type: 'fourth-sunday',
+                    name: 'Salsa Sol Sessions',
+                    desc: "Salsa Sol Sessions is not a club night. It is a Sunday afternoon built for the people who grew up with this music. Every fourth Sunday at Babe Coffee Lounge in Land O Lakes, Kenny Barcenas brings live guitar and percussion to a room that runs on community, not cover charges. The music is classic, the crowd is warm, and the afternoon takes care of the rest. No dress code. No cover. Just real music, real people, and a Sunday that feels the way it used to. Pa' la gente.",
+                    startH: 15, startM: 0, endH: 19, endM: 0,
+                    hasLesson: false,
+                    img: 'flyer1.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639',
+                    lat: 28.2117, lng: -82.4598, price: "0", url: "https://maloofentertainment.com/events/"
+                },
+                {
+                    id: '809',
+                    type: 'first-sunday',
+                    name: 'Classic Salsa Sundays',
+                    desc: "Some nights are built on trends. Classic Salsa Sundays at 809 Lounge in Tampa is built on tradition. Every first Sunday of the month, the Tampa Bay Latin community gathers for a classic Salsa matinee rooted in Salsa Dura, deep cuts, and a live performance from Koko Band directed by Jorge Escalante. The afternoon opens at 3:00 PM with a complimentary beginner Salsa lesson with nationally touring instructor Jenny Marie, no partner required. DJ Pechocho keeps the energy moving until 7:00 PM. No cover charge. Walk in. If you have been looking for authentic Sunday Salsa dancing in Tampa Bay, this is the room.",
+                    startH: 15, startM: 0, endH: 19, endM: 0,
+                    img: 'flyer3.jpg', venue: '809 Lounge', address: '3710 W Waters Ave', city: 'Tampa', zip: '33614',
+                    lat: 28.0249, lng: -82.5063, price: "0", url: "https://maloofentertainment.com/#classic-salsa"
+                },
+                {
+                    id: 'quality-inn',
+                    type: 'second-saturday',
+                    name: 'La Noche Grande',
+                    desc: "Pasco County's Saturday night finally has a name. La Noche Grande brings the New Port Richey Latin community together every second Saturday at Taco Tequila Co inside the Quality Inn on US-19. DJ Mike Sensation runs the floor all night with his signature mix of Salsa, Bachata, and Merengue. The night opens with a complimentary Salsa lesson with Jenny Marie at 8:30 PM. Doors open at 8:00 PM. Presale tickets are $8 online and $10 at the door. The space flows indoor to outdoor, giving the night room to breathe. No experience needed. No partner required. New Port Richey, your Latin night is here.",
+                    startH: 20, startM: 0, endH: 26, endM: 0,
+                    lessonH: 20, lessonM: 30,
+                    img: 'flyer2.jpg', venue: 'Taco Tequila Co at Quality Inn', address: '5316 US Hwy 19 N', city: 'New Port Richey', zip: '34652',
+                    lat: 28.2442, lng: -82.7196, price: "8", url: "https://ticketscandy.com/e/la-noche-grande-nprs-latin-night-returns-june-13-2026-18091"
+                },
+                {
+                    id: 'la-sala',
+                    type: 'third-friday',
+                    name: 'La Sala at Babe Coffee Lounge',
+                    desc: "La Sala is Land O Lakes' Latin night, held every third Friday at Babe Coffee Lounge. The room holds 70 people. That is the point. Elba opens the evening at 7:30 PM with a ladies Traditional Bachata class. Jenny Marie follows at 8:00 PM with a ladies Salsa Styling class. DJ Kama keeps the floor moving until 1:00 AM. No cover. Walk in. Come dressed and ready to move. If you have been driving to Tampa for a Latin night that actually feels like something, this is what you have been looking for in Land O Lakes.",
+                    startH: 19, startM: 0, endH: 25, endM: 0,
+                    lessonH: 19, lessonM: 30,
+                    img: 'flyer4.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639',
+                    lat: 28.2117, lng: -82.4598, price: "0", url: "https://maloofentertainment.com/events/"
+                },
+                {
+                    id: 'lutz-latin',
+                    type: 'fourth-saturday',
+                    name: 'Lutz Latin Nights',
+                    desc: "Lutz has its own Latin night now. Every fourth Saturday at The Drinks at 9 Bar and Grill on Dale Mabry, the room fills up for a full night of Salsa, Bachata, and live Latin music. Doors open at 7:00 PM with happy hour for the first hour. Jenny Marie, one of the top-ranked Salsa instructors in the country, leads a complimentary lesson at 8:30 PM. Live music and DJ keep the floor moving after that. $5 at the door, cash. Walk in. Lutz, you no longer have to drive to Tampa for this.",
+                    startH: 19, startM: 0, endH: 26, endM: 0,
+                    hasLesson: true,
+                    lessonH: 20, lessonM: 30,
+                    img: 'flyer6.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548',
+                    lat: 28.1362, lng: -82.4608, price: "5", url: "https://maloofentertainment.com/events/"
+                },
+                {
+                    id: 'slow-burn',
+                    type: 'every-thursday',
+                    name: 'Slow Burn',
+                    desc: "Slow Burn is Tampa Bay's Bachata and cigar night, and it runs every Thursday at The Drinks at 9 Bar and Grill in Lutz. Jenny Marie leads a Bachata lesson at 8:00 PM. DJ Mike Sensation takes over at 9:00 PM and keeps the floor moving until close. Outside, the Slow Burn Lounge is a dedicated cigar patio presented by Tainas Cigars, where the night slows down just enough to feel it. $5 at the door, cash. No reservations needed. Come early, stay late, and let the night do what it does.",
+                    startH: 19, startM: 0, endH: 26, endM: 0,
+                    hasLesson: false,
+                    img: 'flyer7.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548',
+                    lat: 28.1362, lng: -82.4608, price: "5", url: "https://maloofentertainment.com/events/"
+                },
+                {
+                    id: 'back-to-freestyle',
+                    type: 'one-off-june5',
+                    name: 'Back to Freestyle',
+                    desc: "The songs you memorized riding in the back seat in 1989 never left you. Back to Freestyle brings the sound of Stevie B, Lisa Lisa, TKA, Expose, Shannon, The Cover Girls, Debbie Deb, and more to The Drinks at 9 Bar and Grill in Lutz. DJ Richie Rumbero runs the full freestyle catalog all night. Doors open at 7:00 PM with happy hour for the first hour. Complimentary entry. This is the intimate room before the arena summer kicks in. Real heads show up first.",
+                    startH: 19, startM: 0, endH: 26, endM: 0,
+                    hasLesson: false,
+                    img: 'flyer5.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548',
+                    lat: 28.1362, lng: -82.4608, price: "0", url: "https://maloofentertainment.com/events/"
+                }
             ];
 
             eventsData.forEach(ev => {
                 let d = getNextDate(ev.type);
                 
-                // One-time date exceptions identical to index.html
+                // One-time date exceptions identical to index
                 if (ev.id === '809') {
-                    const exceptionDate = new Date(2026, 2, 8);
+                    const exceptionDate = new Date(2026, 2, 8); // March 8
                     const today = new Date(); today.setHours(0,0,0,0);
-                    if (today <= exceptionDate) { d = exceptionDate; }
+                    if (today <= exceptionDate) d = exceptionDate;
                 }
                 if (ev.id === 'quality-inn') {
-                    const launchDate = new Date(2026, 4, 9);
+                    const launchDate = new Date(2026, 4, 9); // May 9
                     const today = new Date(); today.setHours(0,0,0,0);
-                    if (today <= launchDate) { d = launchDate; }
+                    if (today <= launchDate) d = launchDate;
                 }
                 if (ev.id === 'la-sala') {
-                    const launchDate = new Date(2026, 3, 17);
+                    const launchDate = new Date(2026, 3, 17); // April 17
                     const today = new Date(); today.setHours(0,0,0,0);
-                    if (today <= launchDate) { d = launchDate; }
+                    if (today <= launchDate) d = launchDate;
                 }
+                // Exception to skip June 4th for Slow Burn, show June 11th next
                 if (ev.id === 'slow-burn') {
-                    const exceptionDate = new Date(2026, 5, 11);
+                    const exceptionDate = new Date(2026, 5, 11); // June 11
                     const today = new Date(); today.setHours(0,0,0,0);
-                    if (today <= exceptionDate) { d = exceptionDate; }
+                    if (today <= exceptionDate) d = exceptionDate;
                 }
 
                 ev.nextDateObj = d; 
             });
 
+            // Expose globally for UI rendering
             window.maloofEvents = eventsData;
         })();
 
-        // 2. EVENT LIBRARY DETAILS (Identical to main index)
+        // EVENT COPY LIBRARY
         const eventLibrary = {
             'salsa-sol': {
                 title: 'Salsa Sol Sessions',
@@ -594,16 +615,12 @@
         let swiperInstance;
 
         document.addEventListener('DOMContentLoaded', function() {
-
-            // Build the Carousel Cards
             const wrapper = document.getElementById('carousel-wrapper');
             if (wrapper) {
-                // Sort chronologically based on the computed nextDateObj
-                const otherEvents = (window.maloofEvents || [])
-                    .filter(ev => ev.id !== 'red-thread')
-                    .sort((a, b) => a.nextDateObj - b.nextDateObj);
+                // Sort chronologically based on updated engine dates
+                const allEvents = (window.maloofEvents || []).sort((a, b) => a.nextDateObj - b.nextDateObj);
 
-                otherEvents.forEach(ev => {
+                allEvents.forEach(ev => {
                     const dateString = ev.nextDateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
                     const slide = document.createElement('div');
                     slide.className = 'swiper-slide';
@@ -623,7 +640,6 @@
                     wrapper.appendChild(slide);
                 });
 
-                // Init Swiper
                 if (document.querySelector('.event-swiper')) {
                     swiperInstance = new Swiper('.event-swiper', {
                         slidesPerView: 'auto',
@@ -645,14 +661,12 @@
                 }
             }
 
-            // Navbar scroll effect
             const nav = document.querySelector('nav');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) nav.classList.add('scrolled');
                 else nav.classList.remove('scrolled');
             });
 
-            // Mobile menu
             const menuToggle = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
             if (menuToggle && navLinks) {
@@ -662,23 +676,15 @@
                 });
             }
 
-            // Scroll Reveal Animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: "0px 0px -50px 0px"
-            };
+            const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('active');
                 });
             }, observerOptions);
-
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
 
-        // Expanded Accordion Logic
         window.openEventDetails = function(id, cardElement) {
             if(swiperInstance && swiperInstance.autoplay) swiperInstance.autoplay.stop();
             
@@ -688,16 +694,10 @@
             const container = document.getElementById('event-details-expansion');
             const data = eventLibrary[id];
             
-            // Format dynamic date for UI matching the ID
             const evData = window.maloofEvents.find(e => e.id === id);
             const dateStr = evData ? evData.nextDateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) : '';
 
-            // Handle specific audience tagline
-            const audienceText = id === 'slow-burn'
-                ? 'Bachata Night, All Welcome'
-                : id === 'back-to-freestyle'
-                ? 'All Freestyle Music Lovers Welcome'
-                : 'Beginner Friendly, No Partner Needed';
+            const audienceText = id === 'slow-burn' ? 'Bachata Night, All Welcome' : id === 'back-to-freestyle' ? 'All Freestyle Music Lovers Welcome' : 'Beginner Friendly, No Partner Needed';
 
             container.innerHTML = `
                 <div class="details-grid">
@@ -739,10 +739,7 @@
             `;
             
             container.classList.add('expanded');
-            
-            setTimeout(() => {
-                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 100);
+            setTimeout(() => { container.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
         };
 
         window.closeEventDetails = function() {
@@ -752,36 +749,40 @@
             if(swiperInstance && swiperInstance.autoplay) swiperInstance.autoplay.start();
         };
 
-        // Form Submission Logic
         window.submitFeedback = function(e) {
-            e.preventDefault(); // Prevent page reload
+            e.preventDefault(); 
             const form = document.getElementById('feedbackForm');
             const successMsg = document.getElementById('feedbackSuccess');
             const submitBtn = form.querySelector('.btn-submit');
             
-            // Show loading state
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
             submitBtn.style.opacity = '0.7';
             submitBtn.disabled = true;
 
-            // Simulate network request
-            setTimeout(() => {
-                form.reset();
+            const formData = new FormData(form);
+            const actionUrl = form.getAttribute('action');
+
+            fetch(actionUrl, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    successMsg.style.display = 'block';
+                    setTimeout(() => { successMsg.style.display = 'none'; }, 6000);
+                } else {
+                    alert("There was an issue sending your feedback. Please try again.");
+                }
+            }).catch(error => {
+                alert("There was a network error sending your feedback. Please try again.");
+            }).finally(() => {
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.style.opacity = '1';
                 submitBtn.disabled = false;
-                
-                successMsg.style.display = 'block';
-                
-                // Hide message after 6 seconds
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 6000);
-            }, 800);
+            });
         };
-
     </script>
-
 </body>
 </html>
