@@ -234,20 +234,39 @@
         .faq-section details[open] summary { border-bottom: 1px solid #333; }
         .faq-section p { padding: 1.2rem; color: #ddd; line-height: 1.6; font-size: 0.95rem; }
 
-        /* --- FOOTER & WHATSAPP --- */
-        footer#contact { background-color: transparent; padding: 5rem 5% 2rem; position: relative; background: linear-gradient(to top, rgba(10,10,10,1) 0%, transparent 100%); border-top: 1px solid #1a1a1a; }
-        footer#contact h3, footer#contact p, footer#contact a, .footer-bottom { text-shadow: 0 2px 10px rgba(0,0,0,1); position: relative; z-index: 2; }
-        .footer-logo img { max-width: 120px; margin: 0 auto 2rem; display: block; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
-        .footer-social { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; }
-        .footer-social a { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.1); color: var(--white); display: flex; align-items: center; justify-content: center; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); }
-        .footer-social a:hover { background: var(--gold); color: var(--black); transform: translateY(-5px); }
-        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 4rem; font-size: 0.8rem; color: #ccc; }
+        /* --- PROFESSIONAL FOOTER --- */
+        footer#contact { padding: 5rem 5% 2rem; position: relative; background: linear-gradient(to top, rgba(10,10,10,1) 0%, #080808 100%); border-top: 1px solid #1a1a1a; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.2fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto 4rem auto; align-items: start; }
         
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; animation: float-pulse 2s infinite; }
-        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); color: white; }
-        @keyframes float-pulse { 0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.5); transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); transform: translateY(0px); } }
+        .footer-col h4 { font-family: var(--font-display); font-size: 1.3rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem; display: inline-block; }
+        .footer-logo-img { max-width: 160px; margin-bottom: 1.5rem; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
+        .footer-about { color: #aaa; font-size: 0.95rem; line-height: 1.7; }
+        
+        .footer-contact-list { list-style: none; }
+        .footer-contact-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.2rem; color: #ccc; font-size: 0.95rem; line-height: 1.5; }
+        .footer-contact-list i { color: var(--gold); margin-top: 4px; font-size: 1.1rem; }
+        .footer-contact-list strong { color: var(--white); display: block; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
+        .footer-contact-list a { color: #aaa; transition: color 0.3s; text-decoration: none; }
+        .footer-contact-list a:hover { color: var(--gold); }
+        
+        .areas-served-list { color: #999; font-size: 0.9rem; line-height: 2; column-count: 2; column-gap: 2rem; }
+        
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: #aaa; font-size: 0.95rem; transition: all 0.3s; display: inline-block; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+        .footer-links a:hover { color: var(--gold); transform: translateX(5px); }
+        
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 2rem; text-align: center; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 1rem; }
+        .footer-bottom p { color: #777; font-size: 0.85rem; }
+        .footer-social-small { display: flex; gap: 1.5rem; }
+        .footer-social-small a { color: #888; font-size: 1.5rem; transition: color 0.3s, transform 0.3s; }
+        .footer-social-small a:hover { color: var(--gold); transform: translateY(-3px); }
 
-        /* --- RESPONSIVE --- */
+        /* --- WHATSAPP FLOAT --- */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.4); z-index: 10000; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; animation: float-pulse 2s infinite; }
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+        }
         @media (max-width: 900px) {
             .details-grid { grid-template-columns: 1fr; gap: 2rem; }
             .statement-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -268,6 +287,12 @@
             .whatsapp-float { bottom: 90px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
             .video-bg { min-width: 0; min-height: 0; width: 100%; height: 100%; top: 0; left: 0; transform: none; object-fit: cover; background: #000; }
             .details-meta { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+            .footer-col h4 { margin-left: auto; margin-right: auto; }
+            .footer-logo-img { margin-left: auto; margin-right: auto; }
+            .footer-contact-list li { flex-direction: column; align-items: center; text-align: center; gap: 5px; }
+            .footer-bottom { flex-direction: column; justify-content: center; text-align: center; }
+            .areas-served-list { column-count: 1; }
         }
     </style>
 </head>
@@ -904,26 +929,83 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- PROFESSIONAL FOOTER -->
     <footer id="contact">
-        <div class="footer-logo">
-            <img src="/logo.png" alt="Maloof Entertainment Logo" width="120" height="120" loading="lazy">
-        </div>
-        
-        <div class="footer-social">
-            <a href="https://www.facebook.com/maloofentertainment" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/maloof_entertainment" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <div class="footer-grid">
+            
+            <!-- Column 1: Brand -->
+            <div class="footer-col">
+                <img src="/logo.png" alt="Maloof Entertainment Logo" class="footer-logo-img" loading="lazy">
+                <p class="footer-about">
+                    Tampa Bay's premier Latin nightlife and entertainment production company. We specialize in producing high-energy, inclusive, and authentic Latin dance events, featuring live music, top-tier DJs, and professional instruction across the region.
+                </p>
+            </div>
+
+            <!-- Column 2: Contact Info -->
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Direct Line</strong>
+                            <a href="tel:8137382444">(813) 738-2444</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:maloofentertainment@gmail.com">maloofentertainment@gmail.com</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Headquarters</strong>
+                            <span>Tampa Bay, Florida</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Areas Served -->
+            <div class="footer-col">
+                <h4>Areas We Serve</h4>
+                <div class="areas-served-list">
+                    Tampa<br>
+                    St. Petersburg<br>
+                    Clearwater<br>
+                    Land O' Lakes<br>
+                    New Port Richey<br>
+                    Lutz<br>
+                    Wesley Chapel<br>
+                    Pinellas County<br>
+                    Hillsborough County<br>
+                    Pasco County
+                </div>
+            </div>
+
+            <!-- Column 4: Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/events">Upcoming Events</a></li>
+                    <li><a href="/b2b">Venue Owners</a></li>
+                    <li><a href="/host">Book Your MC</a></li>
+                    <li><a href="/about">About Us</a></li>
+                </ul>
+            </div>
+            
         </div>
         
         <div class="footer-bottom">
-            <div style="margin-bottom: 2rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
-                <a href="/" style="color: var(--gold); font-weight: 600;">HOME</a>
-                <a href="/events" style="color: var(--gold); font-weight: 600;">EVENTS</a>
-                <a href="/b2b" style="color: var(--gold); font-weight: 600;">VENUE OWNERS</a>
-                <a href="/host" style="color: var(--gold); font-weight: 600;">BOOK YOUR MC</a>
-                <a href="/about" style="color: var(--gold); font-weight: 600;">ABOUT</a>
-            </div>
             <p>&copy; 2026 Maloof Entertainment. All Rights Reserved.</p>
+            <div class="footer-social-small">
+                <a href="https://www.facebook.com/maloofentertainment" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/maloof_entertainment" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
 
