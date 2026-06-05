@@ -22,7 +22,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500;700&display=swap"></noscript>
+    
+    <!-- ICONS & SWIPER -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         :root {
@@ -97,57 +100,72 @@
         .header-title { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); text-transform: uppercase; letter-spacing: 1px; line-height: 1.05; margin-bottom: 1.5rem; color: var(--white); }
         .header-divider { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
 
-        /* --- EVENTS GRID --- */
-        section#events-grid-section { padding: 4rem 0 6rem 0; width: 100%; overflow: hidden; }
-        .events-grid { 
-            display: flex; 
-            flex-wrap: nowrap; 
-            gap: 2.5rem; 
-            overflow-x: auto; 
-            overflow-y: hidden; 
-            padding: 2rem 5vw 4rem 5vw; 
-            scroll-snap-type: x mandatory; 
-            -webkit-overflow-scrolling: touch; 
-            scrollbar-width: thin; 
-            scrollbar-color: var(--gold) #222;
+        /* --- SECTION BASE --- */
+        section { padding: 6rem 5%; background-color: var(--black); }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-family: var(--font-display); font-size: 3rem; color: var(--white); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .section-header .divider { width: 80px; height: 3px; background: var(--gold); margin: 0 auto; }
+
+        /* --- DYNAMIC CAROUSEL --- */
+        .carousel-section { background: var(--dark-gray); padding-top: 4rem; padding-bottom: 2rem; position: relative; z-index: 2; border-top: 1px solid #222; }
+        .swiper { width: 100%; padding: 20px 0 50px 0; }
+        .swiper-wrapper { transition-timing-function: linear !important; }
+        .swiper-slide { width: 320px; transition: transform 0.3s ease; height: auto; display: flex; }
+        .swiper-slide-active { transform: scale(1.05); z-index: 2; }
+        
+        .carousel-card {
+            background: var(--black); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border: 1px solid #222; cursor: pointer; display: flex; flex-direction: column; width: 100%; transition: all 0.3s;
         }
-        .events-grid::-webkit-scrollbar { height: 8px; }
-        .events-grid::-webkit-scrollbar-track { background: #222; border-radius: 4px; }
-        .events-grid::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
-
-        .event-card { 
-            flex: 0 0 auto; 
-            width: 380px; 
-            max-width: 85vw; 
-            scroll-snap-align: center; 
-            background: var(--dark-gray); border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; display: flex; flex-direction: column; border: 1px solid #222; 
+        .carousel-card:hover { border-color: var(--gold); box-shadow: 0 10px 30px var(--gold-glow); }
+        .carousel-card.active-card { border: 2px solid var(--gold); transform: translateY(-10px); }
+        
+        .card-img-wrap { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #000; }
+        .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .carousel-card:hover .card-img-wrap img { transform: scale(1.05); }
+        
+        .card-date-badge {
+            position: absolute; top: 15px; right: 15px; background: var(--gold-gradient); color: #000;
+            padding: 5px 12px; border-radius: 4px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 10;
         }
-        .event-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
 
-        .flyer-wrapper { position: relative; overflow: hidden; aspect-ratio: 4/5; background-color: #000; border-bottom: 1px solid #222; }
-        .flyer-wrapper img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
-        .event-card:hover .flyer-wrapper img { transform: scale(1.03); }
+        .card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-family: var(--font-display); font-size: 1.6rem; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+        .card-teaser { font-size: 0.85rem; color: #ccc; flex-grow: 1; margin-bottom: 1rem; line-height: 1.5; }
+        .card-btn { color: var(--white); font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 5px; }
+        .card-btn i { transition: transform 0.3s; }
+        .carousel-card:hover .card-btn i { transform: translateX(5px); color: var(--gold); }
 
-        .event-date-badge { position: absolute; top: 15px; right: 15px; background: var(--gold-gradient); color: #000; padding: 6px 14px; border-radius: 2px; font-weight: 800; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); z-index: 10; }
+        /* --- ACCORDION EXPANSION --- */
+        #event-details-expansion {
+            max-width: 1200px; margin: 0 auto; height: 0; overflow: hidden; transition: height 0.5s ease-in-out, opacity 0.4s ease;
+            opacity: 0; background: var(--dark-gray); border-radius: 8px; border: 1px solid var(--gold);
+        }
+        #event-details-expansion.expanded { height: auto; opacity: 1; margin-bottom: 4rem; padding: 2rem; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        
+        .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+        .details-content h3 { font-family: var(--font-display); font-size: 3rem; color: var(--white); margin-bottom: 1rem; text-transform: uppercase; line-height: 1.1; }
+        .details-content p { color: #ddd; font-size: 1.05rem; margin-bottom: 1.5rem; line-height: 1.7; }
+        
+        .details-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 6px; border-left: 3px solid var(--gold); }
+        .meta-item { display: flex; align-items: start; gap: 10px; }
+        .meta-item i { color: var(--gold); font-size: 1.2rem; margin-top: 3px; }
+        .meta-text strong { display: block; color: var(--white); font-size: 0.9rem; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 1px;}
+        .meta-text span { color: #aaa; font-size: 0.9rem; }
 
-        .event-info { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(to bottom, var(--dark-gray), #080808); }
+        .details-map iframe { width: 100%; height: 100%; min-height: 350px; border-radius: 6px; border: 1px solid #333; }
+        .details-actions { display: flex; gap: 1rem; margin-top: 1rem; }
+        
+        .btn-close-details { background: transparent; border: 1px solid #555; color: #fff; padding: 0.8rem 1.5rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; border-radius: 4px; }
+        .btn-close-details:hover { background: #333; }
+        
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--gold-gradient); color: var(--black); padding: 1rem 2.2rem; font-size: 0.95rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; border-radius: 4px; box-shadow: 0 10px 20px rgba(0,0,0,0.4); border: 1px solid var(--gold); cursor: pointer; transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3); background: transparent; color: var(--gold); }
 
-        .event-date { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 0.5rem; letter-spacing: 2px; }
-        .event-title { font-family: var(--font-display); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; color: var(--white); line-height: 1.1; }
-        .event-tagline { font-family: var(--font-serif); font-style: italic; color: var(--gold); font-size: 0.95rem; margin-bottom: 1.2rem; }
-        .event-desc { color: #ccc; font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.2rem; }
-
-        .event-meta { background: rgba(0,0,0,0.4); padding: 1rem 1.2rem; border-left: 3px solid var(--gold); border-radius: 2px; margin-bottom: 1.2rem; }
-        .event-meta-row { display: flex; align-items: start; gap: 10px; color: #aaa; font-size: 0.85rem; margin-bottom: 0.5rem; }
-        .event-meta-row:last-child { margin-bottom: 0; }
-        .event-meta-row i { color: var(--gold); margin-top: 3px; width: 14px; flex-shrink: 0; }
-
-        .map-container { width: 100%; height: 200px; border-radius: 2px; overflow: hidden; margin-bottom: 1.2rem; border: 1px solid #333; background: #000; filter: grayscale(100%) contrast(1.2); transition: filter 0.3s; }
-        .event-card:hover .map-container { filter: grayscale(0%); }
-        .map-container iframe { width: 100%; height: 100%; border: 0; }
-
-        .btn-primary { display: block; text-align: center; background: var(--gold-gradient); color: var(--black); padding: 1rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; font-weight: 700; border: 1px solid var(--gold); transition: all 0.3s ease; }
-        .btn-primary:hover { background: transparent; color: var(--gold); }
+        /* --- SCROLL REVEAL ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* --- FOOTER (matches main index exactly) --- */
         footer#contact { padding: 5rem 5% 2rem; position: relative; background: linear-gradient(to top, rgba(10,10,10,1) 0%, transparent 100%); border-top: 1px solid #1a1a1a; }
@@ -164,13 +182,16 @@
         @keyframes float-pulse { 0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.5); transform: translateY(0px); } 50% { transform: translateY(-5px); } 100% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); transform: translateY(0px); } }
 
         /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .details-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
         @media (max-width: 768px) {
             nav { padding: 0.8rem 1rem; }
             .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--black); padding: 2rem; border-bottom: 1px solid var(--gold); }
             .nav-links.active { display: flex; }
             .menu-toggle { display: block; }
             .whatsapp-float { bottom: 90px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
-            .events-grid { gap: 1.5rem; padding: 1rem 5vw 3rem 5vw; }
+            .details-meta { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -201,8 +222,23 @@
         </div>
     </header>
 
-    <section id="events-grid-section">
-        <div class="events-grid" id="events-grid"></div>
+    <!-- CAROUSEL SECTION REPLACING OLD GRID -->
+    <section id="events" class="carousel-section">
+        <div class="section-header reveal">
+            <h2>Experience The Nights</h2>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="swiper event-swiper reveal">
+            <div class="swiper-wrapper" id="carousel-wrapper">
+                <!-- Dynamic Content Rendered Here (JS filters out removed elements) -->
+            </div>
+        </div>
+
+        <!-- ACCORDION EXPANSION AREA -->
+        <div id="event-details-expansion">
+            <!-- Rendered dynamically via JS -->
+        </div>
     </section>
 
     <footer id="contact">
@@ -229,172 +265,239 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // DATE ENGINE — identical to main index
-        function getNextDate(type) {
-            const now = new Date();
-            now.setHours(0,0,0,0);
-            let y = now.getFullYear(), m = now.getMonth();
-            function getFirst(day, y, m) {
-                let d = new Date(y, m, 1);
-                while(d.getDay() !== day) d.setDate(d.getDate() + 1);
-                return d;
-            }
-            function getNth(day, n, y, m) {
-                let d = new Date(y, m, 1);
-                let count = 0;
-                while (d.getMonth() === m) {
-                    if (d.getDay() === day) { count++; if (count === n) return new Date(d); }
-                    d.setDate(d.getDate() + 1);
-                }
-                return null;
-            }
-            let d = null;
-            if(type === 'first-friday') d = getFirst(5, y, m);
-            if(type === 'second-saturday') d = getNth(6, 2, y, m);
-            if(type === 'first-sunday') d = getFirst(0, y, m);
-            if(type === 'third-friday') d = getNth(5, 3, y, m);
-            if(type === 'fourth-wednesday') d = getNth(3, 4, y, m);
-            if(type === 'fourth-sunday') d = getNth(0, 4, y, m);
+        // 1. GENERATE DYNAMIC DATES AND GLOBAL ARRAY
+        (function() {
+            function getNextDate(type) {
+                const now = new Date();
+                now.setHours(0,0,0,0);
+                let y = now.getFullYear(), m = now.getMonth();
 
-            if(d < now) {
-                m++; if(m > 11) { m = 0; y++; }
+                function getFirst(day, y, m) {
+                    let d = new Date(y, m, 1);
+                    while(d.getDay() !== day) d.setDate(d.getDate() + 1);
+                    return d;
+                }
+                function getNth(day, n, y, m) {
+                    let d = new Date(y, m, 1);
+                    let count = 0;
+                    while (d.getMonth() === m) {
+                        if (d.getDay() === day) {
+                            count++;
+                            if (count === n) return new Date(d);
+                        }
+                        d.setDate(d.getDate() + 1);
+                    }
+                    return null;
+                }
+
+                let d = null;
                 if(type === 'first-friday') d = getFirst(5, y, m);
                 if(type === 'second-saturday') d = getNth(6, 2, y, m);
                 if(type === 'first-sunday') d = getFirst(0, y, m);
                 if(type === 'third-friday') d = getNth(5, 3, y, m);
                 if(type === 'fourth-wednesday') d = getNth(3, 4, y, m);
                 if(type === 'fourth-sunday') d = getNth(0, 4, y, m);
+                if(type === 'fourth-saturday') d = getNth(6, 4, y, m);
+                if(type === 'one-off-may16') d = new Date(2026, 4, 16);
+                if(type === 'one-off-june5') d = new Date(2026, 5, 5);
+                if(type === 'every-thursday') { let td = new Date(now); let daysUntil = (4 - td.getDay() + 7) % 7; td.setDate(td.getDate() + daysUntil); return td; }
+
+                if(d < now && type !== 'one-off-may16' && type !== 'one-off-june5') {
+                    m++; if(m > 11) { m = 0; y++; }
+                    if(type === 'first-friday') d = getFirst(5, y, m);
+                    if(type === 'second-saturday') d = getNth(6, 2, y, m);
+                    if(type === 'first-sunday') d = getFirst(0, y, m);
+                    if(type === 'third-friday') d = getNth(5, 3, y, m);
+                    if(type === 'fourth-wednesday') d = getNth(3, 4, y, m);
+                    if(type === 'fourth-sunday') d = getNth(0, 4, y, m);
+                    if(type === 'fourth-saturday') d = getNth(6, 4, y, m);
+                    if(type === 'every-thursday') { let td = new Date(now); let daysUntil = (4 - td.getDay() + 7) % 7; td.setDate(td.getDate() + daysUntil); return td; }
+                }
+
+                // Launch date exception for Lutz Latin Nights
+                if (type === 'fourth-saturday') {
+                    const launchDate = new Date(2026, 4, 23); // May 23, 2026
+                    const today = new Date();
+                    today.setHours(0,0,0,0);
+                    if (today <= launchDate) {
+                        d = launchDate;
+                    }
+                }
+
+                return d;
             }
 
-            // Launch date exception for Quality Inn NPR Latin Night — May 9, 2026
-            if(type === 'second-saturday') {
-                const launchDate = new Date(2026, 4, 9);
-                const today = new Date(); today.setHours(0,0,0,0);
-                if(today <= launchDate) d = launchDate;
-            }
+            const eventsData = [
+                { id: 'salsa-sol', type: 'fourth-sunday', name: 'Salsa Sol Sessions', img: '/flyer1.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639' },
+                { id: '809', type: 'first-sunday', name: 'Classic Salsa Sundays', img: '/flyer3.jpg', venue: '809 Lounge', address: '3710 W Waters Ave', city: 'Tampa', zip: '33614' },
+                { id: 'quality-inn', type: 'second-saturday', name: 'La Noche Grande', img: '/flyer2.jpg', venue: 'Taco Tequila Co at Quality Inn', address: '5316 US Hwy 19 N', city: 'New Port Richey', zip: '34652' },
+                { id: 'la-sala', type: 'third-friday', name: 'La Sala at Babe Coffee Lounge', img: '/flyer4.jpg', venue: 'Babe Coffee Lounge', address: '5132 Land O Lakes Blvd, Unit 107', city: 'Land O Lakes', zip: '34639' },
+                { id: 'lutz-latin', type: 'fourth-saturday', name: 'Lutz Latin Nights', img: '/flyer6.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548' },
+                { id: 'slow-burn', type: 'every-thursday', name: 'Slow Burn', img: '/flyer7.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548' },
+                { id: 'back-to-freestyle', type: 'one-off-june5', name: 'Back to Freestyle', img: '/flyer5.jpg', venue: 'The Drinks at 9 Bar & Grill', address: '17667 Dale Mabry Hwy', city: 'Lutz', zip: '33548' }
+            ];
 
-            // Launch date exception for La Sala — April 17, 2026
-            if(type === 'third-friday') {
-                const launchDate = new Date(2026, 3, 17);
-                const today = new Date(); today.setHours(0,0,0,0);
-                if(today <= launchDate) d = launchDate;
-            }
+            eventsData.forEach(ev => {
+                let d = getNextDate(ev.type);
+                
+                // One-time date exceptions identical to index.html
+                if (ev.id === '809') {
+                    const exceptionDate = new Date(2026, 2, 8);
+                    const today = new Date(); today.setHours(0,0,0,0);
+                    if (today <= exceptionDate) { d = exceptionDate; }
+                }
+                if (ev.id === 'quality-inn') {
+                    const launchDate = new Date(2026, 4, 9);
+                    const today = new Date(); today.setHours(0,0,0,0);
+                    if (today <= launchDate) { d = launchDate; }
+                }
+                if (ev.id === 'la-sala') {
+                    const launchDate = new Date(2026, 3, 17);
+                    const today = new Date(); today.setHours(0,0,0,0);
+                    if (today <= launchDate) { d = launchDate; }
+                }
+                if (ev.id === 'slow-burn') {
+                    const exceptionDate = new Date(2026, 5, 11);
+                    const today = new Date(); today.setHours(0,0,0,0);
+                    if (today <= exceptionDate) { d = exceptionDate; }
+                }
 
-            // One-time date exception for Classic Salsa Sundays — March 8, 2026
-            if(type === 'first-sunday') {
-                const exceptionDate = new Date(2026, 2, 8);
-                const today = new Date(); today.setHours(0,0,0,0);
-                if(today <= exceptionDate) d = exceptionDate;
-            }
+                ev.nextDateObj = d; 
+            });
 
-            return d;
-        }
+            window.maloofEvents = eventsData;
+        })();
 
-        // EVENT LIBRARY — matches main index exactly
+        // 2. EVENT LIBRARY DETAILS (Identical to main index)
         const eventLibrary = {
             'salsa-sol': {
-                type: 'fourth-sunday',
                 title: 'Salsa Sol Sessions',
-                tagline: 'Fourth Sundays @ Babe Coffee Lounge \u00b7 Land O\' Lakes',
-                img: '/flyer1.jpg',
-                imgAlt: 'Salsa Sol Sessions at Babe Coffee Lounge Land O Lakes',
-                venue: 'Babe Coffee Lounge',
-                address: '5132 Land O Lakes Blvd, Unit 107, Land O Lakes, FL 34639',
-                copy: "Salsa Sol Sessions isn't a club—it's a Sunday afternoon gathering for the community. Featuring Kenny Barcenas bringing live guitar and percussion to authentic, classic salsa that lives in your bones. Enjoy Babe Coffee Lounge's full menu, including lobster empanadas and mimosa flights, in a relaxed, family-friendly space. No pressure, just real music and real people.",
-                time: '3:00 PM – 7:00 PM | Live Music',
+                tagline: 'Fourth Sundays @ Babe Coffee Lounge · Land O Lakes',
+                copy: "Salsa Sol Sessions is not a club night. It is a Sunday afternoon built for the people who grew up with this music. Every fourth Sunday at Babe Coffee Lounge in Land O Lakes, Kenny Barcenas brings live guitar and percussion to a room that runs on community, not cover charges. The music is classic, the crowd is warm, and the afternoon takes care of the rest. No dress code. No cover. Just real music, real people, and a Sunday that feels the way it used to. Pa' la gente.",
+                time: '3:00 PM to 7:00 PM | Kenny Barcenas Live',
                 cover: 'Complimentary Entry',
                 mapUrl: 'https://maps.google.com/maps?q=5132+Land+O+Lakes+Blvd,+Land+O+Lakes,+FL+34639&t=&z=15&ie=UTF8&iwloc=&output=embed',
-                actionText: 'GET DIRECTIONS',
-                actionLink: 'https://maps.google.com/?q=5132+Land+O+Lakes+Blvd+Land+O+Lakes+FL+34639',
-                actionTarget: '_blank'
-            },
-            'quality-inn': {
-                type: 'second-saturday',
-                title: 'Quality Inn NPR Latin Night',
-                tagline: 'Second Saturdays @ Grand Ballroom \u00b7 New Port Richey',
-                img: '/flyer2.jpg',
-                imgAlt: 'Quality Inn NPR Latin Night at Grand Ballroom New Port Richey',
-                venue: 'Grand Ballroom at Quality Inn & Suites',
-                address: '5316 US Hwy 19 N, New Port Richey, FL 34652',
-                copy: "Pasco County finally has its own Saturday night. Maloof Entertainment brings a full Latin production to the Grand Ballroom at Quality Inn & Suites Conference Center in New Port Richey \u2014 The Koko Band live, DJ Mike Sensation, and two complimentary dance classes to kick off the night. Elba teaches Ladies Traditional Bachata at 8 PM. Jenny Morano teaches Salsa at 8:30 PM. DJ Mike Sensation \u2014 Tampa Bay's most recognized Latin DJ \u2014 takes over at 9 PM with his signature Salsa, Bachata, and Merengue mix. Doors open at 7:30 PM. Presale tickets are $12 \u2014 price goes to $15 at the door. No experience needed. No partner required. Just show up.",
-                time: '7:30 PM Doors | 8:00 PM Bachata Class | 8:30 PM Salsa Class | 9:00 PM DJ Mike Sensation',
-                cover: '$12 Presale \u00b7 $15 at the Door',
-                mapUrl: 'https://maps.google.com/maps?q=5316+US+Hwy+19+N,+New+Port+Richey,+FL+34652&t=&z=15&ie=UTF8&iwloc=&output=embed',
-                actionText: 'GET TICKETS \u2014 $12 PRESALE',
-                actionLink: 'https://buytickets.at/maloofentertainment/2161470',
-                actionTarget: '_blank'
-            },
-            'la-sala': {
-                type: 'third-friday',
-                title: 'La Sala',
-                tagline: 'Third Fridays @ Babes Coffee Lounge \u00b7 Land O Lakes',
-                img: '/flyer4.jpg',
-                imgAlt: 'La Sala \u2014 Third Friday Latin Night at Babes Coffee Lounge Land O Lakes',
-                venue: 'Babes Coffee Lounge',
-                address: '5132 Land O Lakes Blvd, Land O Lakes, FL 34639',
-                copy: "La Sala is the newest Latin night in Tampa Bay \u2014 and it\u2019s launching at one of the most unique venues in the region. Babes Coffee Lounge in Land O Lakes opens its doors every third Friday for a night of Salsa, Bachata, and Merengue with a complimentary ladies styling Salsa class by Jenny Marie at 8:30 PM and DJ Kama keeping the energy going until 1 AM. Whether you\u2019re a seasoned dancer or stepping onto the floor for the first time, La Sala is built for you \u2014 beginner friendly, no partner needed. Come dressed, come ready, and come expecting something different.",
-                time: '8:30 PM Lesson | DJ Kama until 1:00 AM',
-                cover: 'Complimentary Entry',
-                mapUrl: 'https://maps.google.com/maps?q=5132+Land+O+Lakes+Blvd,+Land+O+Lakes,+FL+34639&t=&z=15&ie=UTF8&iwloc=&output=embed',
-                actionText: 'GET DIRECTIONS',
-                actionLink: 'https://maps.google.com/?q=5132+Land+O+Lakes+Blvd+Land+O+Lakes+FL+34639',
-                actionTarget: '_blank'
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=5132+Land+O+Lakes+Blvd+Land+O+Lakes+FL+34639'
             },
             '809': {
-                type: 'first-sunday',
                 title: 'Classic Salsa Sundays',
-                tagline: 'First Sundays @ 809 Lounge Tampa',
-                img: '/flyer3.jpg',
-                imgAlt: 'Classic Salsa Sundays at 809 Lounge Tampa',
-                venue: '809 Lounge Tampa',
-                address: '3710 W Waters Ave, Tampa, FL 33614',
-                copy: "Some nights are about trends. This one is about tradition. Classic Salsa Sundays at the 809 Lounge is a matinee built for people who love classic salsa dancing Tampa the way it was meant to be felt \u2014 deep cuts on vinyl, Salsa Dura, Live Latin Bands, and a room full of dancers who respect the roots. The afternoon opens at 3:00 PM with a complimentary beginner salsa lesson Tampa (no partner required), then flows into open dancing until 7:00 PM on the first Sunday of every month. If you\u2019ve been searching for the best Sunday salsa Tampa has to offer, you just found it.",
-                time: '3:00 PM Lesson | Social until 7:00 PM',
-                cover: 'FREE ENTRY',
+                tagline: 'First Sundays @ 809 Lounge · Tampa',
+                copy: "Some nights are built on trends. Classic Salsa Sundays at 809 Lounge in Tampa is built on tradition. Every first Sunday of the month, the Tampa Bay Latin community gathers for a classic Salsa matinee rooted in Salsa Dura, deep cuts, and a live performance from Koko Band directed by Jorge Escalante. The afternoon opens at 3:00 PM with a complimentary beginner Salsa lesson with nationally touring instructor Jenny Marie, no partner required. DJ Pechocho keeps the energy moving until 7:00 PM. No cover charge. Walk in. If you have been looking for authentic Sunday Salsa dancing in Tampa Bay, this is the room.",
+                time: '3:00 PM Salsa Lesson | Koko Band Live | Open Dancing until 7:00 PM',
+                cover: 'Complimentary Entry',
                 mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3521.984508255559!2d-82.50631682573251!3d28.02494931141417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2c1133501914f%3A0xfc44c7c992528e39!2s809%20Lounge%20Restaurant%20%26%20Grill!5e0!3m2!1sen!2sus!4v1770002862871!5m2!1sen!2sus',
-                actionText: 'RESERVE A TABLE',
-                actionLink: 'https://www.eventbrite.com/e/dinner-drinks-live-salsa-the-red-black-valentines-affair-809-lounge-tickets-1980289175231',
-                actionTarget: '_blank'
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=3710+W+Waters+Ave+Tampa+FL+33614'
+            },
+            'quality-inn': {
+                title: 'La Noche Grande',
+                tagline: 'Second Saturdays @ Taco Tequila Co · New Port Richey',
+                copy: "Pasco County's Saturday night finally has a name. La Noche Grande brings the New Port Richey Latin community together every second Saturday at Taco Tequila Co inside the Quality Inn on US-19. DJ Mike Sensation runs the floor all night with his signature mix of Salsa, Bachata, and Merengue. The night opens with a complimentary Salsa lesson with Jenny Marie at 8:30 PM. Doors open at 8:00 PM. Presale tickets are $8 online and $10 at the door. The space flows indoor to outdoor, giving the night room to breathe. No experience needed. No partner required. New Port Richey, your Latin night is here.",
+                time: '8:00 PM Doors | 8:30 PM Salsa Lesson | DJ Mike Sensation',
+                cover: '$8 Online Presale · $10 at the Door',
+                mapUrl: 'https://maps.google.com/maps?q=5316+US+Hwy+19+N,+New+Port+Richey,+FL+34652&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'Get Tickets — $8 Online',
+                actionLink: 'https://ticketscandy.com/e/la-noche-grande-nprs-latin-night-returns-june-13-2026-18091'
+            },
+            'la-sala': {
+                title: 'La Sala',
+                tagline: 'Third Fridays @ Babe Coffee Lounge · Land O Lakes',
+                copy: "La Sala is Land O Lakes' Latin night, held every third Friday at Babe Coffee Lounge. The room holds 70 people. That is the point. Elba opens the evening at 7:30 PM with a ladies Traditional Bachata class. Jenny Marie follows at 8:00 PM with a ladies Salsa Styling class. DJ Kama keeps the floor moving until 1:00 AM. No cover. Walk in. Come dressed and ready to move. If you have been driving to Tampa for a Latin night that actually feels like something, this is what you have been looking for in Land O Lakes.",
+                time: '7:30 PM Bachata Class | 8:00 PM Salsa Class | DJ Kama until 1:00 AM',
+                cover: 'Complimentary Entry',
+                mapUrl: 'https://maps.google.com/maps?q=5132+Land+O+Lakes+Blvd,+Land+O+Lakes,+FL+34639&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=5132+Land+O+Lakes+Blvd+Land+O+Lakes+FL+34639'
+            },
+            'lutz-latin': {
+                title: 'Lutz Latin Nights',
+                tagline: 'Fourth Saturdays @ The Drinks at 9 Bar & Grill · Lutz',
+                copy: "Lutz has its own Latin night now. Every fourth Saturday at The Drinks at 9 Bar and Grill on Dale Mabry, the room fills up for a full night of Salsa, Bachata, and live Latin music. Doors open at 7:00 PM with happy hour for the first hour. Jenny Marie, one of the top-ranked Salsa instructors in the country, leads a complimentary lesson at 8:30 PM. Live music and DJ keep the floor moving after that. $5 at the door, cash. Walk in. Lutz, you no longer have to drive to Tampa for this.",
+                time: '7:00 PM Doors | Happy Hour until 8:00 PM | 8:30 PM Salsa Lesson',
+                cover: '$5 at the Door, Cash',
+                mapUrl: 'https://maps.google.com/maps?q=The+Drinks+at+9+Bar+and+Grill+Lutz+FL&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=17667+Dale+Mabry+Hwy+Lutz+FL+33548'
+            },
+            'slow-burn': {
+                title: 'Slow Burn',
+                tagline: 'Every Thursday @ The Drinks at 9 Bar & Grill · Lutz',
+                copy: "Slow Burn is Tampa Bay's Bachata and cigar night, and it runs every Thursday at The Drinks at 9 Bar and Grill in Lutz. Jenny Marie leads a Bachata lesson at 8:00 PM. DJ Mike Sensation takes over at 9:00 PM and keeps the floor moving until close. Outside, the Slow Burn Lounge is a dedicated cigar patio presented by Tainas Cigars, where the night slows down just enough to feel it. $5 at the door, cash. No reservations needed. Come early, stay late, and let the night do what it does.",
+                time: '8:00 PM Bachata Lesson | 9:00 PM DJ Mike Sensation until Close',
+                cover: '$5 at the Door, Cash',
+                mapUrl: 'https://maps.google.com/maps?q=The+Drinks+at+9+Bar+and+Grill+Lutz+FL&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=17667+Dale+Mabry+Hwy+Lutz+FL+33548'
+            },
+            'back-to-freestyle': {
+                title: 'Back to Freestyle',
+                tagline: 'Friday, June 5 @ The Drinks at 9 Bar & Grill · Lutz',
+                copy: "The songs you memorized riding in the back seat in 1989 never left you. Back to Freestyle brings the sound of Stevie B, Lisa Lisa, TKA, Expose, Shannon, The Cover Girls, Debbie Deb, and more to The Drinks at 9 Bar and Grill in Lutz. DJ Richie Rumbero runs the full freestyle catalog all night. Doors open at 7:00 PM with happy hour for the first hour. Complimentary entry. This is the intimate room before the arena summer kicks in. Real heads show up first.",
+                time: '7:00 PM Doors | Happy Hour until 8:00 PM | DJ Richie Rumbero',
+                cover: 'Complimentary Entry',
+                mapUrl: 'https://maps.google.com/maps?q=The+Drinks+at+9+Bar+and+Grill+Lutz+FL&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                actionText: 'Get Directions',
+                actionLink: 'https://maps.google.com/?q=17667+Dale+Mabry+Hwy+Lutz+FL+33548'
             }
         };
 
+        let swiperInstance;
+
         document.addEventListener('DOMContentLoaded', function() {
-            const grid = document.getElementById('events-grid');
 
-            ['salsa-sol', 'quality-inn', 'la-sala', '809'].forEach(id => {
-                const ev = eventLibrary[id];
-                const nextDate = getNextDate(ev.type);
-                const dayFull  = nextDate.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase();
-                const dateFull = nextDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).toUpperCase();
-                const badge    = nextDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            // Build the Carousel Cards
+            const wrapper = document.getElementById('carousel-wrapper');
+            if (wrapper) {
+                // Sort chronologically based on the computed nextDateObj
+                const otherEvents = (window.maloofEvents || [])
+                    .filter(ev => ev.id !== 'red-thread')
+                    .sort((a, b) => a.nextDateObj - b.nextDateObj);
 
-                const card = document.createElement('article');
-                card.className = 'event-card';
-                card.innerHTML =
-                    '<div class="flyer-wrapper">' +
-                        '<div class="event-date-badge">Next: ' + badge + '</div>' +
-                        '<img src="' + ev.img + '" alt="' + ev.imgAlt + '" loading="lazy">' +
-                    '</div>' +
-                    '<div class="event-info">' +
-                        '<div>' +
-                            '<div class="event-date">' + dayFull + ', ' + dateFull + '</div>' +
-                            '<h2 class="event-title">' + ev.title + '</h2>' +
-                            '<p class="event-tagline">' + ev.tagline + '</p>' +
-                            '<p class="event-desc">' + ev.copy + '</p>' +
-                            '<div class="event-meta">' +
-                                '<div class="event-meta-row"><i class="fas fa-clock"></i><span>' + ev.time + '</span></div>' +
-                                '<div class="event-meta-row"><i class="fas fa-ticket-alt"></i><span>' + ev.cover + '</span></div>' +
-                                '<div class="event-meta-row"><i class="fas fa-users"></i><span>Beginner Friendly \u00b7 No Partner Needed</span></div>' +
-                                '<div class="event-meta-row"><i class="fas fa-map-marker-alt"></i><span>' + ev.venue + '</span></div>' +
-                                '<div class="event-meta-row" style="padding-left:24px;"><i class="fas fa-location-arrow" style="color:var(--gold);margin-top:3px;width:14px;flex-shrink:0;"></i><span>' + ev.address + '</span></div>' +
-                            '</div>' +
-                            '<div class="map-container"><iframe src="' + ev.mapUrl + '" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>' +
-                        '</div>' +
-                        '<a href="' + ev.actionLink + '" class="btn-primary" target="' + ev.actionTarget + '"' + (ev.actionTarget === '_blank' ? ' rel="noopener"' : '') + '>' + ev.actionText + '</a>' +
-                    '</div>';
-                grid.appendChild(card);
-            });
+                otherEvents.forEach(ev => {
+                    const dateString = ev.nextDateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    slide.innerHTML = `
+                        <div class="carousel-card" onclick="openEventDetails('${ev.id}', this)">
+                            <div class="card-img-wrap">
+                                <div class="card-date-badge">Next: ${dateString}</div>
+                                <img src="${ev.img}" alt="${ev.name}">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">${ev.name.split(' - ')[0]}</h3>
+                                <p class="card-teaser">${eventLibrary[ev.id].tagline}</p>
+                                <span class="card-btn">View Details <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    `;
+                    wrapper.appendChild(slide);
+                });
+
+                // Init Swiper
+                if (document.querySelector('.event-swiper')) {
+                    swiperInstance = new Swiper('.event-swiper', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 20,
+                        centeredSlides: false,
+                        loop: true,
+                        grabCursor: true,
+                        freeMode: { enabled: true },
+                        autoplay: {
+                            delay: 0,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true
+                        },
+                        speed: 10000,
+                        breakpoints: {
+                            768: { spaceBetween: 30 }
+                        }
+                    });
+                }
+            }
 
             // Navbar scroll effect
             const nav = document.querySelector('nav');
@@ -412,7 +515,97 @@
                     link.addEventListener('click', () => navLinks.classList.remove('active'));
                 });
             }
+
+            // Scroll Reveal Animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
+
+        // Expanded Accordion Logic
+        window.openEventDetails = function(id, cardElement) {
+            if(swiperInstance && swiperInstance.autoplay) swiperInstance.autoplay.stop();
+            
+            document.querySelectorAll('.carousel-card').forEach(c => c.classList.remove('active-card'));
+            if(cardElement) cardElement.classList.add('active-card');
+
+            const container = document.getElementById('event-details-expansion');
+            const data = eventLibrary[id];
+            
+            // Format dynamic date for UI matching the ID
+            const evData = window.maloofEvents.find(e => e.id === id);
+            const dateStr = evData ? evData.nextDateObj.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) : '';
+
+            // Handle specific audience tagline
+            const audienceText = id === 'slow-burn'
+                ? 'Bachata Night, All Welcome'
+                : id === 'back-to-freestyle'
+                ? 'All Freestyle Music Lovers Welcome'
+                : 'Beginner Friendly, No Partner Needed';
+
+            container.innerHTML = `
+                <div class="details-grid">
+                    <div>
+                        <div class="details-content">
+                            <span style="color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px; display:block;">Next Date: ${dateStr}</span>
+                            <h3>${data.title}</h3>
+                            <p>${data.copy}</p>
+                            
+                            <div class="details-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <div class="meta-text"><strong>Schedule</strong><span>${data.time}</span></div>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-ticket-alt"></i>
+                                    <div class="meta-text"><strong>Cover / Entry</strong><span>${data.cover}</span></div>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <div class="meta-text"><strong>Who can join?</strong><span>${audienceText}</span></div>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <div class="meta-text"><strong>Venue</strong><span>${evData.venue}</span><span>${evData.address}, ${evData.city}, FL ${evData.zip}</span></div>
+                                </div>
+                            </div>
+
+                            <div class="details-actions">
+                                <a href="${data.actionLink}" target="_blank" class="btn-primary" style="font-size:0.85rem; padding: 0.8rem 1.5rem;">${data.actionText}</a>
+                                <button class="btn-close-details" onclick="closeEventDetails()">Close Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details-map">
+                        <iframe src="${data.mapUrl}" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            `;
+            
+            container.classList.add('expanded');
+            
+            setTimeout(() => {
+                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        };
+
+        window.closeEventDetails = function() {
+            const container = document.getElementById('event-details-expansion');
+            container.classList.remove('expanded');
+            document.querySelectorAll('.carousel-card').forEach(c => c.classList.remove('active-card'));
+            if(swiperInstance && swiperInstance.autoplay) swiperInstance.autoplay.start();
+        };
+
     </script>
 
 </body>
